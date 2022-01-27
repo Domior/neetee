@@ -1,1 +1,1 @@
-export { ViewedPage } from './ViewedPage';
+export { default } from './ViewedPage';
