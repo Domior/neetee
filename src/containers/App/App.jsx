@@ -1,11 +1,13 @@
+import Footer from '@components/Footer'
+
 // import styles from './App.module.css';
 
 const App = () => {
   return (
     <>
-    <h1>Start</h1>
+      <Footer />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
