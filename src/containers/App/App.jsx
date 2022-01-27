@@ -1,4 +1,4 @@
-import Footer from '@components/Footer'
+import Footer from '@components/Footer';
 
 // import styles from './App.module.css';
 
@@ -7,7 +7,7 @@ const App = () => {
     <>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
