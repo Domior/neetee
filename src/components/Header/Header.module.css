@@ -1,0 +1,9 @@
+.headerNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+.headerNav li {
+  margin-right: 15px;
+}

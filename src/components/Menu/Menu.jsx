@@ -1,3 +1,4 @@
+import MenuNav from '@components/Menu/MenuNav';
 import Logo from '@components/Logo';
 import personPhoto from '@static/person-photo.jpg';
 
@@ -10,6 +11,7 @@ const Menu = () => {
         <Logo />
         <img className={styles.pesonPhoto} src={personPhoto} alt="person" />
         <p className={styles.pesonName}>Иванов Сергей</p>
+        <MenuNav />
       </div>
     </>
   );

@@ -3,6 +3,8 @@
 :root {
     --color-white: #fff;
     --color-black: #000;
+    --color-gray: #666;
+    --color-orange: #FF9900;
 
     --font-size-smallest: 10px;
     --font-size-small: 12px;
