@@ -2,12 +2,12 @@
   width: 100%;
 
 }
-.menuLink_container {
+.menuNav li {
   width: 100%;
   height: 60px;
 }
 
-.menuLink {
+.menuNav a {
   display: flex;
   align-items: center;
   width: 100%;
@@ -20,14 +20,21 @@
   text-decoration: none;
   border-left: 3.5px solid transparent;
 }
-.menuLink span {
-  margin-left: 15px;
+
+.menuNav a:hover {
+  background: rgba(255, 255, 255, .1);
+  color: var(--color-white);
+  transition: all .4s linear;
 }
-.menuLink:hover,
-.menuLink:active,
-.menuLink.active {
+
+
+.menuNav :global(a.active) {
   background: rgba(255, 255, 255, .1);
   border-left: 3.5px solid var(--color-orange);
   color: var(--color-white);
   transition: all .4s linear;
+}
+
+.menuNav span {
+  margin-left: 15px;
 }

@@ -11,26 +11,26 @@ const MenuNav = () => {
   return (
     <>
       <ul className={styles.menuNav}>
-        <li className={styles.menuLink_container}>
-          <NavLink className={styles.menuLink} to="/my-announcements">
+        <li>
+          <NavLink to="/my-announcements">
             <img src={IconAnnouncements} alt="IconAnnouncements" />
             <span>Мои объявления</span>
           </NavLink>
         </li>
-        <li className={styles.menuLink_container}>
-          <NavLink className={styles.menuLink} to="/orders">
+        <li>
+          <NavLink to="/orders">
             <img src={IconOrders} alt="IconOrders" />
             <span>Мои заказы</span>
           </NavLink>
         </li>
-        <li className={styles.menuLink_container}>
-          <NavLink className={styles.menuLink} to="/favourites">
+        <li>
+          <NavLink to="/favourites">
             <img src={IconFavourites} alt="IconFavourites" />
             <span>Избранное</span>
           </NavLink>
         </li>
-        <li className={styles.menuLink_container}>
-          <NavLink className={styles.menuLink} to="/settings">
+        <li>
+          <NavLink to="/settings">
             <img src={IconSettings} alt="IconSettings" />
             <span>Настройки</span>
           </NavLink>

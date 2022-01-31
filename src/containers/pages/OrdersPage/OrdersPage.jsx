@@ -1,14 +1,14 @@
 import Menu from '@components/Menu';
 
-// import styles from './BasketPage.module.css';
+// import styles from './OrdersPage.module.css';
 
-const BasketPage = () => {
+const OrdersPage = () => {
   return (
     <>
-      <h1>BasketPage</h1>
+      <h1>OrdersPage</h1>
       <Menu />
     </>
   );
 };
 
-export default BasketPage;
+export default OrdersPage;
