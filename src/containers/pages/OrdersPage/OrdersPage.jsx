@@ -1,12 +1,15 @@
 import Menu from '@components/Menu';
+import OrderTabs from '@components/OrderTabs';
 
-// import styles from './OrdersPage.module.css';
+import styles from './OrdersPage.module.css';
 
 const OrdersPage = () => {
   return (
     <>
-      <h1>OrdersPage</h1>
-      <Menu />
+      <div className={styles.wrapper}>
+        <Menu />
+        <OrderTabs />
+      </div>
     </>
   );
 };
