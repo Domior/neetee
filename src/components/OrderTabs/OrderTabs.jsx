@@ -2,9 +2,10 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-import styles from './OrderTabs.module.css';
+import './OrderTabs.module.css';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -17,7 +18,7 @@ function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && <Box>{children}</Box>}
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   );
 }
@@ -28,7 +29,7 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-function a11yProps(index) {
+function a11yProps(index, styled) {
   return {
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`,
@@ -43,7 +44,9 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box className={styles.tabsWrapper}>
+    <Box
+      sx={{ width: '100%', pt: '40px', pl: '115px', pb: '60px', pr: '65px' }}
+    >
       <Box>
         <Tabs
           value={value}

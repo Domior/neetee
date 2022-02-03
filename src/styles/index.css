@@ -1,41 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap'); */
 
 :root {
-    --color-white: #fff;
-    --color-black: #000;
-    --color-gray: #666;
+    --color-white : #fff;
+    --color-black : #000;
+    --color-gray  : #666;
     --color-orange: #FF9900;
+    --color-blue  : #4270AD;
 
     --font-size-smallest: 10px;
-    --font-size-small: 12px;
-    --font-size-medium: 14px;
-    --font-size-large: 16px;
-    --font-size-largest: 18px;
-    --font-size-huge: 20px;
+    --font-size-small   : 12px;
+    --font-size-medium  : 14px;
+    --font-size-large   : 16px;
+    --font-size-largest : 18px;
+    --font-size-huge    : 20px;
 
     --font-weight-regular: 400;
-    --font-weight-medium: 500;
-    --font-weight-bold: 700;
+    --font-weight-medium : 500;
+    --font-weight-bold   : 700;
 
-    --line-height-tiny: 12px;
+    --line-height-tiny    : 12px;
     --line-height-littlest: 14px;
-    --line-height-little: 16px;
+    --line-height-little  : 16px;
     --line-height-smallest: 18px;
-    --line-height-small: 19px;
-    --line-height-medium: 20px;
-    --line-height-large: 21px;
-    --line-height-largest: 23px;
-    --line-height-huge: 24px;
+    --line-height-small   : 19px;
+    --line-height-medium  : 20px;
+    --line-height-large   : 21px;
+    --line-height-largest : 23px;
+    --line-height-huge    : 24px;
 }
 
 *,
 *:before,
 *:after {
-    padding: 0;
-    margin: 0;
+    padding   : 0;
+    margin    : 0;
     box-sizing: border-box;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
+}
+
+
+/* Tabs */
+.MuiTabs-root .MuiButtonBase-root {
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-smallest);
+    letter-spacing: initial;
+    text-transform: initial;
+    min-width: 40px;
+    max-width: 145px;
+    padding: 10px 0;
+    margin-right: 20px;
+    color: var(--color-gray);
+}
+.MuiTabs-root .MuiButtonBase-root:last-of-type {
+    margin-right: 0;
+}
+
+.MuiTabs-root .MuiButtonBase-root.Mui-selected {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-black)
+}
+.MuiTabs-indicator {
+    border-radius   : 10px;
+    background-color: var(--color-blue);
+}
+.MuiTabs-root .MuiButtonBase-root .MuiTouchRipple-root {
+    display: none;
 }
