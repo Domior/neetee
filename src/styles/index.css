@@ -6,6 +6,7 @@
     --color-gray  : #666;
     --color-orange: #FF9900;
     --color-blue  : #4270AD;
+    --color-green-secondary: #27AE60;
 
     --font-size-smallest: 10px;
     --font-size-small   : 12px;
@@ -50,14 +51,20 @@ body {
     line-height: var(--line-height-smallest);
     letter-spacing: initial;
     text-transform: initial;
+    white-space: nowrap;
     min-width: 40px;
-    max-width: 145px;
-    padding: 10px 0;
-    margin-right: 20px;
+    /* max-width: 145px; */
+    max-height: 45px;
+    padding: 10px 20px;
+    /* margin-left: 20px; */
     color: var(--color-gray);
 }
-.MuiTabs-root .MuiButtonBase-root:last-of-type {
-    margin-right: 0;
+.MuiTabs-root .MuiButtonBase-root:first-of-type {
+    margin-left: 0;
+}
+
+.MuiTabs-root .MuiButtonBase-root label {
+    /* width: 120px; */
 }
 
 .MuiTabs-root .MuiButtonBase-root.Mui-selected {
@@ -70,4 +77,24 @@ body {
 }
 .MuiTabs-root .MuiButtonBase-root .MuiTouchRipple-root {
     display: none;
+}
+
+/* Badge */
+.MuiBadge-root {
+    /* padding: 0 20px; */
+}
+.MuiBadge-root .MuiBadge-badge{
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--font-size-smallest);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tiny);
+    letter-spacing: initial;
+    text-transform: initial;
+    white-space: nowrap;
+    width: 19px;
+    height: 19px;
+    background-color: var(--color-green-secondary);
+    color: var(--color-white);
+    top: -5px;
+    right: -9px;
 }

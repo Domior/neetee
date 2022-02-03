@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Badge from '@mui/material/Badge';
-import Typography from '@mui/material/Typography';
+// import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-import './OrderTabs.module.css';
+import styles from './OrderTabs.module.css';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -37,7 +37,7 @@ function a11yProps(index, styled) {
   };
 }
 
-export default function BasicTabs() {
+export default function OrderTabs() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -45,25 +45,20 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box
-      sx={{ width: '100%', pt: '40px', pl: '115px', pb: '60px', pr: '65px' }}
-    >
+    <Box className={styles.tabsWrapper}>
       <Box>
         <Tabs
           value={value}
           onChange={handleChange}
           variant="scrollable"
           scrollButtons="auto"
+          allowScrollButtonsMobile={true}
         >
           <Tab label="Просмотренные" {...a11yProps(0)} />
           <Tab label="Избранное" {...a11yProps(1)} />
           <Tab label="Корзина" {...a11yProps(2)} />
           <Tab
-            label={
-              <Badge badgeContent={3} color="primary">
-                Messages
-              </Badge>
-            }
+            label={<Badge badgeContent={3}>Ждут оплаты</Badge>}
             {...a11yProps(3)}
           />
 

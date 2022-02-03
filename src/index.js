@@ -13,11 +13,15 @@ const theme = createTheme({
     primary: {
       main     : colors.black,
       secondary: colors.gray,
-      white    : colors.white,
-      black    : colors.black,
-      gray     : colors.gray,
-      orange   : colors.orange
+      
     },
+  },
+  colors: {
+    white         : colors.white,
+    black         : colors.black,
+    gray          : colors.gray,
+    orange        : colors.orange,
+    greenSecondary: colors.greenSecondary
   },
   spacing: 5, 
 });
