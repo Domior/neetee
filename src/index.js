@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 
 import { colors } from './styles/styles';
 import { ThemeProvider, createTheme, StyledEngineProvider } from '@mui/material/styles';
-
 import App from '@containers/App/App';
 
 import '@styles/index.css';
@@ -13,7 +12,6 @@ const theme = createTheme({
     primary: {
       main     : colors.black,
       secondary: colors.gray,
-      
     },
   },
   colors: {
@@ -23,7 +21,33 @@ const theme = createTheme({
     orange        : colors.orange,
     greenSecondary: colors.greenSecondary
   },
-  spacing: 5, 
+  spacing: 5,
+  typography: {
+    fontFamily: 'Roboto',
+  },
+  components: {
+    MuiTouchRipple: {
+      styleOverrides: {
+        root: {
+          disply: 'none',
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+        },
+      },
+    },
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          minHeight: 'unset',
+        },
+      },
+    },
+  },
 });
 
 ReactDOM.render(

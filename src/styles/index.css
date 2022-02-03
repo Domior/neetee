@@ -42,6 +42,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Disable Mui button click animation */
+.MuiTouchRipple-root {
+    display: none;
+}
 
 /* Tabs */
 .MuiTabs-root .MuiButtonBase-root {
@@ -75,9 +79,7 @@ body {
     border-radius   : 10px;
     background-color: var(--color-blue);
 }
-.MuiTabs-root .MuiButtonBase-root .MuiTouchRipple-root {
-    display: none;
-}
+
 
 /* Badge */
 .MuiBadge-root {
