@@ -2,6 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import Badge from '@mui/material/Badge';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
@@ -57,7 +58,15 @@ export default function BasicTabs() {
           <Tab label="Просмотренные" {...a11yProps(0)} />
           <Tab label="Избранное" {...a11yProps(1)} />
           <Tab label="Корзина" {...a11yProps(2)} />
-          <Tab label="Ждут оплаты" {...a11yProps(3)} />
+          <Tab
+            label={
+              <Badge badgeContent={3} color="primary">
+                Messages
+              </Badge>
+            }
+            {...a11yProps(3)}
+          />
+
           <Tab label="Оплаченные" {...a11yProps(4)} />
           <Tab label="Ждут получения" {...a11yProps(5)} />
           <Tab label="Завершенные" {...a11yProps(6)} />
