@@ -20,7 +20,9 @@ const App = () => {
                 path={route.path}
                 exact={route.exact}
                 element={route.element}
-              />
+              >
+                <Route key={index} path="products" element={<div>HI</div>} />
+              </Route>
             ))}
           </Routes>
           <Footer />
