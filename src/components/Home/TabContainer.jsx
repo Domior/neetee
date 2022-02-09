@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
-
+import { Outlet } from 'react-router';
 import allItems from '@icons/allItems.svg';
 import popolatItems from '@icons/popolatItems.svg';
 import iconItems from '@static/iconItems.jpg';
 import iconOpt from '@static/iconOpt.jpg';
+// import routesConfig from '@routes/routesConfig';
+import SearchList from '@components/Home/SearchList';
 
 // const tabsItems = [
 //   { name: 'Все товары', img: allItems },
@@ -48,26 +50,30 @@ const Image = styled.img`
 
 const Tabs = () => {
   return (
-    <TabList>
-      <ListItem>
-        <Link to="/products">
-          <Image src={allItems} alt="" />
-          Все товары
-        </Link>
-        <Link to="/products">
-          <Image src={popolatItems} alt="" />
-          Трендовые товары
-        </Link>
-        <Link to="/products">
-          <Image src={iconItems} alt="" />
-          Товары 1688.com
-        </Link>
-        <Link to="/products">
-          <Image src={iconOpt} alt="" />
-          Оптовые товары
-        </Link>
-      </ListItem>
-    </TabList>
+    <div>
+      <TabList>
+        <ListItem>
+          <Link to="/products">
+            <Image src={allItems} alt="" />
+            Все товары
+          </Link>
+          <Link to="/trending">
+            <Image src={popolatItems} alt="" />
+            Трендовые товары
+          </Link>
+          <Link to="/products1688">
+            <Image src={iconItems} alt="" />
+            Товары 1688.com
+          </Link>
+          <Link to="/wholesale">
+            <Image src={iconOpt} alt="" />
+            Оптовые товары
+          </Link>
+        </ListItem>
+      </TabList>
+      <SearchList />
+      <Outlet />
+    </div>
   );
 };
 export default Tabs;

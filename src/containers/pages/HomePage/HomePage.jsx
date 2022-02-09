@@ -3,6 +3,7 @@
 import { Outlet } from 'react-router';
 import Hero from '@components/Home/Hero';
 import Tabs from '@components/Home/TabContainer';
+
 const HomePage = () => {
   return (
     <>
