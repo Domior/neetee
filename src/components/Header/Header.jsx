@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // import styles from './Header.module.css';
 
@@ -88,6 +88,23 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
+  headerIcon: {
+    width: '24px',
+    height: '24px',
+    fill: theme.colors.gray,
+    marginRight: '20px',
+    '&:last-of-type': {
+      marginRight: '0',
+    },
+    '&:hover': {
+      fill: theme.colors.blue,
+    },
+  },
+  headerIcons: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+
   headerDown: {
     width: '100%',
     height: headerDownHeight,
@@ -105,12 +122,16 @@ export default function ButtonAppBar() {
       <AppBar className={classes.appBar} position="static" component="div">
         <Toolbar className={classes.toolbar}>
           <Box className={classes.headerUp}>
-            <NavLink to="/">
+            <Link to="/">
               <Logo type="blue" />
-            </NavLink>
+            </Link>
             <Box className={classes.authBtns}>
-              {!logined ? (
-                <Box>logined</Box>
+              {logined ? (
+                <Box className={classes.headerIcons}>
+                  <Link to="/"></Link>
+                  <Link to="/"></Link>
+                  <Link to="/"></Link>
+                </Box>
               ) : (
                 <>
                   <Button variant="text" color="secondary">
