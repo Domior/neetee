@@ -10,6 +10,8 @@ const list = [
   'Детская одежда и обувь1',
 ];
 const ProductNavList = styled.ul`
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: 1170px;
   display: flex;
   flex-wrap: wrap;
@@ -19,14 +21,22 @@ const ProductNavList = styled.ul`
   background-color: #f5f5f5;
 `;
 const ProdoctItem = styled.li`
-  flex-basis: calc((100% - 3 * 30px) / 2);
+  flex-basis: calc((100% - 3 * 30px) / 3);
+  &:nth-child(n + 3) {
+      m
+  }
 `;
+const Link = styled(NavLink)`
+  color: var(--color-black);
+  text-decoration: none;
+`;
+
 const SearchList = () => {
   return (
     <ProductNavList>
       {list.map((item) => (
         <ProdoctItem key={item}>
-          <NavLink to="/">{item}</NavLink>
+          <Link to="/">{item}</Link>
         </ProdoctItem>
       ))}
     </ProductNavList>
