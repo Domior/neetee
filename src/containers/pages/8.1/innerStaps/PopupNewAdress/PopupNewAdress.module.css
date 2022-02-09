@@ -1,0 +1,11 @@
+.popupWrap{
+    /*width: 48%;*/
+    width: 813px;
+}
+.row{
+    display: flex;
+    margin-bottom: 10px;
+}
+.column{
+    width: 50%;
+}

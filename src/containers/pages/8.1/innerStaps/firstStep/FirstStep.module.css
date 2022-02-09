@@ -1,0 +1,185 @@
+.bg{
+    background: #F5F5F5;
+}
+.bg>*{
+    font-family: Roboto;
+}
+.dataRecipient{
+    width: 100%;
+    background: #C4C4C4;
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5% 5%;
+}
+.dataRecipientDesc{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.orderDesc{
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.order{
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 10px;
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+.btnWrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+.btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 24px;
+    width: 169px;
+    height: 30px;
+    background: #4270AD;
+    box-shadow: 0px 10px 20px rgba(66, 112, 173, 0.12);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border: none;
+}
+.btnGreen{
+    background: #79B256;
+}
+.btnOrange{
+    background: #FF9900;
+}
+.btnInfo{
+    width: 571px;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #353535;
+}
+.btnInfoIcon{
+    font-size: 24px;
+    color: #FF9900;
+    margin-bottom: -5px;
+    margin-right: 6px;
+}
+.rowBtnInfo{
+    display: flex;
+}
+.formTitle{
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #666666;
+    margin-bottom: 10px;
+}
+.formInfo{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+}
+.formInfoInnerText{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 13px;
+}
+.blockAdr{
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 17px 45px 20px;
+}
+.currentAdres{
+    /*display: flex;*/
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 17px 45px 20px;
+    justify-content: space-between;
+    height: max-content;
+    display: inline-flex;
+    width: 100%;
+}
+.title{
+    height: 44px;
+    background: #C4C4C4;
+    border-radius: 5px;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+}
+.sotialBlock{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+.sotialBlock>svg{
+    color:#666666;
+    font-size: 24px;
+}
+.productsWrap{
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 17px;
+    margin-bottom: 40px;
+    height: 438px;
+    overflow-y: auto;
+}
+.itemProduct{
+    display: flex;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #C4C4C4;
+    position: relative;
+}
+.itemProduct img{
+    border-radius: 5px;
+    margin-right: 15px;
+}
+.i{
+    background: #F9CB38;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    font-weight: bold;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    border-radius: 12px;
+    position: absolute;
+    left: -11px;
+    top: -11px;
+}
+.blockTotal{
+    height: 61px;
+    background: #C4C4C4;
+    display: flex;
+}
+
