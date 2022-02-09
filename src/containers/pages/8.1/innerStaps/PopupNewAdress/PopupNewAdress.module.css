@@ -1,11 +1,109 @@
 .popupWrap{
-    /*width: 48%;*/
-    width: 813px;
+    /*width: 813px;*/
 }
 .row{
     display: flex;
     margin-bottom: 10px;
+    justify-content: space-between;
 }
 .column{
     width: 50%;
+    max-width: 530px;
+}
+.select{
+    margin: 13px 5px;
+    width: 320px;
+    height: 48px;
+}
+.multiField{
+    width: 320px;
+    margin: 7px 5px;
+    float: right;
+}
+.userChange input{
+    border: 1px solid #C4C4C4;
+    width: 575px;
+    border-radius: 5px;
+    height: 50px;
+    padding-left: 10px;
+    margin-bottom: 35px;
+}
+.userChange p,.add{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    margin-bottom: 12px;
+}
+.sotialBtn{
+    width: 154px;
+    height: 50px;
+    border: 2px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sotialBtn:hover{
+    border: 2px solid #79B256;
+}
+.fb{
+    color:#537FA4;
+}
+.ws{
+    color:green;
+}
+.tg{
+    color:#077BB7;
+}
+.bottomBtn button{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(121, 178, 86, 0.12);
+    border-radius: 5px;
+    width: 120px;
+    height: 50px;
+    border: none;
+}
+.bottomBtnApply{
+    background: #79B256;
+}
+.bottomBtnCreate{
+    background: #4270AD;
+}
+.bottomBtnRemove{
+    background: #FFFFFF;
+    color: #000000!important;
+    border: 2px solid #C4C4C4!important;
+}
+.bottomBtnRemove svg{
+    color: red;
+}
+.bottomBtn{
+    display: flex;
+    justify-content: space-between;
+    width: 388px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.loadMore{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 169px;
+    height: 50px;
+    background: #4270AD;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: right;
+    color: #FFFFFF;
 }

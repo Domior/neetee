@@ -11,6 +11,7 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import UserCard from '../../../../../components/UserCard/UserCard';
 
 
 const FirstStep = () => {
@@ -34,6 +35,10 @@ const FirstStep = () => {
     console.log(i);
     dispatch(setCurrentAdresAC(i));
     handleClose();
+  };
+  const removeUser = (i) => {
+    console.log(i);
+    // dispatch(setCurrentAdresAC(i));
   };
 
   useEffect(() => {
@@ -122,16 +127,19 @@ const FirstStep = () => {
           }
         </div>
         <div className={cl.title}>Ваш заказ</div>
-        <div>
-          <p>Выберите дополнительные услуги, которые предоставит карго, отправляющее товар в вашу страну. Нажмите на
-            иконки справа от цены, чтобы выбрать услуги.</p>
-          <div>
-            <span>Магазин</span>
-            <span>Цена за единицу</span>
-            <span>Кол-во</span>
-            <span>Достав-ка</span>
-            <span>Общая сумма</span>
-            <span>Дополнительные услуги</span>
+        <div className={cl.row}>
+          <div style={{display: 'flex'}}>
+            <InfoOutlinedIcon className={cl.btnInfoIcon} />
+            <p className={cl.infoSettings}>Выберите дополнительные услуги, которые предоставит карго, отправляющее товар в вашу страну. Нажмите на
+              иконки справа от цены, чтобы выбрать услуги.</p>
+          </div>
+          <div className={cl.row}>
+            <span className={cl.settingsProduct}>Магазин</span>
+            <span className={cl.settingsProduct}>Цена за единицу</span>
+            <span className={cl.settingsProduct}>Кол-во</span>
+            <span className={cl.settingsProduct}>Достав-ка</span>
+            <span className={cl.settingsProduct}>Общая сумма</span>
+            <span className={cl.settingsProduct}>Дополнительные услуги</span>
           </div>
         </div>
         <div className={cl.productsWrap}>
@@ -151,20 +159,7 @@ const FirstStep = () => {
         <DialogTitle>Выберите адрес</DialogTitle>
         <List sx={{ pt: 0 }}>
           {listUserAdres.map((i) => (
-            <ListItem key={i.id}>
-              <ListItemAvatar>
-                <Avatar>
-                  <img src={i.imgUrl} alt='' />
-                </Avatar>
-              </ListItemAvatar>
-              <div>
-                <p>{i.firstName}{i.lastName}</p>
-                <p>{i.phone}</p>
-                <p>{i.adres}</p>
-              </div>
-              <button onClick={() => handleListItemClick(i)}>select</button>
-              <button>delete</button>
-            </ListItem>
+            <UserCard user={i} selectUser={handleListItemClick} removeUser={removeUser}/>
           ))}
         </List>
       </Dialog>

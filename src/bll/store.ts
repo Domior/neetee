@@ -6,5 +6,5 @@ const rootReducer = combineReducers({
     order: orderReducer,
 })
 export const store = createStore(rootReducer)
-// export type RootStateType = ReturnType<typeof rootReducer>;
+export type RootStateType = ReturnType<typeof rootReducer>;
 // window.store = store;

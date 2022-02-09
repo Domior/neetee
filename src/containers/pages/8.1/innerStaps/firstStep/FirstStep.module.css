@@ -89,6 +89,10 @@
 .rowBtnInfo{
     display: flex;
 }
+.row{
+     display: flex;
+    justify-content: space-between;
+ }
 .formTitle{
     font-weight: normal;
     font-size: 12px;
@@ -132,6 +136,9 @@
     font-size: 20px;
     line-height: 23px;
     color: #000000;
+    padding: 12px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 .sotialBlock{
     display: flex;
@@ -141,6 +148,23 @@
 .sotialBlock>svg{
     color:#666666;
     font-size: 24px;
+}
+.infoSettings{
+    width: 391px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #353535;
+}
+.settingsProductWrap{
+    border-bottom: 1px solid #C4C4C4;
+}
+.settingsProduct{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #666666;
 }
 .productsWrap{
     background: #ffffff;

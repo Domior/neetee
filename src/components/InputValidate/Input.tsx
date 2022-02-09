@@ -11,6 +11,7 @@ type inputType = {
   // validate: (value?: string, min?: number, max?: number, name?: string,type?:string) => string
   min: number
   max: number
+  label:string
 }
 export const InputValidate = ({ min, max, ...props }: inputType) => {
   let [value, setValue] = useState<any>('');
@@ -37,12 +38,14 @@ export const InputValidate = ({ min, max, ...props }: inputType) => {
   };
   return (
     <div className={cl.wrapp}>
+      <label htmlFor={props.name} className={cl.label}>{props.label} </label>
       <input type={props.type} value={value} onChange={onChangeValue}
              name={props.name} placeholder={props.placeholder}
              onBlur={handleBlur} className={!error ? cl.input : cl.errorInput}
-             onKeyPress={onKeyPressCallback}
+             onKeyPress={onKeyPressCallback} id={props.name}
       />
       {error && <span className={cl.textError}>{error}</span>}
+
     </div>
   );
 };
