@@ -1,0 +1,60 @@
+.userWrap{
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    padding: 18px 27px;
+}
+.userWrap p{
+    font-weight: 500;
+    color: #000000;
+}
+.UserName{
+    font-size: 20px;
+    line-height: 23px;
+    padding-bottom: 17px;
+}
+.phone{
+    font-size: 14px;
+    line-height: 16px;
+    padding-bottom: 14px;
+}
+.adres{
+    font-size: 14px;
+    line-height: 16px;
+}
+.btnWrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 110px;
+    margin-left: 20px;
+}
+.btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 32px;
+    width: 120px;
+    height: 50px;
+    box-shadow: 0px 10px 20px rgba(255, 153, 0, 0.12);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+}
+.select{
+    background: #FF9900;
+    color: #FFFFFF;
+}
+.select:hover{
+    background: transparent;
+    color: #FF9900;
+    border-color: #FF9900;
+}
+.delete{
+    color: #ACACAC;
+}
+.delete:hover{
+    border-color: #ACACAC;
+}
