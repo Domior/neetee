@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Dialog,
-  DialogTitle,
   InputLabel,
   MenuItem,
   Select,
@@ -26,6 +25,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import UserCard from '../../../../../components/UserCard/UserCard';
 import { RootStateType } from '../../../../../bll/store';
+import DownloadForOfflineOutlinedIcon from '@mui/icons-material/DownloadForOfflineOutlined';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -58,10 +58,10 @@ function a11yProps(index: number) {
 
 type propsType = {
   open: boolean
-  handleClose:()=>void
+  handleClose: () => void
 }
 
-export const PopupNewAdress = ({ open, handleClose}: propsType) => {
+export const PopupNewAdress = ({ open, handleClose }: propsType) => {
   // const dispatch = useDispatch();
   // const listUserAdres = useSelector<RootStateType,any>(state => state.order.listUserAdres);
   const [value, setValue] = useState(0);
@@ -70,33 +70,36 @@ export const PopupNewAdress = ({ open, handleClose}: propsType) => {
   };
 
   return (
-    <Dialog open={open} className={cl.popupWrap} maxWidth='lg'  onClose={handleClose}
+    <Dialog open={open} className={cl.popupWrap} maxWidth='lg' onClose={handleClose}
       // fullScreen={fullScreen}
     >
       <Box sx={{ width: '100%' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <Tabs value={value} onChange={handleChange} aria-label=" tabs example">
+          <Tabs value={value} onChange={handleChange} centered>
+            {/*aria-label="disabled tabs example"*/}
             <Tab label='Физическим лицам' {...a11yProps(0)} />
             <Tab label='Юридическим лицам'{...a11yProps(1)} />
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-          <FormUserData userType={'individuals'}/>
+          <FormUserData userType={'individuals'} />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <FormUserData userType={'legalEntities'}/>
+          <FormUserData userType={'legalEntities'} />
         </TabPanel>
       </Box>
     </Dialog>
   );
 };
 
-type propsFormUserData={
-  userType:string
+type propsFormUserData = {
+  userType: string
+  data?:boolean
 }
-export const FormUserData=({userType }: propsFormUserData)=>{
+export const FormUserData = ({ userType,...props }: propsFormUserData) => {
   const dispatch = useDispatch();
-  const listUserAdres = useSelector<RootStateType,any>(state => state.order.listUserAdres);
+  const listUserAdres = useSelector<RootStateType, any>(state => state.order.listUserAdres);
+  const currentAdres = useSelector<RootStateType, any>(state => state.order.currentAdres);
   const [phone, setPhone] = useState('');
   const [error, setError] = useState('');
   const [firstName, setFirstName] = useState('');
@@ -133,7 +136,7 @@ export const FormUserData=({userType }: propsFormUserData)=>{
     setOther(event.target.value as string);
   };
   const addNewAdres = () => {
-    if(userType==='individuals'&& (phone === '' || firstName === ''
+    if (userType === 'individuals' && (phone === '' || firstName === ''
       || email === '' || index === '' || country === ''
       || town === '' || companyName === '' || adres === '' || inn === '')) {
       setError('All fields are required');
@@ -142,9 +145,9 @@ export const FormUserData=({userType }: propsFormUserData)=>{
       let payload = { id, phone, firstName, email, adres, index, country, town, companyName, inn };
       dispatch(setNewAdresAC(payload));
     }
-    if(userType==="legalEntities"&& (phone === '' || firstName === ''
+    if (userType === 'legalEntities' && (phone === '' || firstName === ''
       || email === '' || index === '' || country === ''
-      || town === '' || adres === '' )){
+      || town === '' || adres === '')) {
       setError('All fields are required');
     } else {
       let id = new Date().getHours();
@@ -155,31 +158,46 @@ export const FormUserData=({userType }: propsFormUserData)=>{
   const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
   };
-  const selectUser = (u:any) => {
+  const selectUser = (u: any) => {
     console.log(u);
-  }
-  const removeUser = (u:any) => {
+  };
+  const removeUser = (u: any) => {
     console.log(u);
-  }
-
-  return(
+  };
+  useEffect(()=>{
+    // debugger
+    if(props.data){
+      //currentAdres
+      setFirstName(currentAdres.firstName)
+      setPhone(currentAdres.phone)
+      setEmail(currentAdres.email)
+      setIndex(currentAdres.index)
+      setAdres(currentAdres.adres)
+      setTown(currentAdres.town)
+      setCompanyName(currentAdres.companyName)
+      setCountry(currentAdres.country)
+      setInn(currentAdres.inn)
+    }
+  },[props.data])
+  console.log(firstName,phone,email,index,adres);
+  return (
     <form style={{ padding: '3% 10%' }}>
       {userType === 'legalEntities' && <div className={cl.row}>
         <InputValidate type={'string'} placeholder={'ИНН*'} label={'ИНН*'} name={'inn'}
-                       min={5} max={5} typeV={'number'} addInputValue={setNewInputsValue} />
+                       min={5} max={5} typeV={'number'} addInputValue={setNewInputsValue} oldValue={ inn } />
         <InputValidate type={'string'} placeholder={'Название компании*'} label={'Название компании*'}
                        name={'companyName'}
-                       min={4} max={12} typeV={'string'} addInputValue={setNewInputsValue} />
+                       min={4} max={12} typeV={'string'} addInputValue={setNewInputsValue} oldValue={ companyName }/>
       </div>}
       <InputValidate type={'string'} placeholder={'ФИО*'} label={'ФИО*'} name={'firstName'}
-                     min={10} max={30} typeV={'string'} addInputValue={setNewInputsValue} />
+                     min={10} max={30} typeV={'string'} addInputValue={setNewInputsValue} oldValue={firstName}/>
       <div className={cl.row}>
         <InputValidate type={'string'} placeholder={'Номер телефона*'} label={'Номер телефона*'} name={'phone'}
                        min={13} max={16}
-                       typeV={'phone'} addInputValue={setNewInputsValue} />
+                       typeV={'phone'} addInputValue={setNewInputsValue} oldValue={phone}/>
         <InputValidate type={'string'} placeholder={'E-mail*'} label={'E-mail*'} name={'email'} min={5} max={20}
                        typeV={'string'}
-                       addInputValue={setNewInputsValue} />
+                       addInputValue={setNewInputsValue} oldValue={email}/>
       </div>
       <div className={cl.row}>
         <div className={cl.column}>
@@ -192,7 +210,6 @@ export const FormUserData=({userType }: propsFormUserData)=>{
               <MenuItem value={'Thirty'}>Thirty</MenuItem>
             </Select>
           </FormControl>
-
           <FormControl className={cl.select}>
             <InputLabel id='demo-simple-select-label'>Город*</InputLabel>
             <Select labelId='demo-simple-select-label' id='demo-simple-select' value={town} label='Город*'
@@ -204,7 +221,7 @@ export const FormUserData=({userType }: propsFormUserData)=>{
           </FormControl>
           <div style={{ width: '320px' }}>
             <InputValidate type={'string'} placeholder={'Индекс*'} label={'Индекс*'} name={'index'}
-                           min={10} max={10} typeV={'number'} addInputValue={setNewInputsValue} />
+                           min={10} max={10} typeV={'number'} addInputValue={setNewInputsValue} oldValue={index} />
           </div>
         </div>
         <div className={cl.column}>
@@ -231,8 +248,8 @@ export const FormUserData=({userType }: propsFormUserData)=>{
           <div style={{ display: 'flex' }}>
             <p>Укажите получателя</p>
             <span>
-                    <InfoOutlinedIcon style={{ marginLeft: '10px', color: '#FF9900' }} />
-                  </span>
+              <InfoOutlinedIcon style={{ marginLeft: '10px', color: '#FF9900' }} />
+            </span>
           </div>
           <input type='text' placeholder='Никнейм' />
         </div>
@@ -255,12 +272,14 @@ export const FormUserData=({userType }: propsFormUserData)=>{
         </div>
       </div>
       <div className={cl.bottomBtn}>
-        <button onClick={addNewAdres} className={cl.bottomBtnApply} >применить</button>
+        <button onClick={addNewAdres} className={cl.bottomBtnApply}>применить</button>
         <button onClick={addNewAdres} className={cl.bottomBtnCreate}>Создать</button>
-        <button onClick={()=>{}} className={cl.bottomBtnRemove}><DeleteOutlineSharpIcon/>удалить</button>
+        <button onClick={() => {
+        }} className={cl.bottomBtnRemove}><DeleteOutlineSharpIcon />удалить
+        </button>
       </div>
-      <UserCard user={listUserAdres[0]} selectUser={selectUser} removeUser={removeUser}/>
-      <button className={cl.loadMore}>Загрузить еще</button>
+      <UserCard user={listUserAdres[0]} selectUser={selectUser} removeUser={removeUser} />
+      <button className={cl.loadMore}><span>Загрузить еще</span> <DownloadForOfflineOutlinedIcon/></button>
     </form>
-  )
-}
+  );
+};

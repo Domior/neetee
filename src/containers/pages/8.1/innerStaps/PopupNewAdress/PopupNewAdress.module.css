@@ -95,15 +95,23 @@
 }
 .loadMore{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 169px;
     height: 50px;
     background: #4270AD;
+    border: 2px solid #4270AD;
     border-radius: 5px;
     font-size: 14px;
     line-height: 16px;
     text-align: right;
     color: #FFFFFF;
+    margin: 20px auto 0;
+}
+.loadMore:hover{
+
+}
+.loadMore svg{
+    font-size: 20px;
+    margin-left: 5px;
 }

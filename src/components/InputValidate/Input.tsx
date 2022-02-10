@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import cl from './input.module.css';
 import { validate } from './Validator';
 
@@ -12,10 +12,15 @@ type inputType = {
   min: number
   max: number
   label:string
+  oldValue?:any
 }
-export const InputValidate = ({ min, max, ...props }: inputType) => {
+export const InputValidate = ({oldValue, min, max, ...props }: inputType) => {
   let [value, setValue] = useState<any>('');
   let [error, setError] = useState<string>('');
+  useEffect(()=>{
+    console.log('oldValue',oldValue);
+    oldValue && setValue(oldValue)
+  },[oldValue])
   const onChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
     setError('');
     setValue(e.currentTarget.value);

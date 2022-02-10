@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import cl from './FirstStep.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Dialog, DialogTitle, List, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
-import Avatar from '@mui/material/Avatar';
-import { setCurrentAdresAC, setNewAdresAC } from '../../../../../bll/orderReducer';
+import { Button, Dialog, DialogTitle, List } from '@mui/material';
+import { setCurrentAdresAC} from '../../../../../bll/orderReducer';
 import productImg from './../../../../../assets/productImg.jpg';
 import { PopupNewAdress } from '../PopupNewAdress/PopupNewAdress';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
@@ -12,6 +11,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import UserCard from '../../../../../components/UserCard/UserCard';
+import { PopupChangeUserData } from '../PopupChangeUserData/PopupChangeUserData';
 
 
 const FirstStep = () => {
@@ -24,11 +24,11 @@ const FirstStep = () => {
   const [openChangeUserData, setOpenChangeUserData] = useState(false);
   const [currentAdres, setCurrentAdres] = useState(listUserAdres[0]);
 
-  const handleClose = () => {
-    setOpenAdress(false);
-  };
   const handleOpen = () => {
     setOpenAdress(true);
+  };
+  const handleClose = () => {
+    setOpenAdress(false);
   };
   const handleOpenNewAdr = () => {
     setOpenNewAdress(true);
@@ -37,10 +37,10 @@ const FirstStep = () => {
     setOpenNewAdress(false);
   };
   const handleOpenChangeUserData = () => {
-    setOpenNewAdress(true);
+    setOpenChangeUserData(true);
   };
   const handleCloseChangeUserData = () => {
-    setOpenNewAdress(false);
+    setOpenChangeUserData(false);
   };
   const handleListItemClick = (i) => {
     console.log(i);
@@ -90,7 +90,7 @@ const FirstStep = () => {
         <div className={cl.btnWrap}>
           <Button onClick={handleOpen} className={cl.btn}>выбрать адрес</Button>
           <Button onClick={handleOpenNewAdr} className={`${cl.btn} ${cl.btnGreen}`}>создать адрес</Button>
-          <Button className={`${cl.btn} ${cl.btnOrange}`} onClick={openChangeUserData}>редактировать</Button>
+          <Button onClick={handleOpenChangeUserData} className={`${cl.btn} ${cl.btnOrange}`}>редактировать</Button>
           <div className={cl.rowBtnInfo}>
             <InfoOutlinedIcon className={cl.btnInfoIcon} />
             <p className={cl.btnInfo}>
