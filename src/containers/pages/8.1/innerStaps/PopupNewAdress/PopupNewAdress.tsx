@@ -58,14 +58,45 @@ function a11yProps(index: number) {
 
 type propsType = {
   open: boolean
+  handleClose:()=>void
 }
-export const PopupNewAdress = ({ open }: propsType) => {
-  const dispatch = useDispatch();
-  const listUserAdres = useSelector<RootStateType,any>(state => state.order.listUserAdres);
+
+export const PopupNewAdress = ({ open, handleClose}: propsType) => {
+  // const dispatch = useDispatch();
+  // const listUserAdres = useSelector<RootStateType,any>(state => state.order.listUserAdres);
   const [value, setValue] = useState(0);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
+  return (
+    <Dialog open={open} className={cl.popupWrap} maxWidth='lg'  onClose={handleClose}
+      // fullScreen={fullScreen}
+    >
+      <Box sx={{ width: '100%' }}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <Tabs value={value} onChange={handleChange} aria-label=" tabs example">
+            <Tab label='Физическим лицам' {...a11yProps(0)} />
+            <Tab label='Юридическим лицам'{...a11yProps(1)} />
+          </Tabs>
+        </Box>
+        <TabPanel value={value} index={0}>
+          <FormUserData userType={'individuals'}/>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <FormUserData userType={'legalEntities'}/>
+        </TabPanel>
+      </Box>
+    </Dialog>
+  );
+};
+
+type propsFormUserData={
+  userType:string
+}
+export const FormUserData=({userType }: propsFormUserData)=>{
+  const dispatch = useDispatch();
+  const listUserAdres = useSelector<RootStateType,any>(state => state.order.listUserAdres);
   const [phone, setPhone] = useState('');
   const [error, setError] = useState('');
   const [firstName, setFirstName] = useState('');
@@ -101,7 +132,7 @@ export const PopupNewAdress = ({ open }: propsType) => {
   const handleChangeOther = (event: SelectChangeEvent) => {
     setOther(event.target.value as string);
   };
-  const addNewAdres = (userType:string) => {
+  const addNewAdres = () => {
     if(userType==='individuals'&& (phone === '' || firstName === ''
       || email === '' || index === '' || country === ''
       || town === '' || companyName === '' || adres === '' || inn === '')) {
@@ -131,214 +162,105 @@ export const PopupNewAdress = ({ open }: propsType) => {
     console.log(u);
   }
 
+  return(
+    <form style={{ padding: '3% 10%' }}>
+      {userType === 'legalEntities' && <div className={cl.row}>
+        <InputValidate type={'string'} placeholder={'ИНН*'} label={'ИНН*'} name={'inn'}
+                       min={5} max={5} typeV={'number'} addInputValue={setNewInputsValue} />
+        <InputValidate type={'string'} placeholder={'Название компании*'} label={'Название компании*'}
+                       name={'companyName'}
+                       min={4} max={12} typeV={'string'} addInputValue={setNewInputsValue} />
+      </div>}
+      <InputValidate type={'string'} placeholder={'ФИО*'} label={'ФИО*'} name={'firstName'}
+                     min={10} max={30} typeV={'string'} addInputValue={setNewInputsValue} />
+      <div className={cl.row}>
+        <InputValidate type={'string'} placeholder={'Номер телефона*'} label={'Номер телефона*'} name={'phone'}
+                       min={13} max={16}
+                       typeV={'phone'} addInputValue={setNewInputsValue} />
+        <InputValidate type={'string'} placeholder={'E-mail*'} label={'E-mail*'} name={'email'} min={5} max={20}
+                       typeV={'string'}
+                       addInputValue={setNewInputsValue} />
+      </div>
+      <div className={cl.row}>
+        <div className={cl.column}>
+          <FormControl className={cl.select}>
+            <InputLabel id='demo-simple-select-label'>Страна*</InputLabel>
+            <Select labelId='demo-simple-select-label' id='demo-simple-select' value={country} label='Страна*'
+                    onChange={handleChangeCountry}>
+              <MenuItem value={'Россия'}>Россия</MenuItem>
+              <MenuItem value={'Twenty'}>Twenty</MenuItem>
+              <MenuItem value={'Thirty'}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
 
-  return (
-    <Dialog open={open} className={cl.popupWrap} maxWidth='lg'
-      // fullScreen={fullScreen}
-    >
-      <Box sx={{ width: '100%' }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <Tabs value={value} onChange={handleChange}>
-            <Tab label='Физическим лицам' {...a11yProps(0)} />
-            <Tab label='Юридическим лицам'{...a11yProps(1)} />
-          </Tabs>
-        </Box>
-        <TabPanel value={value} index={0}>
-          <form style={{ padding: '3% 10%' }}>
-            <InputValidate type={'string'} placeholder={'ФИО*'} label={'ФИО*'} name={'firstName'}
-                           min={10} max={30} typeV={'string'} addInputValue={setNewInputsValue} />
-            <div className={cl.row}>
-              <InputValidate type={'string'} placeholder={'Номер телефона*'} label={'Номер телефона*'} name={'phone'}
-                             min={13} max={16}
-                             typeV={'phone'} addInputValue={setNewInputsValue} />
-              <InputValidate type={'string'} placeholder={'E-mail*'} label={'E-mail*'} name={'email'} min={5} max={20}
-                             typeV={'string'}
-                             addInputValue={setNewInputsValue} />
-            </div>
-            <div className={cl.row}>
-              <div className={cl.column}>
-                <FormControl className={cl.select}>
-                  <InputLabel id='demo-simple-select-label'>Страна*</InputLabel>
-                  <Select labelId='demo-simple-select-label' id='demo-simple-select' value={country} label='Страна*'
-                          onChange={handleChangeCountry}>
-                    <MenuItem value={'Россия'}>Россия</MenuItem>
-                    <MenuItem value={'Twenty'}>Twenty</MenuItem>
-                    <MenuItem value={'Thirty'}>Thirty</MenuItem>
-                  </Select>
-                </FormControl>
-
-                <FormControl className={cl.select}>
-                  <InputLabel id='demo-simple-select-label'>Город*</InputLabel>
-                  <Select labelId='demo-simple-select-label' id='demo-simple-select' value={town} label='Город*'
-                          onChange={handleChangeTown}>
-                    <MenuItem value={'Москва'}>Москва</MenuItem>
-                    <MenuItem value={'Twenty'}>Twenty</MenuItem>
-                    <MenuItem value={'Thirty'}>Thirty</MenuItem>
-                  </Select>
-                </FormControl>
-                <div style={{ width: '320px' }}>
-                  <InputValidate type={'string'} placeholder={'Индекс*'} label={'Индекс*'} name={'index'}
-                                 min={10} max={10} typeV={'number'} addInputValue={setNewInputsValue} />
-                </div>
-              </div>
-              <div className={cl.column}>
-                <TextField id='standard-multiline-static' label='Адрес получателя*' multiline value={adres} rows={8}
-                  // min={10} max={30} rows={4}
-                           className={cl.multiField} onChange={handleChangeAdres}
-                />
-              </div>
-            </div>
-            {error && <p>{error}</p>}
-            <div className={cl.row}>
-              <FormControlLabel
-                label='Привязать аккаунт другого пользователя'
-                control={
-                  <Checkbox checked={checked} onChange={handleChange1} style={{ color: '#C4C4C4' }}
-                    // indeterminate={checked[0] !== checked[1]} color='info'
-                  />
-                }
-              />
-            </div>
-            <div className={cl.row}>
-              <AccountCircleOutlinedIcon style={{ color: '#C4C4C4', fontSize: '75px' }} />
-              <div className={cl.userChange}>
-                <div style={{ display: 'flex' }}>
-                  <p>Укажите получателя</p>
-                  <span>
+          <FormControl className={cl.select}>
+            <InputLabel id='demo-simple-select-label'>Город*</InputLabel>
+            <Select labelId='demo-simple-select-label' id='demo-simple-select' value={town} label='Город*'
+                    onChange={handleChangeTown}>
+              <MenuItem value={'Москва'}>Москва</MenuItem>
+              <MenuItem value={'Twenty'}>Twenty</MenuItem>
+              <MenuItem value={'Thirty'}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
+          <div style={{ width: '320px' }}>
+            <InputValidate type={'string'} placeholder={'Индекс*'} label={'Индекс*'} name={'index'}
+                           min={10} max={10} typeV={'number'} addInputValue={setNewInputsValue} />
+          </div>
+        </div>
+        <div className={cl.column}>
+          <TextField id='standard-multiline-static' label='Адрес получателя*' multiline value={adres} rows={8}
+            // min={10} max={30} rows={4}
+                     className={cl.multiField} onChange={handleChangeAdres}
+          />
+        </div>
+      </div>
+      {error && <p>{error}</p>}
+      <div className={cl.row}>
+        <FormControlLabel
+          label='Привязать аккаунт другого пользователя'
+          control={
+            <Checkbox checked={checked} onChange={handleChange1} style={{ color: '#C4C4C4' }}
+              // indeterminate={checked[0] !== checked[1]} color='info'
+            />
+          }
+        />
+      </div>
+      <div className={cl.row}>
+        <AccountCircleOutlinedIcon style={{ color: '#C4C4C4', fontSize: '75px' }} />
+        <div className={cl.userChange}>
+          <div style={{ display: 'flex' }}>
+            <p>Укажите получателя</p>
+            <span>
                     <InfoOutlinedIcon style={{ marginLeft: '10px', color: '#FF9900' }} />
                   </span>
-                </div>
-                <input type='text' placeholder='Никнейм' />
-              </div>
-            </div>
-            <div>
-              <p className={cl.add}>Добавить оповещение в соц. сети</p>
-              <div className={cl.row}>
-                <button className={`${cl.sotialBtn} ${cl.fb}`}><FacebookOutlinedIcon />Facebook</button>
-                <button className={`${cl.sotialBtn} ${cl.tg}`}><TelegramIcon />Telegram</button>
-                <button className={`${cl.sotialBtn} ${cl.ws}`}><WhatsappSharpIcon />Whatsapp</button>
-                <FormControl className={cl.sotialBtn}>
-                  <InputLabel id='demo-simple-select-label'>Другое</InputLabel>
-                  <Select labelId='demo-simple-select-label' id='demo-simple-select' value={other} label='Другое'
-                          onChange={handleChangeOther}>
-                    <MenuItem value={'first'}>first</MenuItem>
-                    <MenuItem value={'Twenty'}>Twenty</MenuItem>
-                    <MenuItem value={'Thirty'}>Thirty</MenuItem>
-                  </Select>
-                </FormControl>
-              </div>
-            </div>
-            <div className={cl.bottomBtn}>
-              <button onClick={()=>addNewAdres('individuals')} className={cl.bottomBtnApply} >применить</button>
-              <button onClick={()=>addNewAdres('individuals')} className={cl.bottomBtnCreate}>Создать</button>
-              <button onClick={()=>{}} className={cl.bottomBtnRemove}><DeleteOutlineSharpIcon/>удалить</button>
-            </div>
-            <UserCard user={listUserAdres[0]} selectUser={selectUser} removeUser={removeUser}/>
-            <button className={cl.loadMore}>Загрузить еще</button>
-          </form>
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <form style={{ padding: '3% 10%' }}>
-            <div className={cl.row}>
-              <InputValidate type={'string'} placeholder={'ИНН*'} label={'ИНН*'} name={'inn'}
-                             min={5} max={5} typeV={'number'} addInputValue={setNewInputsValue} />
-              <InputValidate type={'string'} placeholder={'Название компании*'} label={'Название компании*'}
-                             name={'companyName'}
-                             min={4} max={12} typeV={'string'} addInputValue={setNewInputsValue} />
-            </div>
-            <InputValidate type={'string'} placeholder={'ФИО*'} label={'ФИО*'} name={'firstName'}
-                           min={10} max={30} typeV={'string'} addInputValue={setNewInputsValue} />
-            <div className={cl.row}>
-              <InputValidate type={'string'} placeholder={'Номер телефона*'} label={'Номер телефона*'} name={'phone'}
-                             min={13} max={16}
-                             typeV={'phone'} addInputValue={setNewInputsValue} />
-              <InputValidate type={'string'} placeholder={'E-mail*'} label={'E-mail*'} name={'email'} min={5} max={20}
-                             typeV={'string'}
-                             addInputValue={setNewInputsValue} />
-            </div>
-            <div className={cl.row}>
-              <div className={cl.column}>
-                <FormControl className={cl.select}>
-                  <InputLabel id='demo-simple-select-label'>Страна*</InputLabel>
-                  <Select labelId='demo-simple-select-label' id='demo-simple-select' value={country} label='Страна*'
-                          onChange={handleChangeCountry}>
-                    <MenuItem value={'Россия'}>Россия</MenuItem>
-                    <MenuItem value={'Twenty'}>Twenty</MenuItem>
-                    <MenuItem value={'Thirty'}>Thirty</MenuItem>
-                  </Select>
-                </FormControl>
-
-                <FormControl className={cl.select}>
-                  <InputLabel id='demo-simple-select-label'>Город*</InputLabel>
-                  <Select labelId='demo-simple-select-label' id='demo-simple-select' value={town} label='Город*'
-                          onChange={handleChangeTown}>
-                    <MenuItem value={'Москва'}>Москва</MenuItem>
-                    <MenuItem value={'Twenty'}>Twenty</MenuItem>
-                    <MenuItem value={'Thirty'}>Thirty</MenuItem>
-                  </Select>
-                </FormControl>
-                <div style={{ width: '320px' }}>
-                  <InputValidate type={'string'} placeholder={'Индекс*'} label={'Индекс*'} name={'index'}
-                                 min={10} max={10} typeV={'number'} addInputValue={setNewInputsValue} />
-                </div>
-              </div>
-              <div className={cl.column}>
-                <TextField id='standard-multiline-static' label='Адрес получателя*' multiline value={adres} rows={8}
-                  // min={10} max={30} rows={4}
-                           className={cl.multiField} onChange={handleChangeAdres}
-                />
-              </div>
-            </div>
-            {error && <p>{error}</p>}
-            <div className={cl.row}>
-              <FormControlLabel
-                label='Привязать аккаунт другого пользователя'
-                control={
-                  <Checkbox checked={checked} onChange={handleChange1} style={{ color: '#C4C4C4' }}
-                    // indeterminate={checked[0] !== checked[1]} color='info'
-                  />
-                }
-              />
-            </div>
-            <div className={cl.row}>
-              <AccountCircleOutlinedIcon style={{ color: '#C4C4C4', fontSize: '75px' }} />
-              <div className={cl.userChange}>
-                <div style={{ display: 'flex' }}>
-                  <p>Укажите получателя</p>
-                  <span>
-                    <InfoOutlinedIcon style={{ marginLeft: '10px', color: '#FF9900' }} />
-                  </span>
-                </div>
-                <input type='text' placeholder='Никнейм' />
-              </div>
-            </div>
-            <div>
-              <p className={cl.add}>Добавить оповещение в соц. сети</p>
-            <div className={cl.row}>
-              <button className={`${cl.sotialBtn} ${cl.fb}`}><FacebookOutlinedIcon />Facebook</button>
-              <button className={`${cl.sotialBtn} ${cl.tg}`}><TelegramIcon />Telegram</button>
-              <button className={`${cl.sotialBtn} ${cl.ws}`}><WhatsappSharpIcon />Whatsapp</button>
-              <FormControl className={cl.sotialBtn}>
-                <InputLabel id='demo-simple-select-label'>Другое</InputLabel>
-                <Select labelId='demo-simple-select-label' id='demo-simple-select' value={other} label='Другое'
-                        onChange={handleChangeOther}>
-                  <MenuItem value={'first'}>first</MenuItem>
-                  <MenuItem value={'Twenty'}>Twenty</MenuItem>
-                  <MenuItem value={'Thirty'}>Thirty</MenuItem>
-                </Select>
-              </FormControl>
-            </div>
-            </div>
-            <div className={cl.bottomBtn}>
-              <button onClick={()=>addNewAdres('legalEntities')} className={cl.bottomBtnApply} >применить</button>
-              <button onClick={()=>addNewAdres('legalEntities')} className={cl.bottomBtnCreate}>Создать</button>
-              <button onClick={()=>{}} className={cl.bottomBtnRemove}><DeleteOutlineSharpIcon/>удалить</button>
-            </div>
-            <UserCard user={listUserAdres[0]} selectUser={selectUser} removeUser={removeUser}/>
-            <button className={cl.loadMore}>Загрузить еще</button>
-          </form>
-        </TabPanel>
-      </Box>
-    </Dialog>
-  );
-};
+          </div>
+          <input type='text' placeholder='Никнейм' />
+        </div>
+      </div>
+      <div>
+        <p className={cl.add}>Добавить оповещение в соц. сети</p>
+        <div className={cl.row}>
+          <button className={`${cl.sotialBtn} ${cl.fb}`}><FacebookOutlinedIcon />Facebook</button>
+          <button className={`${cl.sotialBtn} ${cl.tg}`}><TelegramIcon />Telegram</button>
+          <button className={`${cl.sotialBtn} ${cl.ws}`}><WhatsappSharpIcon />Whatsapp</button>
+          <FormControl className={cl.sotialBtn}>
+            <InputLabel id='demo-simple-select-label'>Другое</InputLabel>
+            <Select labelId='demo-simple-select-label' id='demo-simple-select' value={other} label='Другое'
+                    onChange={handleChangeOther}>
+              <MenuItem value={'first'}>first</MenuItem>
+              <MenuItem value={'Twenty'}>Twenty</MenuItem>
+              <MenuItem value={'Thirty'}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
+        </div>
+      </div>
+      <div className={cl.bottomBtn}>
+        <button onClick={addNewAdres} className={cl.bottomBtnApply} >применить</button>
+        <button onClick={addNewAdres} className={cl.bottomBtnCreate}>Создать</button>
+        <button onClick={()=>{}} className={cl.bottomBtnRemove}><DeleteOutlineSharpIcon/>удалить</button>
+      </div>
+      <UserCard user={listUserAdres[0]} selectUser={selectUser} removeUser={removeUser}/>
+      <button className={cl.loadMore}>Загрузить еще</button>
+    </form>
+  )
+}

@@ -21,7 +21,9 @@ const FirstStep = () => {
   const listSelectedProduct = useSelector(state => state.order.listSelectedProduct);
   const [openAdress, setOpenAdress] = useState(false);
   const [openNewAdress, setOpenNewAdress] = useState(false);
+  const [openChangeUserData, setOpenChangeUserData] = useState(false);
   const [currentAdres, setCurrentAdres] = useState(listUserAdres[0]);
+
   const handleClose = () => {
     setOpenAdress(false);
   };
@@ -30,6 +32,15 @@ const FirstStep = () => {
   };
   const handleOpenNewAdr = () => {
     setOpenNewAdress(true);
+  };
+  const handleCloseNewAdr = () => {
+    setOpenNewAdress(false);
+  };
+  const handleOpenChangeUserData = () => {
+    setOpenNewAdress(true);
+  };
+  const handleCloseChangeUserData = () => {
+    setOpenNewAdress(false);
   };
   const handleListItemClick = (i) => {
     console.log(i);
@@ -79,7 +90,7 @@ const FirstStep = () => {
         <div className={cl.btnWrap}>
           <Button onClick={handleOpen} className={cl.btn}>выбрать адрес</Button>
           <Button onClick={handleOpenNewAdr} className={`${cl.btn} ${cl.btnGreen}`}>создать адрес</Button>
-          <Button className={`${cl.btn} ${cl.btnOrange}`}>редактировать</Button>
+          <Button className={`${cl.btn} ${cl.btnOrange}`} onClick={openChangeUserData}>редактировать</Button>
           <div className={cl.rowBtnInfo}>
             <InfoOutlinedIcon className={cl.btnInfoIcon} />
             <p className={cl.btnInfo}>
@@ -159,11 +170,12 @@ const FirstStep = () => {
         <DialogTitle>Выберите адрес</DialogTitle>
         <List sx={{ pt: 0 }}>
           {listUserAdres.map((i) => (
-            <UserCard user={i} selectUser={handleListItemClick} removeUser={removeUser}/>
+            <UserCard key={i.id} user={i} selectUser={handleListItemClick} removeUser={removeUser}/>
           ))}
         </List>
       </Dialog>
-      <PopupNewAdress open={openNewAdress} />
+      <PopupNewAdress open={openNewAdress} handleClose={handleCloseNewAdr}/>
+      <PopupChangeUserData open={openChangeUserData} handleClose={handleCloseChangeUserData}/>
     </div>
   );
 };
