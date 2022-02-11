@@ -1,4 +1,4 @@
-import Menu from '@components/Menu';
+import DrawerMenu from '@components/DrawerMenu';
 import OrderTabs from '@components/OrderTabs';
 
 import styles from './OrdersPage.module.css';
@@ -7,7 +7,7 @@ const OrdersPage = () => {
   return (
     <>
       <div className={styles.wrapper}>
-        <Menu />
+        <DrawerMenu />
         <OrderTabs />
       </div>
     </>

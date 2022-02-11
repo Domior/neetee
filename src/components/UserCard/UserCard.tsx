@@ -16,7 +16,7 @@ const UserCard = ({ user, selectUser, removeUser }: propsType) => {
       <ListItemAvatar>
         <Avatar>
           {/*<img src={user.imgUrl} alt='' />*/}
-          <img src={avatarDefault} alt='avatarDefault' />
+          <img src={avatarDefault} alt="avatarDefault" />
         </Avatar>
       </ListItemAvatar>
       <div>

@@ -16,12 +16,7 @@ const App = () => {
           <Header />
           <Routes>
             {routesConfig.map((route, index) => (
-              <Route
-                key={index}
-                path={route.path}
-                exact={route.exact}
-                element={route.element}
-              />
+              <Route key={index} path={route.path} element={route.element} />
             ))}
           </Routes>
           <Footer />

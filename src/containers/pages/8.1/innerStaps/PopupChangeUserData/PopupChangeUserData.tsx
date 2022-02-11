@@ -21,7 +21,7 @@ export const PopupChangeUserData = ({ open, handleClose }: propsType) => {
   const userType = currentAdres.companyName ? 'legalEntities' : 'individuals';
 
   return (
-    <Dialog open={open} className={cl.popupWrap} maxWidth='lg' onClose={handleClose}
+    <Dialog open={open} className={cl.popupWrap} maxWidth="lg" onClose={handleClose}
       // fullScreen={fullScreen}
     >
       <Box sx={{ width: '100%' }}>
