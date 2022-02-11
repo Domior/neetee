@@ -3,15 +3,15 @@ import { Button, Step, StepButton, Stepper } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import cl from './ConfirmationOfAnOrder.module.css';
-import FirstStep from './innerStaps/firstStep/firstStep';
 import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
-
+import FirstStep  from './innerStaps/firstStep/FirstStep';
+import ThirdStep from './innerStaps/thirdStep/ThirdStep';
 
 const steps = ['Данные получателя', 'Оплата товара', 'Выбор доставки','Отслеживание заказа'];
 const innerSteps = [
   <FirstStep/>,
-  'some text',
+  <ThirdStep/>,
   'last',
   'finish'
 ]

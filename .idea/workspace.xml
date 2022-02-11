@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="add 8.1...">
+      <change afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/firstStep.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\lisa1\Desktop\helps\neetee\node_modules\prettier" />
@@ -46,6 +49,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lisa1\Desktop\helps\neetee\src\containers\pages\8.1\innerStaps" />
       <recent name="C:\Users\lisa1\Desktop\helps\neetee" />
     </key>
   </component>
@@ -117,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644525691017</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add 8.1...">
+      <created>1644535819767</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1644535819767</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,8 +155,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.js</url>
-          <line>71</line>
+          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.jsx</url>
+          <line>70</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
