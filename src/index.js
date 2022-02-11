@@ -2,9 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { ThemeProvider, createTheme, StyledEngineProvider } from '@mui/material/styles';
-import App from '@containers/App/App';
+import App from './containers/App';
+import { store } from './bll/store';
+import { Provider } from 'react-redux';
+// import App from '@containers/App/App';
 
 import '@styles/index.css';
+
 
 const theme = createTheme({
   palette: {
@@ -121,9 +125,11 @@ ReactDOM.render(
   <React.StrictMode>
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
-        <App />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </ThemeProvider>
     </StyledEngineProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
+  ,document.getElementById('root'),
 );
