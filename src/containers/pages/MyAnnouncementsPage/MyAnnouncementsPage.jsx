@@ -1,4 +1,4 @@
-import Menu from '@components/Menu';
+import DrawerMenu from '@components/DrawerMenu';
 
 // import styles from './MyAnnouncementsPage.module.css';
 
@@ -6,7 +6,7 @@ const MyAnnouncementsPage = () => {
   return (
     <>
       <h1>MyAnnouncementsPage</h1>
-      <Menu />
+      <DrawerMenu />
     </>
   );
 };

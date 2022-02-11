@@ -5,13 +5,14 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Drawer from '@mui/material/Drawer';
 import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@static/icons/menu.svg';
 
-import MenuNav from '@components/Menu/MenuNav';
+import DrawerMenuNav from '@components/DrawerMenu/DrawerMenuNav';
 import Logo from '@components/Logo';
 import personPhoto from '@static/person-photo.jpg';
 
@@ -30,9 +31,10 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     position: 'unset',
     width: drawerWidth,
-    padding: 0,
-    boxShadow: 'none',
+    padding: `0 !important`,
     marginBottom: '-1px',
+    backgroundColor: theme.colors.black,
+    boxShadow: 'none',
     [theme.breakpoints.down('md')]: {
       position: 'fixed',
       right: 'unset',
@@ -76,6 +78,16 @@ const useStyles = makeStyles((theme) => ({
       minWidth: '20px',
     },
   },
+  logo: {
+    width: '123px',
+    height: '43px',
+    marginBottom: '40px',
+    [theme.breakpoints.down('md')]: {
+      width: '103px',
+      height: '40px',
+      marginBottom: '0',
+    },
+  },
   personPhoto: {
     width: '102px',
     height: '102px',
@@ -107,7 +119,6 @@ const useStyles = makeStyles((theme) => ({
   content: {
     display: 'none',
     flexGrow: 1,
-    backgroundColor: theme.palette.primary.orange,
     padding: theme.spacing(3),
     [theme.breakpoints.down('sm')]: {
       flexGrow: 0,
@@ -115,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Menu() {
+export default function DrawerMenu() {
   const classes = useStyles();
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
@@ -134,8 +145,8 @@ export default function Menu() {
   };
 
   return (
-    <div className={classes.root}>
-      <AppBar position="fixed" className={classes.appBar}>
+    <Box className={classes.root} component="header">
+      <AppBar position="fixed" className={classes.appBar} component="div">
         <Toolbar className={classes.drawerHeader}>
           <IconButton
             aria-label="open drawer"
@@ -144,7 +155,7 @@ export default function Menu() {
           >
             <img src={MenuIcon} alt="menu" />
           </IconButton>
-          <Logo />
+          <Logo type="white" />
           <Avatar
             className={classes.personPhoto}
             src={personPhoto}
@@ -164,8 +175,8 @@ export default function Menu() {
         onClose={toggleDrawer}
         BackdropProps={{ invisible: true }}
       >
-        <MenuNav />
+        <DrawerMenuNav />
       </Drawer>
-    </div>
+    </Box>
   );
 }

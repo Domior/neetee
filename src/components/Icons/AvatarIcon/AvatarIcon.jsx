@@ -1,0 +1,54 @@
+import styles from './AvatarIcon.module.css';
+
+const AvatarIcon = () => {
+  return (
+    <svg
+      className={styles.svg}
+      viewBox="0 0 55 55"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M53.85 27.5C53.85 42.0527 42.0527 53.85 27.5 53.85C12.9473 53.85 1.15 42.0527 1.15 27.5C1.15 12.9473 12.9473 1.15 27.5 1.15C42.0527 1.15 53.85 12.9473 53.85 27.5Z"
+        stroke="#666666"
+        strokeWidth="2.3"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M28 34C34.0751 34 39 29.0751 39 23C39 16.9249 34.0751 12 28 12C21.9249 12 17 16.9249 17 23C17 29.0751 21.9249 34 28 34Z"
+        stroke="#666666"
+        strokeWidth="2.3"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M46.058 45.735C42.8437 38.8453 35.9389 34.0938 27.8437 34.0938C19.7484 34.0938 12.8437 38.8453 9.62939 45.735"
+        stroke="#666666"
+        strokeWidth="2.3"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M36.4149 37.7759C35.2244 41.2207 31.8911 43.7153 27.9625 43.8341C24.034 43.8341 20.5816 41.4583 19.3911 37.8947"
+        stroke="#666666"
+        strokeWidth="2.3"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M27.9629 43.7153V52.6244"
+        stroke="#666666"
+        strokeWidth="2.3"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export default AvatarIcon;
