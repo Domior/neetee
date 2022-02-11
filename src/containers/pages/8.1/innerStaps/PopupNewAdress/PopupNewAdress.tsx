@@ -37,7 +37,7 @@ function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
 
   return (
-    <div role='tabpanel' hidden={value !== index} id={`simple-tabpanel-${index}`}
+    <div role="tabpanel" hidden={value !== index} id={`simple-tabpanel-${index}`}
          aria-labelledby={`simple-tab-${index}`} {...other} >
       {value === index && (
         <Box sx={{ p: 3 }}>
@@ -70,15 +70,15 @@ export const PopupNewAdress = ({ open, handleClose }: propsType) => {
   };
 
   return (
-    <Dialog open={open} className={cl.popupWrap} maxWidth='lg' onClose={handleClose}
+    <Dialog open={open} className={cl.popupWrap} maxWidth="lg" onClose={handleClose}
       // fullScreen={fullScreen}
     >
       <Box sx={{ width: '100%' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs value={value} onChange={handleChange} centered>
             {/*aria-label="disabled tabs example"*/}
-            <Tab label='Физическим лицам' {...a11yProps(0)} />
-            <Tab label='Юридическим лицам'{...a11yProps(1)} />
+            <Tab label="Физическим лицам" {...a11yProps(0)} />
+            <Tab label="Юридическим лицам"{...a11yProps(1)} />
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
@@ -202,8 +202,8 @@ export const FormUserData = ({ userType,...props }: propsFormUserData) => {
       <div className={cl.row}>
         <div className={cl.column}>
           <FormControl className={cl.select}>
-            <InputLabel id='demo-simple-select-label'>Страна*</InputLabel>
-            <Select labelId='demo-simple-select-label' id='demo-simple-select' value={country} label='Страна*'
+            <InputLabel id="demo-simple-select-label">Страна*</InputLabel>
+            <Select labelId="demo-simple-select-label" id="demo-simple-select" value={country} label="Страна*"
                     onChange={handleChangeCountry}>
               <MenuItem value={'Россия'}>Россия</MenuItem>
               <MenuItem value={'Twenty'}>Twenty</MenuItem>
@@ -211,8 +211,8 @@ export const FormUserData = ({ userType,...props }: propsFormUserData) => {
             </Select>
           </FormControl>
           <FormControl className={cl.select}>
-            <InputLabel id='demo-simple-select-label'>Город*</InputLabel>
-            <Select labelId='demo-simple-select-label' id='demo-simple-select' value={town} label='Город*'
+            <InputLabel id="demo-simple-select-label">Город*</InputLabel>
+            <Select labelId="demo-simple-select-label" id="demo-simple-select" value={town} label="Город*"
                     onChange={handleChangeTown}>
               <MenuItem value={'Москва'}>Москва</MenuItem>
               <MenuItem value={'Twenty'}>Twenty</MenuItem>
@@ -225,7 +225,7 @@ export const FormUserData = ({ userType,...props }: propsFormUserData) => {
           </div>
         </div>
         <div className={cl.column}>
-          <TextField id='standard-multiline-static' label='Адрес получателя*' multiline value={adres} rows={8}
+          <TextField id="standard-multiline-static" label="Адрес получателя*" multiline value={adres} rows={8}
             // min={10} max={30} rows={4}
                      className={cl.multiField} onChange={handleChangeAdres}
           />
@@ -234,7 +234,7 @@ export const FormUserData = ({ userType,...props }: propsFormUserData) => {
       {error && <p>{error}</p>}
       <div className={cl.row}>
         <FormControlLabel
-          label='Привязать аккаунт другого пользователя'
+          label="Привязать аккаунт другого пользователя"
           control={
             <Checkbox checked={checked} onChange={handleChange1} style={{ color: '#C4C4C4' }}
               // indeterminate={checked[0] !== checked[1]} color='info'
@@ -251,7 +251,7 @@ export const FormUserData = ({ userType,...props }: propsFormUserData) => {
               <InfoOutlinedIcon style={{ marginLeft: '10px', color: '#FF9900' }} />
             </span>
           </div>
-          <input type='text' placeholder='Никнейм' />
+          <input type="text" placeholder="Никнейм" />
         </div>
       </div>
       <div>
@@ -261,8 +261,8 @@ export const FormUserData = ({ userType,...props }: propsFormUserData) => {
           <button className={`${cl.sotialBtn} ${cl.tg}`}><TelegramIcon />Telegram</button>
           <button className={`${cl.sotialBtn} ${cl.ws}`}><WhatsappSharpIcon />Whatsapp</button>
           <FormControl className={cl.sotialBtn}>
-            <InputLabel id='demo-simple-select-label'>Другое</InputLabel>
-            <Select labelId='demo-simple-select-label' id='demo-simple-select' value={other} label='Другое'
+            <InputLabel id="demo-simple-select-label">Другое</InputLabel>
+            <Select labelId="demo-simple-select-label" id="demo-simple-select" value={other} label="Другое"
                     onChange={handleChangeOther}>
               <MenuItem value={'first'}>first</MenuItem>
               <MenuItem value={'Twenty'}>Twenty</MenuItem>
