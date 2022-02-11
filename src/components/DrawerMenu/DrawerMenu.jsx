@@ -12,7 +12,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@static/icons/menu.svg';
 
-import MenuNav from '@components/Menu/MenuNav';
+import DrawerMenuNav from '@components/DrawerMenu/DrawerMenuNav';
 import Logo from '@components/Logo';
 import personPhoto from '@static/person-photo.jpg';
 
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     position: 'unset',
     width: drawerWidth,
-    padding: 0,
+    padding: `0 !important`,
     marginBottom: '-1px',
     backgroundColor: theme.colors.black,
     boxShadow: 'none',
@@ -126,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Menu() {
+export default function DrawerMenu() {
   const classes = useStyles();
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
@@ -175,7 +175,7 @@ export default function Menu() {
         onClose={toggleDrawer}
         BackdropProps={{ invisible: true }}
       >
-        <MenuNav />
+        <DrawerMenuNav />
       </Drawer>
     </Box>
   );

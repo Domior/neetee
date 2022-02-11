@@ -1,41 +1,17 @@
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-// import styles from './Header.module.css';
-
-// const Header = () => {
-//   return (
-//     <div>
-//       <ul className={styles.headerNav}>
-//         <li>
-//           <NavLink to="/">Home</NavLink>
-//         </li>
-//         <li>
-//           <NavLink to="/my-announcements">MyAnnouncementsPage</NavLink>
-//         </li>
-//         <li>
-//           <NavLink to="/orders">OrdersPage</NavLink>
-//         </li>
-//         <li>
-//           <NavLink to="/favourites">FavouritesPage</NavLink>
-//         </li>
-//         <li>
-//           <NavLink to="/settings">SettingsPage</NavLink>
-//         </li>
-//       </ul>
-//     </div>
-//   );
-// };
-
-// export default Header;
-
-import * as React from 'react';
 import { makeStyles } from '@mui/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 
+import HeaderMenu from '@components/HeaderMenu';
 import Logo from '@components/Logo';
+import HomeIcon from '@components/Icons/HomeIcon';
+import CatalogIcon from '@components/Icons/CatalogIcon';
+import AvatarIcon from '@components/Icons/AvatarIcon';
 
 // const headerHeight = 150;
 const headerUpHeight = 110;
@@ -71,38 +47,38 @@ const useStyles = makeStyles((theme) => ({
       padding: `14px 20px 10px 18px`,
     },
   },
-  authBtns: {
+  authBtnsContainer: {
     display: 'flex',
     alignItems: 'center',
-    '& .MuiButton-text': {
-      marginRight: '10px',
-    },
     [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
       alignItems: 'normal',
       justifyContent: 'center',
-      '& .MuiButton-text': {
-        order: '1',
-        marginTop: '10px',
-        marginRight: '0',
-      },
     },
   },
-  headerIcon: {
-    width: '24px',
-    height: '24px',
-    fill: theme.colors.gray,
-    marginRight: '20px',
-    '&:last-of-type': {
+  authBtns: {
+    marginRight: '10px',
+    [theme.breakpoints.down('md')]: {
+      order: '1',
+      marginTop: '10px',
       marginRight: '0',
-    },
-    '&:hover': {
-      fill: theme.colors.blue,
     },
   },
   headerIcons: {
     display: 'flex',
     alignItems: 'center',
+    '& a': {
+      display: 'inline-flex',
+      marginRight: '20px',
+    },
+    '& a:last-of-type': {
+      marginRight: '0',
+    },
+    [theme.breakpoints.down('md')]: {
+      '& a': {
+        marginRight: '10px',
+      },
+    },
   },
 
   headerDown: {
@@ -125,19 +101,34 @@ export default function ButtonAppBar() {
             <Link to="/">
               <Logo type="blue" />
             </Link>
-            <Box className={classes.authBtns}>
+            <Box className={classes.authBtnsContainer}>
               {logined ? (
                 <Box className={classes.headerIcons}>
-                  <Link to="/"></Link>
-                  <Link to="/"></Link>
-                  <Link to="/"></Link>
+                  <Link to="/">
+                    <HomeIcon />
+                  </Link>
+                  <Link to="/">
+                    <CatalogIcon />
+                  </Link>
+                  <HeaderMenu />
+                  <Link to="/">
+                    <AvatarIcon />
+                  </Link>
                 </Box>
               ) : (
                 <>
-                  <Button variant="text" color="secondary">
+                  <Button
+                    className={classes.authBtns}
+                    variant="text"
+                    color="secondary"
+                  >
                     Регистрация
                   </Button>
-                  <Button variant="contained" color="warning">
+                  <Button
+                    className={classes.authBtns}
+                    variant="contained"
+                    color="warning"
+                  >
                     Вход в систему
                   </Button>
                 </>

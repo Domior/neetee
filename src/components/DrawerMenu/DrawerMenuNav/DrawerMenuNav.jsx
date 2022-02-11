@@ -5,9 +5,9 @@ import IconOrders from '@icons/orders.svg';
 import IconFavourites from '@icons/favourites.svg';
 import IconSettings from '@icons/settings.svg';
 
-import styles from './MenuNav.module.css';
+import styles from './DrawerMenuNav.module.css';
 
-const MenuNav = () => {
+const DrawerMenuNav = () => {
   return (
     <>
       <ul className={styles.menuNav}>
@@ -40,4 +40,4 @@ const MenuNav = () => {
   );
 };
 
-export default MenuNav;
+export default DrawerMenuNav;
