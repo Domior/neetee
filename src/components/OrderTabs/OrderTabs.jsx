@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tabs: {
     minHeight: 'unset',
+    margin: `0 -15px`,
     '& .MuiTabs-indicator': {
       display: 'none',
     },
@@ -25,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
       textShadow: `0px 0px 1px rgba(0,0,0,0.5)`,
       color: theme.colors.black,
       borderBottom: `2px solid ${theme.palette.info.main}`,
+    },
+    '& .MuiTabScrollButton-root': {
+      width: 'fit-content',
     },
   },
   tab: {
@@ -63,6 +67,11 @@ const useStyles = makeStyles((theme) => ({
       color: theme.colors.white,
       top: '-5px',
       right: '-9px',
+    },
+  },
+  tabPanel: {
+    '& > div': {
+      padding: `20px 0 0`,
     },
   },
 }));
@@ -179,7 +188,7 @@ export default function OrderTabs() {
           />
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
+      <TabPanel value={value} index={0} className={classes.tabPanel}>
         <ProductItem />
       </TabPanel>
       <TabPanel value={value} index={1}>

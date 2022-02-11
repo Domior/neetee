@@ -4,6 +4,10 @@
     flex-direction: column;
     border-radius: 5px;
     border: 1px solid #C4C4C4;
+    margin-bottom: 20px;
+}
+.cardContainer:last-of-type {
+    margin-bottom: 0;
 }
 .cardHeader {
     position: relative;
@@ -46,15 +50,17 @@
 
 .cardBody {
     display: flex;
-
     background-color: #fff;
     padding: 30px 20px 30px 30px;
     border-radius: 0 0 5px 5px;
 }
 
 .cardItemImg{
+    width: 215px;
+    height: 157px;
     align-self: stretch;
     margin-right: 30px;
+    border-radius: 5px;
 }
 .cardItemInfo {
     flex: 2 0 auto;
@@ -91,4 +97,65 @@
     line-height: 14px;
     color: #666666;
     margin-right: 10px;
+}
+.cardItemPrice span:nth-child(1) {
+    display: inline;
+}
+.cardItemPrice span:nth-child(2) {
+    display: none;
+}
+
+
+@media screen and (max-width: 900px) {
+    .cardContainer {
+        width: 100%;
+    }
+    .cardHeader {
+        height: 50px;
+        padding-left: 9px;
+    }
+    .btnClose {
+        top: 9px;
+        right: 9px;
+    }
+    .cardBody {
+        flex-wrap: wrap;
+        padding: 15px 10px 20px;
+    }
+    .cardItemImg{
+        width: 102px;
+        height: 74px;
+        margin-right: 10px;
+    }
+    .cardItemInfo {
+        width: 30%;
+        flex: auto;
+        margin-bottom: 10px;
+    }
+    .cardItemTitle {
+        font-size: 12px;
+        line-height: 14px;
+        margin-bottom: 5px;
+    }
+    .cardItemDescription {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .cardBodyFooter {
+        width: 100%;
+    }
+    .cardItemPrice {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    .cardItemPrice span {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .cardItemPrice span:nth-child(1) {
+        display: none;
+    }
+    .cardItemPrice span:nth-child(2) {
+        display: block;
+    }
 }
