@@ -40,6 +40,7 @@ import fotoI from './../../../../../assets/4.png'
 import save from './../../../../../assets/3.png'
 import hr from './../../../../../assets/2.png'
 import send from './../../../../../assets/Vector1.png'
+import { BlockTotal, DataRecipient } from '../firstStep/FirstStep';
 
 function createData(companyName: string, calories: number, fat: number, carbs: number, protein: number, price: number, desk: string,
 ) {
@@ -252,18 +253,18 @@ const ThirdStep = () => {
 
   return (
     <div className={cl.bg}>
-      <div className={cl.dataRecipient}>
-        <p className={cl.dataRecipientDesc}>
-          Выберите способ доставки
-        </p>
-        <p className={cl.orderDesc}>
-          Номер заказа
-          <span className={cl.order}>
-              RT3234234234234
-          </span>
-        </p>
-      </div>
-
+      {/*<div className={cl.dataRecipient}>*/}
+      {/*  <p className={cl.dataRecipientDesc}>*/}
+      {/*    Выберите способ доставки*/}
+      {/*  </p>*/}
+      {/*  <p className={cl.orderDesc}>*/}
+      {/*    Номер заказа*/}
+      {/*    <span className={cl.order}>*/}
+      {/*        RT3234234234234*/}
+      {/*    </span>*/}
+      {/*  </p>*/}
+      {/*</div>*/}
+      <DataRecipient text={'Выберите способ доставки'} order={'RT3234234234234'}/>
       <div className={cl.container}>
         <h3 className={cl.settingsTitle}>Найстройки поиска логистических компаний</h3>
         <div>
@@ -383,16 +384,7 @@ const ThirdStep = () => {
         </div>
       </div>
 
-
-      <div className={cl.blockTotal}>
-        <div className={cl.left}>
-          <p>Стоимость товаров <span>23 000 $</span></p>
-          <p>Стоимость доставки <span>230 $</span></p>
-        </div>
-        <div className={cl.right}>
-          <p>Итоговая сумма к оплате</p><span>23 000 $</span>
-        </div>
-      </div>
+      <BlockTotal prise={'23 000 $'} delivery={'230 $'} orderPrise={'23 000 $'}/>
 
     </div>
   );

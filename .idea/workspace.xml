@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="add 8.2...">
-      <change afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +96,7 @@
       <workItem from="1644493392989" duration="1288000" />
       <workItem from="1644494707758" duration="121000" />
       <workItem from="1644494838330" duration="892000" />
-      <workItem from="1644589713461" duration="23216000" />
+      <workItem from="1644589713461" duration="31966000" />
     </task>
     <task id="LOCAL-00001" summary="add 8.1">
       <created>1644398846734</created>
@@ -137,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644571284737</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add 8.2...">
+      <created>1644620600686</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1644620600686</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,33 +187,39 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx</url>
-          <line>140</line>
+          <line>141</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx</url>
-          <line>126</line>
+          <line>127</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx</url>
-          <line>122</line>
+          <line>123</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx</url>
-          <line>130</line>
+          <line>131</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx</url>
-          <line>174</line>
+          <line>175</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
+          <line>93</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

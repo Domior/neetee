@@ -3,7 +3,6 @@ import cl from './FirstStep.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Dialog, DialogTitle, List } from '@mui/material';
 import { setCurrentAdresAC } from '../../../../../bll/orderReducer';
-import productImg from './../../../../../assets/productImg.jpg';
 import { PopupNewAdress } from '../PopupNewAdress/PopupNewAdress';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import TelegramIcon from '@mui/icons-material/Telegram';
@@ -12,16 +11,19 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import UserCard from '../../../../../components/UserCard/UserCard';
 import { PopupChangeUserData } from '../PopupChangeUserData/PopupChangeUserData';
+import productImg from './../../../../../assets/productImg.jpg';
+import message from './../../../../../assets/message.png';
+import foto from './../../../../../assets/foto.png';
+import save from './../../../../../assets/save.png';
+import box from './../../../../../assets/box.png';
+import test from './../../../../../assets/test.png';
+import delivery from './../../../../../assets/delivery.png';
 
 const FirstStep = () => {
   const dispatch = useDispatch();
   const listUserAdres = useSelector((state) => state.order.listUserAdres);
-  const currentAdresFromState = useSelector(
-    (state) => state.order.currentAdres
-  );
-  const listSelectedProduct = useSelector(
-    (state) => state.order.listSelectedProduct
-  );
+  const currentAdresFromState = useSelector((state) => state.order.currentAdres);
+  const listSelectedProduct = useSelector((state) => state.order.listSelectedProduct);
   const [openAdress, setOpenAdress] = useState(false);
   const [openNewAdress, setOpenNewAdress] = useState(false);
   const [openChangeUserData, setOpenChangeUserData] = useState(false);
@@ -54,7 +56,6 @@ const FirstStep = () => {
     console.log(i);
     // dispatch(setCurrentAdresAC(i));
   };
-
   useEffect(() => {
     currentAdresFromState.id && setCurrentAdres(currentAdresFromState);
   }, [dispatch, currentAdresFromState]);
@@ -64,29 +65,33 @@ const FirstStep = () => {
       <div key={p.id} className={cl.itemProduct}>
         <span className={cl.i}>{i}</span>
         {/*<img src={p.imgUrl} alt='img' />*/}
-        <img src={productImg} alt="img" />
-        <div>
+        <img src={productImg} alt='img' />
+        <div className={cl.itemProductDeck}>
           <p>{p.desc}</p>
-          <p>{p.color}</p>
+          <p className={cl.itemProductColor}>{p.color}</p>
         </div>
-        <div>{p.storeName}</div>
-        <div>{p.itemPrise}</div>
-        <div>{p.count}</div>
-        <div>{p.deliveryPr}</div>
-        <div>{p.totalPr}</div>
+        <div className={`${cl.row} ${cl.prRow}`}>
+          <div className={`${cl.settingsProduct} ${cl.itemPrStoreName}`}>{p.storeName}</div>
+          <div className={`${cl.settingsProduct} ${cl.itemPrPrice}`}>{p.itemPrise}</div>
+          <div className={`${cl.settingsProduct} ${cl.itemPrCount}`}>{p.count}</div>
+          <div className={`${cl.settingsProduct} ${cl.itemPrDelivery}`}>{p.deliveryPr}</div>
+          <div className={`${cl.settingsProduct} ${cl.itemPrComPrice}`}>{p.totalPr}</div>
+          <div className={`${cl.settingsProduct} ${cl.itemPrAdditional} ${cl.wrBtnAdditional}`}>
+            <button><img src={message} alt='message' /></button>
+            <button><img src={foto} alt='message' /></button>
+            <button><img src={save} alt='message' /></button>
+            <button><img src={box} alt='message' /></button>
+            <button><img src={test} alt='test' /></button>
+            <button><img src={delivery} alt='delivery' /></button>
+          </div>
+        </div>
       </div>
     );
   });
 
   return (
     <div className={cl.bg}>
-      <div className={cl.dataRecipient}>
-        <p className={cl.dataRecipientDesc}>Укажите данные получателя</p>
-        <p className={cl.orderDesc}>
-          Номер заказа
-          <span className={cl.order}>RT3234234234234</span>
-        </p>
-      </div>
+      <DataRecipient text={'Укажите данные получателя'} order={'RT3234234234234'} />
       <div className={cl.container}>
         <div className={cl.btnWrap}>
           <Button onClick={handleOpen} className={cl.btn}>
@@ -169,31 +174,19 @@ const FirstStep = () => {
               цены, чтобы выбрать услуги.
             </p>
           </div>
-          <div className={cl.row}>
-            <span className={cl.settingsProduct}>Магазин</span>
-            <span className={cl.settingsProduct}>Цена за единицу</span>
-            <span className={cl.settingsProduct}>Кол-во</span>
-            <span className={cl.settingsProduct}>Достав-ка</span>
-            <span className={cl.settingsProduct}>Общая сумма</span>
-            <span className={cl.settingsProduct}>Дополнительные услуги</span>
+          <div className={`${cl.row} ${cl.expansive}`}>
+            <span className={`${cl.settingsProduct} ${cl.itemPrStoreName}`}>Магазин</span>
+            <span className={`${cl.settingsProduct} ${cl.itemPrPrice}`}>Цена за единицу</span>
+            <span className={`${cl.settingsProduct} ${cl.itemPrCount}`}>Кол-во</span>
+            <span className={`${cl.settingsProduct} ${cl.itemPrDelivery}`}>Достав-ка</span>
+            <span className={`${cl.settingsProduct} ${cl.itemPrComPrice}`}>Общая сумма</span>
+            <span className={`${cl.settingsProduct} ${cl.itemPrAdditional}`}>Дополнительные услуги</span>
           </div>
         </div>
         <div className={cl.productsWrap}>{itemsProduct}</div>
       </div>
-      <div className={cl.blockTotal}>
-        <div className={cl.left}>
-          <p>
-            Стоимость товаров <span>23 000 $</span>
-          </p>
-          <p>
-            Стоимость доставки <span>230 $</span>
-          </p>
-        </div>
-        <div className={cl.right}>
-          <p>Итоговая сумма к оплате</p>
-          <span>23 000 $</span>
-        </div>
-      </div>
+      <BlockTotal prise={'23 000 $'} delivery={'230 $'} orderPrise={'23 000 $'}/>
+
       <Dialog open={openAdress} onClose={handleClose}>
         <DialogTitle>Выберите адрес</DialogTitle>
         <List sx={{ pt: 0 }}>
@@ -217,3 +210,39 @@ const FirstStep = () => {
 };
 
 export default FirstStep;
+
+export const DataRecipient = ({ text, order }) => {
+  return (
+    <div className={cl.dataRecipient}>
+      <p className={cl.dataRecipientDesc}>{text}</p>
+      <p className={cl.orderDesc}>
+        Номер заказа
+        <span className={cl.order}>{order}</span>
+      </p>
+    </div>
+  );
+};
+export const BlockTotal = ({ prise,delivery, orderPrise }) => {
+  return (
+    <div className={cl.blockTotal}>
+      <div className={cl.container}>
+        <div className={cl.left}>
+          <div  className={cl.row}>
+            <p>Стоимость товаров</p>
+            <span>{prise}</span>
+          </div>
+          <div  className={cl.row}>
+            <p>Стоимость доставки </p>
+            <span>{delivery}</span>
+          </div>
+
+
+        </div>
+        <div className={cl.right}>
+          <p>Итоговая сумма к оплате</p>
+          <span>{orderPrise}</span>
+        </div>
+      </div>
+    </div>
+  );
+};

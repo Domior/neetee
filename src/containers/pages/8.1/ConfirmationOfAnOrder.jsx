@@ -61,7 +61,7 @@ const ConfirmationOfAnOrder = () => {
 
   return (
     <div className={cl.stepperStyle}>
-      <Stepper nonLinear activeStep={activeStep}>
+      <Stepper nonLinear activeStep={activeStep} className={cl.stepperWrap}>
         {steps.map((label, index) => (
           <Step key={label} completed={completed[index]}>
             <StepButton color="inherit" onClick={handleStep(index)}>
