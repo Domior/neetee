@@ -18,16 +18,19 @@ import save from './../../../../../assets/save.png';
 import box from './../../../../../assets/box.png';
 import test from './../../../../../assets/test.png';
 import delivery from './../../../../../assets/delivery.png';
+import { RootStateType } from '../../../../../bll/store';
 
 const FirstStep = () => {
   const dispatch = useDispatch();
   const listUserAdres = useSelector((state) => state.order.listUserAdres);
   const currentAdresFromState = useSelector((state) => state.order.currentAdres);
   const listSelectedProduct = useSelector((state) => state.order.listSelectedProduct);
+  const [isDisabled, setDisabled] = useState('true');
   const [openAdress, setOpenAdress] = useState(false);
   const [openNewAdress, setOpenNewAdress] = useState(false);
   const [openChangeUserData, setOpenChangeUserData] = useState(false);
   const [currentAdres, setCurrentAdres] = useState(listUserAdres[0]);
+  console.log('currentAdresFromState', currentAdresFromState);
 
   const handleOpen = () => {
     setOpenAdress(true);
@@ -58,9 +61,105 @@ const FirstStep = () => {
   };
   useEffect(() => {
     currentAdresFromState.id && setCurrentAdres(currentAdresFromState);
+    currentAdresFromState.id === undefined ? setDisabled('true') : setDisabled('');
   }, [dispatch, currentAdresFromState]);
 
-  const itemsProduct = listSelectedProduct.map((p, i) => {
+
+  return (
+    <div className={cl.bg}>
+      <DataRecipient text={'Укажите данные получателя'} order={'RT3234234234234'} />
+      <div className={cl.container}>
+        <div className={cl.btnWrap}>
+          <Button onClick={handleOpen} className={cl.btn}>
+            выбрать адрес
+          </Button>
+          <Button
+            onClick={handleOpenNewAdr} className={`${cl.btn} ${cl.btnGreen}`}>
+            создать адрес
+          </Button>
+          <Button onClick={handleOpenChangeUserData} className={`${cl.btn} ${cl.btnOrange}`}
+                  disabled={isDisabled}>
+            редактировать
+          </Button>
+          <div className={cl.rowBtnInfo}>
+            <InfoOutlinedIcon className={cl.btnInfoIcon} />
+            <p className={cl.btnInfo}>
+              Выберите получателя из ранее сохраненных, чтобы увидеть его
+              контактные данные и адрес получения. Или создайте нового
+              получателя, нажав кнопку “Создать”.
+            </p>
+          </div>
+        </div>
+        <div>
+          {currentAdres ? (
+            <AdresBloc adres={currentAdres} />
+          ) : (
+            <div className={cl.blockAdr}>нет доступных адресов</div>
+          )}
+        </div>
+        <div className={cl.title}>Ваш заказ</div>
+        {/*<div className={cl.row}>*/}
+        {/*  <div style={{ display: 'flex' }}>*/}
+        {/*    <InfoOutlinedIcon className={cl.btnInfoIcon} />*/}
+        {/*    <p className={cl.infoSettings}>*/}
+        {/*      Выберите дополнительные услуги, которые предоставит карго,*/}
+        {/*      отправляющее товар в вашу страну. Нажмите на иконки справа от*/}
+        {/*      цены, чтобы выбрать услуги.*/}
+        {/*    </p>*/}
+        {/*  </div>*/}
+        {/*  <div className={`${cl.row} ${cl.expansive}`}>*/}
+        {/*    <span className={`${cl.settingsProduct} ${cl.itemPrStoreName}`}>Магазин</span>*/}
+        {/*    <span className={`${cl.settingsProduct} ${cl.itemPrPrice}`}>Цена за единицу</span>*/}
+        {/*    <span className={`${cl.settingsProduct} ${cl.itemPrCount}`}>Кол-во</span>*/}
+        {/*    <span className={`${cl.settingsProduct} ${cl.itemPrDelivery}`}>Достав-ка</span>*/}
+        {/*    <span className={`${cl.settingsProduct} ${cl.itemPrComPrice}`}>Общая сумма</span>*/}
+        {/*    <span className={`${cl.settingsProduct} ${cl.itemPrAdditional}`}>Дополнительные услуги</span>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
+        {/*<div className={cl.productsWrap}>{itemsProduct}</div>*/}
+        <ListProduct listSelectedProduct={listSelectedProduct} />
+      </div>
+      <BlockTotal prise={'23 000 $'} delivery={'230 $'} orderPrise={'23 000 $'} />
+      <div className={cl.nexstStap}>
+        <div className={cl.container}>
+          <div className={cl.nexstStapWr}>
+            <InfoOutlinedIcon className={cl.btnInfoIcon} />
+            <p className={cl.nexstStapText}>
+              Доставка до вашего города оплачивается отдельно по прибытию товара на склад в Китае
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <Dialog open={openAdress} onClose={handleClose}>
+        <DialogTitle>Выберите адрес</DialogTitle>
+        <List sx={{ pt: 0 }}>
+          {listUserAdres.map((i) => (
+            <UserCard
+              key={i.id}
+              user={i}
+              selectUser={handleListItemClick}
+              removeUser={removeUser}
+            />
+          ))}
+        </List>
+      </Dialog>
+      <PopupNewAdress open={openNewAdress} handleClose={handleCloseNewAdr} />
+      <PopupChangeUserData
+        open={openChangeUserData}
+        handleClose={handleCloseChangeUserData}
+      />
+    </div>
+  );
+};
+
+export default FirstStep;
+
+export const ListProduct = (listSelectedProduct) => {
+  console.log(listSelectedProduct.listSelectedProduct);
+  console.log(typeof (listSelectedProduct));
+  // debugger
+  const itemsProduct = listSelectedProduct.listSelectedProduct.map((p, i) => {
     return (
       <div key={p.id} className={cl.itemProduct}>
         <span className={cl.i}>{i}</span>
@@ -90,127 +189,77 @@ const FirstStep = () => {
   });
 
   return (
-    <div className={cl.bg}>
-      <DataRecipient text={'Укажите данные получателя'} order={'RT3234234234234'} />
-      <div className={cl.container}>
-        <div className={cl.btnWrap}>
-          <Button onClick={handleOpen} className={cl.btn}>
-            выбрать адрес
-          </Button>
-          <Button
-            onClick={handleOpenNewAdr}
-            className={`${cl.btn} ${cl.btnGreen}`}
-          >
-            создать адрес
-          </Button>
-          <Button
-            onClick={handleOpenChangeUserData}
-            className={`${cl.btn} ${cl.btnOrange}`}
-          >
-            редактировать
-          </Button>
-          <div className={cl.rowBtnInfo}>
-            <InfoOutlinedIcon className={cl.btnInfoIcon} />
-            <p className={cl.btnInfo}>
-              Выберите получателя из ранее сохраненных, чтобы увидеть его
-              контактные данные и адрес получения. Или создайте нового
-              получателя, нажав кнопку “Создать”.
-            </p>
-          </div>
+    <>
+      <div className={cl.row}>
+        <div style={{ display: 'flex' }}>
+          <InfoOutlinedIcon className={cl.btnInfoIcon} />
+          <p className={cl.infoSettings}>
+            Выберите дополнительные услуги, которые предоставит карго,
+            отправляющее товар в вашу страну. Нажмите на иконки справа от
+            цены, чтобы выбрать услуги.
+          </p>
         </div>
-        <div>
-          {currentAdres ? (
-            <div className={cl.currentAdres}>
-              <div>
-                <p className={cl.formTitle}>ФИО</p>
-                <p>
-                  {currentAdres.firstName} {currentAdres.lastName}
-                </p>
-                <div className={cl.sotialBlock}>
-                  <FacebookIcon />
-                  <InstagramIcon />
-                  <TelegramIcon />
-                  <TwitterIcon />
-                </div>
-              </div>
-              <div>
-                <p className={cl.formTitle}>Номер телефона</p>
-                <p>{currentAdres.phone}</p>
-                <p className={cl.formTitle}>E-mail</p>
-                <p>{currentAdres.email}</p>
-              </div>
-              <div>
-                <p className={cl.formTitle}>
-                  Индекс <span> Страна, город</span>
-                </p>
-                <p>
-                  {currentAdres.index}
-                  <span>
-                    {currentAdres.country}
-                    {currentAdres.town}
-                  </span>
-                </p>
-                <p className={cl.formTitle}>Адрес получателя</p>
-                <p>{currentAdres.adres}</p>
-              </div>
-              <div>
-                <p className={cl.formTitle}>Название компании</p>
-                <p>{currentAdres.companyName}</p>
-                <p className={cl.formTitle}>ИНН</p>
-                <p>{currentAdres.inn}</p>
-              </div>
-            </div>
-          ) : (
-            <div className={cl.blockAdr}>нет доступных адресов</div>
-          )}
+        <div className={`${cl.row} ${cl.expansive}`}>
+          <span className={`${cl.settingsProduct} ${cl.itemPrStoreName}`}>Магазин</span>
+          <span className={`${cl.settingsProduct} ${cl.itemPrPrice}`}>Цена за единицу</span>
+          <span className={`${cl.settingsProduct} ${cl.itemPrCount}`}>Кол-во</span>
+          <span className={`${cl.settingsProduct} ${cl.itemPrDelivery}`}>Достав-ка</span>
+          <span className={`${cl.settingsProduct} ${cl.itemPrComPrice}`}>Общая сумма</span>
+          <span className={`${cl.settingsProduct} ${cl.itemPrAdditional}`}>Дополнительные услуги</span>
         </div>
-        <div className={cl.title}>Ваш заказ</div>
-        <div className={cl.row}>
-          <div style={{ display: 'flex' }}>
-            <InfoOutlinedIcon className={cl.btnInfoIcon} />
-            <p className={cl.infoSettings}>
-              Выберите дополнительные услуги, которые предоставит карго,
-              отправляющее товар в вашу страну. Нажмите на иконки справа от
-              цены, чтобы выбрать услуги.
-            </p>
-          </div>
-          <div className={`${cl.row} ${cl.expansive}`}>
-            <span className={`${cl.settingsProduct} ${cl.itemPrStoreName}`}>Магазин</span>
-            <span className={`${cl.settingsProduct} ${cl.itemPrPrice}`}>Цена за единицу</span>
-            <span className={`${cl.settingsProduct} ${cl.itemPrCount}`}>Кол-во</span>
-            <span className={`${cl.settingsProduct} ${cl.itemPrDelivery}`}>Достав-ка</span>
-            <span className={`${cl.settingsProduct} ${cl.itemPrComPrice}`}>Общая сумма</span>
-            <span className={`${cl.settingsProduct} ${cl.itemPrAdditional}`}>Дополнительные услуги</span>
-          </div>
-        </div>
-        <div className={cl.productsWrap}>{itemsProduct}</div>
       </div>
-      <BlockTotal prise={'23 000 $'} delivery={'230 $'} orderPrise={'23 000 $'}/>
-
-      <Dialog open={openAdress} onClose={handleClose}>
-        <DialogTitle>Выберите адрес</DialogTitle>
-        <List sx={{ pt: 0 }}>
-          {listUserAdres.map((i) => (
-            <UserCard
-              key={i.id}
-              user={i}
-              selectUser={handleListItemClick}
-              removeUser={removeUser}
-            />
-          ))}
-        </List>
-      </Dialog>
-      <PopupNewAdress open={openNewAdress} handleClose={handleCloseNewAdr} />
-      <PopupChangeUserData
-        open={openChangeUserData}
-        handleClose={handleCloseChangeUserData}
-      />
-    </div>
+      <div className={cl.productsWrap}>{itemsProduct}</div>
+    </>
   );
 };
 
-export default FirstStep;
-
+export const AdresBloc = (adres) => {
+  // let currentAdres = adres
+  const currentAdres = useSelector((state) => state.order.currentAdres)
+  console.log(currentAdres);
+  return (
+    <div className={cl.currentAdres}>
+      <div>
+        <p className={cl.formTitle}>ФИО</p>
+        <p>
+          {currentAdres.firstName} {currentAdres.lastName}
+        </p>
+        <div className={cl.sotialBlock}>
+          <FacebookIcon />
+          <InstagramIcon />
+          <TelegramIcon />
+          <TwitterIcon />
+        </div>
+      </div>
+      <div>
+        <p className={cl.formTitle}>Номер телефона</p>
+        <p>{currentAdres.phone}</p>
+        <p className={cl.formTitle}>E-mail</p>
+        <p>{currentAdres.email}</p>
+      </div>
+      <div>
+        <p className={cl.formTitle}>
+          Индекс <span> Страна, город</span>
+        </p>
+        <p>
+          {currentAdres.index}
+          <span>
+                    {currentAdres.country}
+            {currentAdres.town}
+                  </span>
+        </p>
+        <p className={cl.formTitle}>Адрес получателя</p>
+        <p>{currentAdres.adres}</p>
+      </div>
+      <div>
+        <p className={cl.formTitle}>Название компании</p>
+        <p>{currentAdres.companyName}</p>
+        <p className={cl.formTitle}>ИНН</p>
+        <p>{currentAdres.inn}</p>
+      </div>
+    </div>
+  );
+};
 export const DataRecipient = ({ text, order }) => {
   return (
     <div className={cl.dataRecipient}>
@@ -222,16 +271,17 @@ export const DataRecipient = ({ text, order }) => {
     </div>
   );
 };
-export const BlockTotal = ({ prise,delivery, orderPrise }) => {
+
+export const BlockTotal = ({ prise, delivery, orderPrise }) => {
   return (
     <div className={cl.blockTotal}>
       <div className={cl.container}>
         <div className={cl.left}>
-          <div  className={cl.row}>
+          <div className={cl.row}>
             <p>Стоимость товаров</p>
             <span>{prise}</span>
           </div>
-          <div  className={cl.row}>
+          <div className={cl.row}>
             <p>Стоимость доставки </p>
             <span>{delivery}</span>
           </div>

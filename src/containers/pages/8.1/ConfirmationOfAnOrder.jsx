@@ -7,16 +7,16 @@ import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
 import FirstStep  from './innerStaps/firstStep/FirstStep';
 import ThirdStep from './innerStaps/thirdStep/ThirdStep';
+import SecondStep from './innerStaps/secondStep/SecondStep';
 
 const steps = ['Данные получателя', 'Оплата товара', 'Выбор доставки','Отслеживание заказа'];
 const innerSteps = [
   <FirstStep/>,
+  <SecondStep/>,
   <ThirdStep/>,
-  'last',
   'finish'
 ]
 const ConfirmationOfAnOrder = () => {
-
   const [activeStep, setActiveStep] = useState(0);
   const [completed, setCompleted] = useState({});
 
@@ -86,6 +86,25 @@ const ConfirmationOfAnOrder = () => {
               {/*<div sx={{ mt: 2, mb: 1 }}>task {activeStep + 1}</div>*/}
                 <Box sx={{ mt: 8, mb: 1 }}>
                   {innerSteps[activeStep]}
+                  <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+                    <Button color="inherit" disabled={activeStep === 0} onClick={handleBack} sx={{ mr: 1 }}>
+                      Back
+                    </Button>
+                    <Box sx={{ flex: '1 1 auto' }} />
+                    <Button onClick={handleNext} sx={{ mr: 1 }}>
+                      Next
+                    </Button>
+                    {activeStep !== steps.length &&
+                    (completed[activeStep] ? (
+                      <Typography variant="caption" sx={{ display: 'inline-block' }}>
+                        Step {activeStep + 1} already completed
+                      </Typography>
+                    ) : (
+                      <Button onClick={handleComplete}>
+                        {completedSteps() === totalSteps() - 1 ? 'Finish' : 'Complete Step'}
+                      </Button>
+                    ))}
+                  </Box>
                 </Box>
             </>
           )}

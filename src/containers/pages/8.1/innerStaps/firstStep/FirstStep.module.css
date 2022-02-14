@@ -1,5 +1,6 @@
 .bg{
     background: #F5F5F5;
+    padding-bottom: 40px;
 }
 .bg>*{
     font-family: Roboto;
@@ -249,15 +250,44 @@
 .blockTotal{
     height: 61px;
     background: #C4C4C4;
+    margin-bottom: 22px;
 }
 .blockTotal .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: inherit;
 }
 .left{
     display: flex;
-    width: 380px;
+    width: 480px;
+    font-weight: normal;
+    justify-content: space-between;
+}
+.left .row{
+    align-items: center;
+}
+.left span{
+    font-weight: normal;
+    font-size: 24px;
+}
+.left p{
+    font-size: 14px;
+    margin-right: 8px;
+}
+.right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.right span{
+    font-weight: 500;
+    font-size: 36px;
+}
+.right p{
+    font-weight: 500;
+    font-size: 16px;
+    margin-right: 8px;
 }
 .wrBtnAdditional{
     justify-content: space-around;
@@ -266,4 +296,10 @@
     width: 40px;
     border: none;
     background: transparent;
+}
+.nexstStapWr{
+    display: flex;
+    margin-left: auto;
+    width: max-content;
+    margin-bottom: 17px
 }

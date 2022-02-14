@@ -122,7 +122,7 @@ const theme = createTheme({
 });
 
 ReactDOM.render(
-  // <React.StrictMode>
+  <React.StrictMode>
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <Provider store={store}>
@@ -130,6 +130,6 @@ ReactDOM.render(
         </Provider>
       </ThemeProvider>
     </StyledEngineProvider>
-  // </React.StrictMode>
+  </React.StrictMode>
   ,document.getElementById('root'),
 );

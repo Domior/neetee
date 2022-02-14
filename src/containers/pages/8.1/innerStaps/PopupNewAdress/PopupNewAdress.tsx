@@ -15,7 +15,7 @@ import TextField from '@mui/material/TextField';
 import { InputValidate } from '../../../../../components/InputValidate/Input';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import cl from './PopupNewAdress.module.css';
-import { setNewAdresAC } from '../../../../../bll/orderReducer';
+import { setCurrentAdresAC, setNewAdresAC } from '../../../../../bll/orderReducer';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import TelegramIcon from '@mui/icons-material/Telegram';
@@ -37,7 +37,7 @@ function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
 
   return (
-    <div role="tabpanel" hidden={value !== index} id={`simple-tabpanel-${index}`}
+    <div role='tabpanel' hidden={value !== index} id={`simple-tabpanel-${index}`}
          aria-labelledby={`simple-tab-${index}`} {...other} >
       {value === index && (
         <Box sx={{ p: 3 }}>
@@ -68,17 +68,22 @@ export const PopupNewAdress = ({ open, handleClose }: propsType) => {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+  const selected = () => {
 
+  };
   return (
-    <Dialog open={open} className={cl.popupWrap} maxWidth="lg" onClose={handleClose}
+    <Dialog open={open} className={cl.popupWrap} maxWidth='lg' onClose={handleClose}
       // fullScreen={fullScreen}
     >
       <Box sx={{ width: '100%' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <Tabs value={value} onChange={handleChange} centered>
+          <Tabs value={value} onChange={handleChange} centered aria-label="tabs example"  textColor="inherit" classes={{ indicator: cl.tabTitleSelected }}>
             {/*aria-label="disabled tabs example"*/}
-            <Tab label="Физическим лицам" {...a11yProps(0)} />
-            <Tab label="Юридическим лицам"{...a11yProps(1)} />
+            {/*<Tab label="Физическим лицам" {...a11yProps(0)} className={`${ cl.tabTitle } .selected &&${ cl.tabTitleSelected }`}/>*/}
+            <Tab label='Физическим лицам' {...a11yProps(0)}
+                 className={`${cl.tabTitle}`} />
+            <Tab label='Юридическим лицам'{...a11yProps(1)} className={cl.tabTitle} />
+
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
@@ -92,11 +97,12 @@ export const PopupNewAdress = ({ open, handleClose }: propsType) => {
   );
 };
 
+
 type propsFormUserData = {
   userType: string
-  data?:boolean
+  data?: boolean
 }
-export const FormUserData = ({ userType,...props }: propsFormUserData) => {
+export const FormUserData = ({ userType, ...props }: propsFormUserData) => {
   const dispatch = useDispatch();
   const listUserAdres = useSelector<RootStateType, any>(state => state.order.listUserAdres);
   const currentAdres = useSelector<RootStateType, any>(state => state.order.currentAdres);
@@ -141,18 +147,20 @@ export const FormUserData = ({ userType,...props }: propsFormUserData) => {
       || town === '' || companyName === '' || adres === '' || inn === '')) {
       setError('All fields are required');
     } else {
-      let id = new Date().getHours();
+      let id = new Date().getDate();
       let payload = { id, phone, firstName, email, adres, index, country, town, companyName, inn };
       dispatch(setNewAdresAC(payload));
+      dispatch(setCurrentAdresAC(payload));
     }
     if (userType === 'legalEntities' && (phone === '' || firstName === ''
       || email === '' || index === '' || country === ''
       || town === '' || adres === '')) {
       setError('All fields are required');
     } else {
-      let id = new Date().getHours();
+      let id = new Date().getDate();
       let payload = { id, phone, firstName, email, adres, index, country, town, companyName, inn };
       dispatch(setNewAdresAC(payload));
+      dispatch(setCurrentAdresAC(payload));
     }
   };
   const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -164,46 +172,48 @@ export const FormUserData = ({ userType,...props }: propsFormUserData) => {
   const removeUser = (u: any) => {
     console.log(u);
   };
-  useEffect(()=>{
+  useEffect(() => {
     // debugger
-    if(props.data){
+    if (props.data) {
       //currentAdres
-      setFirstName(currentAdres.firstName)
-      setPhone(currentAdres.phone)
-      setEmail(currentAdres.email)
-      setIndex(currentAdres.index)
-      setAdres(currentAdres.adres)
-      setTown(currentAdres.town)
-      setCompanyName(currentAdres.companyName)
-      setCountry(currentAdres.country)
-      setInn(currentAdres.inn)
+      setFirstName(currentAdres.firstName);
+      setPhone(currentAdres.phone);
+      setEmail(currentAdres.email);
+      setIndex(currentAdres.index);
+      setAdres(currentAdres.adres);
+      setTown(currentAdres.town);
+      setCompanyName(currentAdres.companyName);
+      setCountry(currentAdres.country);
+      setInn(currentAdres.inn);
     }
-  },[props.data])
-  console.log(firstName,phone,email,index,adres);
+  }, [props.data]);
+  console.log(firstName, phone, email, index, adres);
+  console.log('userType', userType == 'individuals', typeof (userType));
   return (
     <form style={{ padding: '3% 10%' }}>
-      {userType === 'legalEntities' && <div className={cl.row}>
+      {userType != 'individuals' &&
+      <div className={cl.row}>
         <InputValidate type={'string'} placeholder={'ИНН*'} label={'ИНН*'} name={'inn'}
-                       min={5} max={5} typeV={'number'} addInputValue={setNewInputsValue} oldValue={ inn } />
+                       min={5} max={5} typeV={'number'} addInputValue={setNewInputsValue} oldValue={inn} />
         <InputValidate type={'string'} placeholder={'Название компании*'} label={'Название компании*'}
                        name={'companyName'}
-                       min={4} max={12} typeV={'string'} addInputValue={setNewInputsValue} oldValue={ companyName }/>
+                       min={4} max={12} typeV={'string'} addInputValue={setNewInputsValue} oldValue={companyName} />
       </div>}
       <InputValidate type={'string'} placeholder={'ФИО*'} label={'ФИО*'} name={'firstName'}
-                     min={10} max={30} typeV={'string'} addInputValue={setNewInputsValue} oldValue={firstName}/>
+                     min={10} max={30} typeV={'string'} addInputValue={setNewInputsValue} oldValue={firstName} />
       <div className={cl.row}>
         <InputValidate type={'string'} placeholder={'Номер телефона*'} label={'Номер телефона*'} name={'phone'}
                        min={13} max={16}
-                       typeV={'phone'} addInputValue={setNewInputsValue} oldValue={phone}/>
+                       typeV={'phone'} addInputValue={setNewInputsValue} oldValue={phone} />
         <InputValidate type={'string'} placeholder={'E-mail*'} label={'E-mail*'} name={'email'} min={5} max={20}
                        typeV={'string'}
-                       addInputValue={setNewInputsValue} oldValue={email}/>
+                       addInputValue={setNewInputsValue} oldValue={email} />
       </div>
       <div className={cl.row}>
         <div className={cl.column}>
           <FormControl className={cl.select}>
-            <InputLabel id="demo-simple-select-label">Страна*</InputLabel>
-            <Select labelId="demo-simple-select-label" id="demo-simple-select" value={country} label="Страна*"
+            <InputLabel id='demo-simple-select-label'>Страна*</InputLabel>
+            <Select labelId='demo-simple-select-label' id='demo-simple-select' value={country} label='Страна*'
                     onChange={handleChangeCountry}>
               <MenuItem value={'Россия'}>Россия</MenuItem>
               <MenuItem value={'Twenty'}>Twenty</MenuItem>
@@ -211,8 +221,8 @@ export const FormUserData = ({ userType,...props }: propsFormUserData) => {
             </Select>
           </FormControl>
           <FormControl className={cl.select}>
-            <InputLabel id="demo-simple-select-label">Город*</InputLabel>
-            <Select labelId="demo-simple-select-label" id="demo-simple-select" value={town} label="Город*"
+            <InputLabel id='demo-simple-select-label'>Город*</InputLabel>
+            <Select labelId='demo-simple-select-label' id='demo-simple-select' value={town} label='Город*'
                     onChange={handleChangeTown}>
               <MenuItem value={'Москва'}>Москва</MenuItem>
               <MenuItem value={'Twenty'}>Twenty</MenuItem>
@@ -225,7 +235,7 @@ export const FormUserData = ({ userType,...props }: propsFormUserData) => {
           </div>
         </div>
         <div className={cl.column}>
-          <TextField id="standard-multiline-static" label="Адрес получателя*" multiline value={adres} rows={8}
+          <TextField id='standard-multiline-static' label='Адрес получателя*' multiline value={adres} rows={8}
             // min={10} max={30} rows={4}
                      className={cl.multiField} onChange={handleChangeAdres}
           />
@@ -234,7 +244,7 @@ export const FormUserData = ({ userType,...props }: propsFormUserData) => {
       {error && <p>{error}</p>}
       <div className={cl.row}>
         <FormControlLabel
-          label="Привязать аккаунт другого пользователя"
+          label='Привязать аккаунт другого пользователя'
           control={
             <Checkbox checked={checked} onChange={handleChange1} style={{ color: '#C4C4C4' }}
               // indeterminate={checked[0] !== checked[1]} color='info'
@@ -251,7 +261,7 @@ export const FormUserData = ({ userType,...props }: propsFormUserData) => {
               <InfoOutlinedIcon style={{ marginLeft: '10px', color: '#FF9900' }} />
             </span>
           </div>
-          <input type="text" placeholder="Никнейм" />
+          <input type='text' placeholder='Никнейм' />
         </div>
       </div>
       <div>
@@ -261,8 +271,8 @@ export const FormUserData = ({ userType,...props }: propsFormUserData) => {
           <button className={`${cl.sotialBtn} ${cl.tg}`}><TelegramIcon />Telegram</button>
           <button className={`${cl.sotialBtn} ${cl.ws}`}><WhatsappSharpIcon />Whatsapp</button>
           <FormControl className={cl.sotialBtn}>
-            <InputLabel id="demo-simple-select-label">Другое</InputLabel>
-            <Select labelId="demo-simple-select-label" id="demo-simple-select" value={other} label="Другое"
+            <InputLabel id='demo-simple-select-label'>Другое</InputLabel>
+            <Select labelId='demo-simple-select-label' id='demo-simple-select' value={other} label='Другое'
                     onChange={handleChangeOther}>
               <MenuItem value={'first'}>first</MenuItem>
               <MenuItem value={'Twenty'}>Twenty</MenuItem>
@@ -279,7 +289,7 @@ export const FormUserData = ({ userType,...props }: propsFormUserData) => {
         </button>
       </div>
       <UserCard user={listUserAdres[0]} selectUser={selectUser} removeUser={removeUser} />
-      <button className={cl.loadMore}><span>Загрузить еще</span> <DownloadForOfflineOutlinedIcon/></button>
+      <button className={cl.loadMore}><span>Загрузить еще</span> <DownloadForOfflineOutlinedIcon /></button>
     </form>
   );
 };

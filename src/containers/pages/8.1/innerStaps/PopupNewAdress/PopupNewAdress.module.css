@@ -1,6 +1,13 @@
 .popupWrap{
     /*width: 813px;*/
 }
+.tabTitle{
+    font-weight: bold;
+    color: #000;
+}
+.tabTitleSelected{
+    background-color: #4270AD;
+}
 .row{
     display: flex;
     margin-bottom: 10px;
