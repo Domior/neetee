@@ -12,11 +12,13 @@ type propsType = {
 const UserCard = ({ user, selectUser, removeUser }: propsType) => {
 
   return (
-    <ListItem key={user.id} className={cl.userWrap}>
+    <ListItem key={user.id} className={cl.userWrap} >
       <ListItemAvatar>
         <Avatar>
-          {/*<img src={user.imgUrl} alt='' />*/}
-          <img src={avatarDefault} alt="avatarDefault" />
+          {user.imgUrl?
+            <img src={user.imgUrl} alt='' />
+           : <img src={avatarDefault} alt="avatarDefault" />
+          }
         </Avatar>
       </ListItemAvatar>
       <div>

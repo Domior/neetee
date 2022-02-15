@@ -59,9 +59,10 @@ function a11yProps(index: number) {
 type propsType = {
   open: boolean
   handleClose: () => void
+  setNewAdres:(payload:any)=>void
 }
 
-export const PopupNewAdress = ({ open, handleClose }: propsType) => {
+export const PopupNewAdress = ({ open, handleClose,...props }: propsType) => {
   // const dispatch = useDispatch();
   // const listUserAdres = useSelector<RootStateType,any>(state => state.order.listUserAdres);
   const [value, setValue] = useState(0);
@@ -87,10 +88,10 @@ export const PopupNewAdress = ({ open, handleClose }: propsType) => {
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-          <FormUserData userType={'individuals'} />
+          <FormUserData userType={'individuals'} setData={props.setNewAdres}/>
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <FormUserData userType={'legalEntities'} />
+          <FormUserData userType={'legalEntities'} setData={props.setNewAdres}/>
         </TabPanel>
       </Box>
     </Dialog>
@@ -101,6 +102,7 @@ export const PopupNewAdress = ({ open, handleClose }: propsType) => {
 type propsFormUserData = {
   userType: string
   data?: boolean
+  setData:(payload:any)=>void
 }
 export const FormUserData = ({ userType, ...props }: propsFormUserData) => {
   const dispatch = useDispatch();
@@ -109,7 +111,7 @@ export const FormUserData = ({ userType, ...props }: propsFormUserData) => {
   const [phone, setPhone] = useState('');
   const [error, setError] = useState('');
   const [firstName, setFirstName] = useState('');
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(false);
   const [email, setEmail] = useState('');
   const [index, setIndex] = useState('');
   const [inn, setInn] = useState('');
@@ -147,20 +149,24 @@ export const FormUserData = ({ userType, ...props }: propsFormUserData) => {
       || town === '' || companyName === '' || adres === '' || inn === '')) {
       setError('All fields are required');
     } else {
-      let id = new Date().getDate();
-      let payload = { id, phone, firstName, email, adres, index, country, town, companyName, inn };
-      dispatch(setNewAdresAC(payload));
-      dispatch(setCurrentAdresAC(payload));
+      let id = new Date().getDate().toString()
+      let payload = { phone, firstName, email, adres, index, country, town, companyName, inn };
+      // let payload = { id, phone, firstName, email, adres, index, country, town, companyName, inn };
+      // dispatch(setNewAdresAC(payload));
+      // dispatch(setCurrentAdresAC(payload));
+      props.setData(payload)
     }
     if (userType === 'legalEntities' && (phone === '' || firstName === ''
       || email === '' || index === '' || country === ''
       || town === '' || adres === '')) {
       setError('All fields are required');
     } else {
-      let id = new Date().getDate();
-      let payload = { id, phone, firstName, email, adres, index, country, town, companyName, inn };
-      dispatch(setNewAdresAC(payload));
-      dispatch(setCurrentAdresAC(payload));
+      let id = new Date().getDate().toString()
+      let payload = { phone, firstName, email, adres, index, country, town, companyName, inn };
+      // let payload = { id, phone, firstName, email, adres, index, country, town, companyName, inn };
+      // dispatch(setNewAdresAC(payload));
+      // dispatch(setCurrentAdresAC(payload));
+      props.setData(payload)
     }
   };
   const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {

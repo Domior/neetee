@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import cl from './FirstStep.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Dialog, DialogTitle, List } from '@mui/material';
-import { setCurrentAdresAC } from '../../../../../bll/orderReducer';
+import { Button, Dialog, DialogContent, DialogTitle, List } from '@mui/material';
+import { changeAdresAC, setCurrentAdresAC, setNewAdresAC } from '../../../../../bll/orderReducer';
 import { PopupNewAdress } from '../PopupNewAdress/PopupNewAdress';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import TelegramIcon from '@mui/icons-material/Telegram';
@@ -19,6 +19,7 @@ import box from './../../../../../assets/box.png';
 import test from './../../../../../assets/test.png';
 import delivery from './../../../../../assets/delivery.png';
 import { RootStateType } from '../../../../../bll/store';
+import logoBlue from '@static/logo-blue.svg';
 
 const FirstStep = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,8 @@ const FirstStep = () => {
   const [openNewAdress, setOpenNewAdress] = useState(false);
   const [openChangeUserData, setOpenChangeUserData] = useState(false);
   const [currentAdres, setCurrentAdres] = useState(listUserAdres[0]);
+  // debugger
+  // const [currentAdres, setCurrentAdres] = useState(null);
   console.log('currentAdresFromState', currentAdresFromState);
 
   const handleOpen = () => {
@@ -51,10 +54,25 @@ const FirstStep = () => {
     setOpenChangeUserData(false);
   };
   const handleListItemClick = (i) => {
-    console.log(i);
+    console.log('handleListItemClick',i);
     dispatch(setCurrentAdresAC(i));
     handleClose();
   };
+  const ChangeUserData = (payload) => {
+    console.log('ChangeUserData', payload);
+    debugger
+    dispatch(changeAdresAC(payload));
+    dispatch(setCurrentAdresAC(payload));
+    handleCloseChangeUserData()
+  }
+  const setNewUserData = (payload) => {
+    console.log('setNewUserData', payload);
+    let updatedPayload={id:'15',...payload}
+    console.log(updatedPayload);
+    // dispatch(setNewAdresAC(updatedPayload));
+    // dispatch(setCurrentAdresAC(updatedPayload));
+    handleCloseNewAdr()
+  }
   const removeUser = (i) => {
     console.log(i);
     // dispatch(setCurrentAdresAC(i));
@@ -91,13 +109,15 @@ const FirstStep = () => {
           </div>
         </div>
         <div>
-          {currentAdres ? (
+          {currentAdres.id ? (
             <AdresBloc adres={currentAdres} />
+            // <AdresBloc />
           ) : (
             <div className={cl.blockAdr}>нет доступных адресов</div>
           )}
         </div>
         <div className={cl.title}>Ваш заказ</div>
+
         {/*<div className={cl.row}>*/}
         {/*  <div style={{ display: 'flex' }}>*/}
         {/*    <InfoOutlinedIcon className={cl.btnInfoIcon} />*/}
@@ -117,6 +137,7 @@ const FirstStep = () => {
         {/*  </div>*/}
         {/*</div>*/}
         {/*<div className={cl.productsWrap}>{itemsProduct}</div>*/}
+
         <ListProduct listSelectedProduct={listSelectedProduct} />
       </div>
       <BlockTotal prise={'23 000 $'} delivery={'230 $'} orderPrise={'23 000 $'} />
@@ -131,24 +152,25 @@ const FirstStep = () => {
         </div>
       </div>
 
+
       <Dialog open={openAdress} onClose={handleClose}>
-        <DialogTitle>Выберите адрес</DialogTitle>
-        <List sx={{ pt: 0 }}>
-          {listUserAdres.map((i) => (
-            <UserCard
-              key={i.id}
-              user={i}
-              selectUser={handleListItemClick}
-              removeUser={removeUser}
-            />
-          ))}
-        </List>
+        <DialogTitle style={{ textAlign: 'center' }}>Выберите адрес</DialogTitle>
+        <DialogContent dividers>
+          <List sx={{ pt: 0 }}>
+            {listUserAdres.map((i) => (
+              <UserCard
+                key={i.id}
+                user={i}
+                selectUser={handleListItemClick}
+                removeUser={removeUser}
+              />
+            ))}
+          </List>
+        </DialogContent>
       </Dialog>
-      <PopupNewAdress open={openNewAdress} handleClose={handleCloseNewAdr} />
-      <PopupChangeUserData
-        open={openChangeUserData}
-        handleClose={handleCloseChangeUserData}
-      />
+      <PopupNewAdress open={openNewAdress} handleClose={handleCloseNewAdr} setNewAdres={setNewUserData}/>
+      <PopupChangeUserData open={openChangeUserData}
+        handleClose={handleCloseChangeUserData} changeUserAdres={ChangeUserData} />
     </div>
   );
 };
@@ -156,8 +178,8 @@ const FirstStep = () => {
 export default FirstStep;
 
 export const ListProduct = (listSelectedProduct) => {
-  console.log(listSelectedProduct.listSelectedProduct);
-  console.log(typeof (listSelectedProduct));
+  // console.log(listSelectedProduct.listSelectedProduct);
+  // console.log(typeof (listSelectedProduct));
   // debugger
   const itemsProduct = listSelectedProduct.listSelectedProduct.map((p, i) => {
     return (
@@ -177,9 +199,9 @@ export const ListProduct = (listSelectedProduct) => {
           <div className={`${cl.settingsProduct} ${cl.itemPrComPrice}`}>{p.totalPr}</div>
           <div className={`${cl.settingsProduct} ${cl.itemPrAdditional} ${cl.wrBtnAdditional}`}>
             <button><img src={message} alt='message' /></button>
-            <button><img src={foto} alt='message' /></button>
-            <button><img src={save} alt='message' /></button>
-            <button><img src={box} alt='message' /></button>
+            <button><img src={foto} alt='foto' /></button>
+            <button><img src={save} alt='save' /></button>
+            <button><img src={box} alt='box' /></button>
             <button><img src={test} alt='test' /></button>
             <button><img src={delivery} alt='delivery' /></button>
           </div>
@@ -214,9 +236,10 @@ export const ListProduct = (listSelectedProduct) => {
 };
 
 export const AdresBloc = (adres) => {
-  // let currentAdres = adres
-  const currentAdres = useSelector((state) => state.order.currentAdres)
-  console.log(currentAdres);
+// export const AdresBloc = () => {
+  let currentAdres = adres.adres
+  // const currentAdres = useSelector((state) => state.order.currentAdres);
+  console.log('!!currentAdres AdresBloc', currentAdres);
   return (
     <div className={cl.currentAdres}>
       <div>

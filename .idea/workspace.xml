@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="add 8.2...">
-      <change afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/secondStep/SecondStep.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/secondStep/SecondStep.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/відповідь.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bll/orderReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/orderReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bll/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserCard/UserCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserCard/UserCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupChangeUserData/PopupChangeUserData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupChangeUserData/PopupChangeUserData.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +99,8 @@
       <workItem from="1644494838330" duration="892000" />
       <workItem from="1644589713461" duration="31966000" />
       <workItem from="1644656849989" duration="19077000" />
-      <workItem from="1644781518300" duration="10437000" />
+      <workItem from="1644781518300" duration="16051000" />
+      <workItem from="1644845839726" duration="12877000" />
     </task>
     <task id="LOCAL-00001" summary="add 8.1">
       <created>1644398846734</created>
@@ -153,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644620600686</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add 8.2...">
+      <created>1644823079133</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1644823079133</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,24 +222,47 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
-          <line>80</line>
+          <line>98</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
-          <line>27</line>
+          <line>28</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
-          <line>63</line>
+          <line>81</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
-          <line>94</line>
+          <line>241</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
+          <line>111</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="32" />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
+          <line>57</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx</url>
+          <line>145</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
+          <line>65</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
