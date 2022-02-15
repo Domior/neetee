@@ -1,7 +1,21 @@
+export type itemUserAdresType={
+  id:string
+  imgUrl?:string
+  phone:string
+  firstName:string
+  lastName?:string
+  email:string
+  adres:string
+  index:string
+  country:string
+  town:string
+  companyName?:string
+  inn?:string
+}
 const userAdres = [
   {
     id: '1',
-    imgUrl: './../someLink',
+    // imgUrl: './../someLink',
     phone: '+ 380986473192',
     firstName: 'Андрей',
     lastName: 'Подольський',
@@ -15,7 +29,7 @@ const userAdres = [
   },
   {
     id: '2',
-    imgUrl: './../someLink',
+    // imgUrl: './../someLink',
     phone: '+ 3809800000',
     firstName: 'Андрей',
     lastName: 'Подольський',
@@ -123,35 +137,41 @@ const listSelectedProductDefault = [
 ]
 const initialState = {
   listUserAdres: userAdres,
-  currentAdres: {},
+  currentAdres: {}as itemUserAdresType,
   listSelectedProduct:listSelectedProductDefault,
 };
 
 export const orderReducer = (state: any = initialState, action: actionType) => {
   switch (action.type) {
     case 'ORDER/SET-CURRENT-ADRES': {
-      console.log('currentAdres', action.payload );
       console.log('currentAdres', state.currentAdres );
+      console.log('currentAdres', state.listUserAdres[0] );
       console.log('currentAdres', action.payload );
       return { ...state, currentAdres: action.payload };
     }
     case 'ORDER/SET-NEW-ADRES':
       console.log(action.payload);
       return { ...state, listUserAdres: [action.payload,...state.listUserAdres] };
-    // case 'ORDER/CHANGE-ADRES':
-    //     return {...state, listUserAdres: }
+    case 'ORDER/CHANGE-ADRES': {
+      return { ...state, listUserAdres:[state.listUserAdres.map((itemAdr:itemUserAdresType)=>{
+       return  itemAdr.id !== action.payload.id? itemAdr : action.payload
+        })] };
+    }
     default:
       return state;
   }
 };
 // actions
-type actionType = setCurrentAdresACType|setNewAdresACType
+type actionType = setCurrentAdresACType|setNewAdresACType|changeAdresACType
 type setCurrentAdresACType = ReturnType<typeof setCurrentAdresAC>
 type setNewAdresACType = ReturnType<typeof setNewAdresAC>
-export const setCurrentAdresAC = (payload:any) => ({ type: 'ORDER/SET-CURRENT-ADRES', payload } as const);
-// export const changeUserAdresAC = (payload) => {type: 'ORDER/CHANGE-ADRES', payload}
-export const setNewAdresAC = (payload:any) => ({ type: 'ORDER/SET-NEW-ADRES', payload } as const);
-// export const setNewAdresAC = (payload) =>({type: 'setNewAdresAC', payload}as const)
+type changeAdresACType = ReturnType<typeof changeAdresAC>
+export const setCurrentAdresAC = (payload:itemUserAdresType) => ({ type: 'ORDER/SET-CURRENT-ADRES', payload } as const);
+export const changeAdresAC = (payload:itemUserAdresType) => ({ type: 'ORDER/CHANGE-ADRES', payload } as const);
+export const setNewAdresAC = (payload:itemUserAdresType) => ({ type: 'ORDER/SET-NEW-ADRES', payload } as const);
+
+
+
 // thunks
 
 

@@ -46,3 +46,17 @@ body {
 .MuiTouchRipple-root {
     display: none !important;
 }
+
+
+.css-jk76l6-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed{
+    color: #fff;
+    background: #79B256;
+    padding: 2px;
+    border-radius: 15px;
+}
+.css-jk76l6-MuiSvgIcon-root-MuiStepIcon-root.Mui-active{
+    color: #fff;
+    background: #79B256;
+    padding: 2px;
+    border-radius: 15px;
+}

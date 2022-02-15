@@ -13,16 +13,30 @@ const UserCard = ({ user, selectUser, removeUser }: propsType) => {
 
   return (
     <ListItem key={user.id} className={cl.userWrap}>
-      <ListItemAvatar>
+      <ListItemAvatar className={cl.desctopAvatar}>
         <Avatar>
-          {/*<img src={user.imgUrl} alt='' />*/}
-          <img src={avatarDefault} alt="avatarDefault" />
+          {user.imgUrl ?
+            <img src={user.imgUrl} alt='' />
+            : <img src={avatarDefault} alt='avatarDefault' />
+          }
         </Avatar>
       </ListItemAvatar>
       <div>
-        {user.companyName && <p>{user.companyName}</p>}
-        <p className={cl.UserName}>{user.firstName}{user.lastName}</p>
-        <p className={cl.phone}>{user.phone}</p>
+        <div className={cl.size}>
+          <ListItemAvatar className={cl.mobileAvatar}>
+            <Avatar>
+              {user.imgUrl ?
+                <img src={user.imgUrl} alt='avatar' />
+                : <img src={avatarDefault} alt='avatarDefault' />
+              }
+            </Avatar>
+          </ListItemAvatar>
+          <div>
+            {user.companyName && <p>{user.companyName}</p>}
+            <p className={cl.UserName}>{user.firstName} {user.lastName}</p>
+            <p className={cl.phone}>{user.phone}</p>
+          </div>
+        </div>
         <p className={cl.adres}>{user.adres}</p>
       </div>
       <div className={cl.btnWrap}>

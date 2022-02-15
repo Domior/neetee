@@ -30,9 +30,11 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 30px 0 0;
+    margin: 15px 0 0;
 }
+
 .btn{
+    margin-top: 15px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -50,6 +52,30 @@
     color: #000000;
     border: 2px solid #666666;
 }
-.btn:hover,.btn:active{
+.btn:hover,.btn.active{
     border-color: #79B256;
+    position: relative;
+}
+.btn.active span{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background: #79B256 url("./../../../../../assets/activeIcon.png");
+    position: absolute;
+    right: -6%;
+    top: -15%;
+}
+
+@media screen and (max-width: 486px) {
+    .btn.internalAccount {
+        width: 100%;
+    }
+    .btn.internalAccount.active span {
+        right: -2%;
+        /*top: -15%;*/
+    }
+    .btn{
+        width: 48%;
+    }
 }

@@ -4,14 +4,16 @@ import { Box, Dialog, } from '@mui/material';
 import cl from './PopupChangeUserData.module.css';
 import { RootStateType } from '../../../../../bll/store';
 import { FormUserData } from '../PopupNewAdress/PopupNewAdress';
+import { itemUserAdresType } from '../../../../../bll/orderReducer';
 
 
 type propsType = {
   open: boolean
   handleClose:()=>void
+  changeUserAdres:(payload:itemUserAdresType)=>void
 }
 
-export const PopupChangeUserData = ({ open, handleClose }: propsType) => {
+export const PopupChangeUserData = ({ open, handleClose,...props }: propsType) => {
   const dispatch = useDispatch();
   const currentAdres = useSelector<RootStateType, any>(state => state.order.currentAdres);
   // const [value, setValue] = useState(0);
@@ -25,7 +27,7 @@ export const PopupChangeUserData = ({ open, handleClose }: propsType) => {
       // fullScreen={fullScreen}
     >
       <Box sx={{ width: '100%' }}>
-        <FormUserData userType={userType} data={true}/>
+        <FormUserData userType={userType} data={true} setData={props.changeUserAdres}/>
       </Box>
     </Dialog>
   );

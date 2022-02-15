@@ -1,35 +1,37 @@
-.bg{
+.bg {
     background: #F5F5F5;
     padding-bottom: 40px;
 }
-.bg>*{
+
+.bg > * {
     font-family: Roboto;
 }
-.dataRecipient{
+
+.dataRecipient {
     width: 100%;
     background: #C4C4C4;
     display: flex;
     justify-content: space-between;
     padding: 2.5% 5%;
 }
-.dataRecipientDesc{
-    font-family: Roboto;
+
+.dataRecipientDesc {
     font-size: 20px;
     font-weight: 500;
     line-height: 23px;
     letter-spacing: 0em;
     text-align: left;
 }
-.orderDesc{
-    font-family: Roboto;
+
+.orderDesc {
     font-size: 16px;
     font-weight: 500;
     line-height: 19px;
     letter-spacing: 0em;
     text-align: left;
 }
-.order{
-    font-family: Roboto;
+
+.order {
     font-size: 18px;
     font-style: normal;
     font-weight: 900;
@@ -38,17 +40,20 @@
     text-align: left;
     margin-left: 10px;
 }
-.container{
+
+.container {
     width: 90%;
     margin: 0 auto;
 }
-.btnWrap{
+
+.btnWrap {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 30px 0;
 }
-.btn{
+
+.btn {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -67,59 +72,68 @@
     color: #FFFFFF;
     border: none;
 }
-.btnGreen{
+
+.btnGreen {
     background: #79B256;
 }
-.btnOrange{
+
+.btnOrange {
     background: #FF9900;
 }
-.btnInfo{
+
+.btnInfo {
     width: 571px;
-    font-family: Roboto;
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
     color: #353535;
 }
-.btnInfoIcon{
+
+.btnInfoIcon {
     font-size: 24px;
     color: #FF9900;
     margin-bottom: -5px;
     margin-right: 6px;
 }
-.rowBtnInfo{
+
+.rowBtnInfo {
     display: flex;
 }
-.row{
-     display: flex;
-    justify-content: space-between;
- }
 
-.formTitle{
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.formTitle {
     font-weight: normal;
     font-size: 12px;
     line-height: 14px;
     color: #666666;
     margin-bottom: 10px;
 }
-.formInfo{
+
+.formInfo {
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
     color: #000000;
 }
-.formInfoInnerText{
+
+.formInfoInnerText {
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
     margin-bottom: 13px;
 }
-.blockAdr{
+
+.blockAdr {
     background: #ffffff;
     border-radius: 5px;
     padding: 17px 45px 20px;
 }
-.currentAdres{
+
+.currentAdres {
     /*display: flex;*/
     background: #ffffff;
     border-radius: 5px;
@@ -129,11 +143,11 @@
     display: inline-flex;
     width: 100%;
 }
-.title{
+
+.title {
     height: 44px;
     background: #C4C4C4;
     border-radius: 5px;
-    font-family: Roboto;
     font-weight: 500;
     font-size: 20px;
     line-height: 23px;
@@ -142,26 +156,31 @@
     margin-top: 30px;
     margin-bottom: 20px;
 }
-.sotialBlock{
+
+.sotialBlock {
     display: flex;
     justify-content: space-between;
     margin-top: 24px;
 }
-.sotialBlock>svg{
-    color:#666666;
+
+.sotialBlock > svg {
+    color: #666666;
     font-size: 24px;
 }
-.infoSettings{
+
+.infoSettings {
     width: 391px;
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
     color: #353535;
 }
-.settingsProductWrap{
+
+.settingsProductWrap {
     border-bottom: 1px solid #C4C4C4;
 }
-.settingsProduct{
+
+.settingsProduct {
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
@@ -171,12 +190,14 @@
     align-items: center;
     justify-content: center
 }
-.expansive{
+
+.expansive {
     width: 730px;
     border-bottom: 2px solid #C4C4C4;
     margin-right: 40px;
 }
-.productsWrap{
+
+.productsWrap {
     background: #ffffff;
     padding: 12px;
     border-radius: 5px;
@@ -185,32 +206,47 @@
     height: 438px;
     overflow-y: auto;
 }
-.prRow{
+
+.prRow {
     align-items: center;
     width: 730px;
     margin-right: 20px;
     margin-left: auto;
 }
-.itemProduct{
+
+.itemProduct {
     display: flex;
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid #C4C4C4;
     position: relative;
 }
-.itemProductDeck{
+
+.itemProductDeck {
     width: 306px;
     margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.itemProductColor{
+
+.itemProductColor {
     font-weight: bold;
-    margin-top: 30px;
- }
-.itemProduct img{
+    margin-top: 10px;
+}
+
+.imgP {
+    width: 100px;
     border-radius: 5px;
     margin-right: 15px;
+    position: relative;
 }
-.i{
+
+.imgP img {
+    width: 100%;
+}
+
+.i {
     background: #F9CB38;
     width: 25px;
     height: 25px;
@@ -224,82 +260,249 @@
     position: absolute;
     left: -11px;
     top: -11px;
+    z-index: 5;
 }
-.itemPrStoreName{
+
+.itemPrPrice, .itemPrCount, .itemPrStoreName {
     width: 130px;
 }
-.itemPrPrice{
-    width: 130px;
-}
-.itemPrCount{
-    width: 130px;
-}
-.itemPrDelivery{
+
+.itemPrDelivery {
     width: 90px;
 }
-.itemPrComPrice{
+
+.itemPrComPrice {
     width: 110px;
 }
-.itemPrAdditional{
+
+.itemPrAdditional {
     display: flex;
     width: 300px;
 }
-.itemPrAdditional img{
+
+.itemPrAdditional img {
     margin: 0;
 }
-.blockTotal{
+
+.blockTotal {
     height: 61px;
     background: #C4C4C4;
     margin-bottom: 22px;
 }
-.blockTotal .container{
+
+.blockTotal .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: inherit;
 }
-.left{
+
+.left {
     display: flex;
     width: 480px;
     font-weight: normal;
     justify-content: space-between;
 }
-.left .row{
+
+.left .row {
     align-items: center;
 }
-.left span{
+
+.left span {
     font-weight: normal;
     font-size: 24px;
 }
-.left p{
+
+.left p {
     font-size: 14px;
     margin-right: 8px;
 }
-.right{
+
+.right {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.right span{
+
+.right span {
     font-weight: 500;
     font-size: 36px;
 }
-.right p{
+
+.right p {
     font-weight: 500;
     font-size: 16px;
     margin-right: 8px;
 }
-.wrBtnAdditional{
+
+.wrBtnAdditional {
     justify-content: space-around;
 }
-.wrBtnAdditional button{
+
+.wrBtnAdditional button {
     width: 40px;
     border: none;
     background: transparent;
 }
-.nexstStapWr{
+
+.imgDeckWrap {
+    display: flex;
+}
+
+.nexstStapWr {
     display: flex;
     margin-left: auto;
     width: max-content;
     margin-bottom: 17px
+}
+
+.headingsProductText {
+    display: flex;
+}
+
+@media screen and (max-width: 1299px) {
+    .btnInfo {
+        width: 300px;
+    }
+
+    .itemProductDeck, .infoSettings {
+        width: auto;
+        margin-right: 20px;
+    }
+
+    .imgDeckWrap {
+
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .expansive, .prRow {
+        margin-right: 15px;
+        width: 600px;
+    }
+
+    .wrBtnAdditional, .itemPrAdditional {
+        width: 200px;
+    }
+
+    .wrBtnAdditional button {
+        width: 30px;
+    }
+
+    .itemPrStoreName, .itemPrPrice, .itemPrCount {
+        width: 85px;
+    }
+
+    .imgP {
+        width: 150px;
+    }
+
+    .i {
+        width: 18px;
+        height: 18px;
+        font-size: 14px;
+        left: -9px;
+    }
+
+    .currentAdres {
+        padding: 10px 30px 15px;
+    }
+
+    .currentAdres > div {
+        padding: 7px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .itemProduct, .headingsProductBlock, .blockTotal .container {
+        flex-wrap: wrap;
+    }
+
+    .itemProductDeck {
+        justify-content: center;
+    }
+
+    .headingsProductText {
+        margin-bottom: 15px;
+    }
+
+    .expansive, .right {
+        margin-left: auto;
+    }
+
+    .right span {
+        font-size: 22px;
+    }
+
+    .nexstStapWr, .btnInfo {
+        width: auto;
+    }
+
+    .rowBtnInfo {
+        margin-top: 17px;
+    }
+
+    .left span {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .currentAdres {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .currentAdres > div {
+        width: 40%;
+        margin: 15px;
+        border: 1px dotted #ebe8e8;
+    }
+
+    .expansive, .prRow {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .expansive .itemPrStoreName,
+    .expansive .itemPrAdditional,
+    .headingsProductText,
+    .orderDesc {
+        display: none;
+    }
+
+    .prRow {
+        flex-wrap: wrap;
+    }
+
+    .prRow .itemPrStoreName, .prRow .wrBtnAdditional {
+        width: 100%;
+        margin: 13px 0;
+    }
+
+    .blockTotal {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .left {
+        width: auto;
+        flex-direction: column;
+    }
+
+    .left div {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .btnWrap{
+        justify-content: center;
+    }
+    .btnWrap button {
+        margin: 10px;
+    }
+    .currentAdres div{
+        width: 100%;
+    }
 }

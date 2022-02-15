@@ -2,6 +2,7 @@
     border: 1px solid #E0E0E0;
     border-radius: 5px;
     padding: 18px 27px;
+    margin-bottom: 15px;
 }
 .userWrap p{
     font-weight: 500;
@@ -57,4 +58,44 @@
 }
 .delete:hover{
     border-color: #ACACAC;
+}
+.desctopAvatar{
+    display: block;
+}
+.mobileAvatar{
+    display: none;
+}
+@media screen and (max-width: 700px) {
+    .userWrap{
+        flex-direction: column;
+    }
+    .desctopAvatar{
+        display: none;
+    }
+    .mobileAvatar div{
+        width: 70px;
+        height: 70px;
+    }
+    .mobileAvatar div>img{
+        width: 100%;
+    }
+    .mobileAvatar{
+        display: block;
+        margin-right: 3%;
+    }
+    .size{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .btnWrap{
+        margin-top: 20px;
+        height: auto;
+        margin-left: 0;
+        width: 100%;
+    }
+    .btnWrap button{
+        width: 100%;
+        margin: 12px auto;
+    }
 }
