@@ -60,3 +60,7 @@ body {
     padding: 2px;
     border-radius: 15px;
 }
+.css-1viwcu6-MuiTableCell-root {
+    white-space: break-spaces;
+    word-break: break-word;
+}

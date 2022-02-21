@@ -42,14 +42,13 @@ import hr from './../../../../../assets/2.png'
 import send from './../../../../../assets/Vector1.png'
 import { BlockTotal, DataRecipient } from '../firstStep/FirstStep';
 
-function createData(companyName: string, calories: number, fat: number, carbs: number, protein: number, price: number, desk: string,
+function createData(companyName: string, completed: number, time: number, priseFor1: string, price: string, desk: string,
 ) {
   return {
     companyName,
-    calories,
-    fat,
-    carbs,
-    protein,
+    completed,
+    time,
+    priseFor1,
     price,
     desk,
     history: [
@@ -94,17 +93,17 @@ function Row(props: { row: ReturnType<typeof createData> }) {
   return (
     <>
       <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
-        <TableCell component='th' scope='row'>
+        <TableCell component='th' scope='flex' className={cl.CompName}>
           <div className={cl.companyLogoWr}>
             <img src={logo} alt='logo' />
           </div>
           <p className={cl.companyName}>{row.companyName}</p>
         </TableCell>
-        <TableCell align='right'>{row.calories}</TableCell>
-        <TableCell align='right'>{row.fat}</TableCell>
-        <TableCell align='right'>{row.carbs}</TableCell>
-        <TableCell align='right'>{row.protein}</TableCell>
-        <TableCell>
+        <TableCell align='right'>{row.completed}</TableCell>
+        <TableCell align='right'>{row.time}</TableCell>
+        <TableCell align='right'>{row.priseFor1}</TableCell>
+        <TableCell align='right' onClick={() => setOpen(!open)}>{row.price}</TableCell>
+        <TableCell className={cl.cellArrow}>
           <IconButton aria-label='expand row' size='small' onClick={() => setOpen(!open)}>
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
@@ -116,8 +115,8 @@ function Row(props: { row: ReturnType<typeof createData> }) {
             <Box sx={{ margin: 1 }}>
               <Table size='small' aria-label='purchases'>
                 <TableBody className={cl.bodyGray}>
-                  <TableRow>
-                    <TableCell component='th' scope='row'>
+                  <TableRow className={cl.tableRowSecond}>
+                    <TableCell component='th' scope='row' className={cl.tableLeftRow}>
                       <p className={cl.tableDesk}>{row.desk}</p>
                       <div className={`${cl.row} ${cl.tableList}`}>
                         <div className={cl.listItem}>
@@ -126,7 +125,7 @@ function Row(props: { row: ReturnType<typeof createData> }) {
                         </div>
                         <div className={cl.listItem}>
                           <CheckCircleOutlineSharpIcon style={{fontSize: '18px', marginRight: '6px'}}/>
-                          <p>Оплата</p>
+                          <p>Гарантия</p>
                         </div>
                         <div className={cl.listItem}>
                           <AccountBalanceWalletOutlinedIcon style={{fontSize: '18px', marginRight: '6px'}}/>
@@ -156,7 +155,8 @@ function Row(props: { row: ReturnType<typeof createData> }) {
                         </button>
                       </div>
                     </TableCell>
-                    <TableCell>
+
+                    <TableCell className={cl.tableRightRow}>
                       <div className={cl.tableCardWrap}>
                         {row.history.map((historyRow) => (
                           <div key={historyRow.cardDelId} className={cl.tableCard}>
@@ -209,15 +209,13 @@ function Row(props: { row: ReturnType<typeof createData> }) {
 }
 
 const rows = [
-  createData('Супер доставка 1 “ DNL”', 159, 6.0, 24, 4.0, 3.99,
+  createData('Супер доставка 1 “ DNL”', 159, 6.0, '5 $', '10 $',
+    '1 онлайн платформа объявлений, наша все о вас. Наша цель - дать возможность каждому человеку в стране независимо общаться с покупателями и продавцами онлайн. Мы заботимся о вас и сделках, которые приближают вас к вашей мечте. Хотите купить свой первый автомобиль? '),
+  createData('Супер доставка 1 “ DNM”', 10, 2, '5 $', '10 $',
     '1 онлайн платформа объявлений, наша все о вас. Наша цель - дать возможность каждому человеку в стране ' +
     'независимо общаться с покупателями и продавцами онлайн. Мы заботимся о вас и сделках, ' +
     'которые приближают вас к вашей мечте. Хотите купить свой первый автомобиль? '),
-  createData('Супер доставка 1 “ DNM”', 10, 2, 24, 4.0, 3.99,
-    '1 онлайн платформа объявлений, наша все о вас. Наша цель - дать возможность каждому человеку в стране ' +
-    'независимо общаться с покупателями и продавцами онлайн. Мы заботимся о вас и сделках, ' +
-    'которые приближают вас к вашей мечте. Хотите купить свой первый автомобиль? '),
-  createData('Супер доставка 1 “ DNEE”', 100, 20, 4, 4.0, 3.99,
+  createData('Супер доставка 1 “ DNEE”', 100, 20, '5 $', '10 $',
     '1 онлайн платформа объявлений, наша все о вас. Наша цель - дать возможность каждому человеку в стране ' +
     'независимо общаться с покупателями и продавцами онлайн. Мы заботимся о вас и сделках, ' +
     'которые приближают вас к вашей мечте. Хотите купить свой первый автомобиль? '),
@@ -233,6 +231,12 @@ const ThirdStep = () => {
   const [countryDeparture, setCountryDeparture] = useState('');
   const [townReceipt, setTownReceipt] = useState('');
   const [townDeparture, setTownDeparture] = useState('');
+  const [active,setActive]=useState('')
+
+  const selectPaymant = (e:any) => {
+    console.log('selectPaymant',e.currentTarget.value);
+    setActive(e.currentTarget.value)
+  };
 
   const handleChangeTownReceipt = (event: SelectChangeEvent) => {
     setTownReceipt(event.target.value);
@@ -253,17 +257,6 @@ const ThirdStep = () => {
 
   return (
     <div className={cl.bg}>
-      {/*<div className={cl.dataRecipient}>*/}
-      {/*  <p className={cl.dataRecipientDesc}>*/}
-      {/*    Выберите способ доставки*/}
-      {/*  </p>*/}
-      {/*  <p className={cl.orderDesc}>*/}
-      {/*    Номер заказа*/}
-      {/*    <span className={cl.order}>*/}
-      {/*        RT3234234234234*/}
-      {/*    </span>*/}
-      {/*  </p>*/}
-      {/*</div>*/}
       <DataRecipient text={'Выберите способ доставки'} order={'RT3234234234234'}/>
       <div className={cl.container}>
         <h3 className={cl.settingsTitle}>Найстройки поиска логистических компаний</h3>
@@ -330,25 +323,35 @@ const ThirdStep = () => {
           <div className={cl.typeDelivery}>
             <p className={cl.selectInfo}>Укажите способ доставки</p>
             <div className={cl.settinsBtnWrap}>
-              <button className={cl.btn}>
+              <button className={`${cl.btn} ${active=='plain' && cl.active}`} value='plain'
+                      onClick={(e)=>selectPaymant(e)}>
                 <span className={cl.imgWr}><img src={plain} alt='Авиа' /></span>
                 <span>Авиа</span>
+                <span className={cl.activIcon}/>
               </button>
-              <button className={cl.btn}>
+              <button className={`${cl.btn} ${active=='boult' && cl.active}`} value='boult'
+                      onClick={(e)=>selectPaymant(e)}>
                 <span className={cl.imgWr}><img src={boult} alt='boult' /></span>
                 <span>Море</span>
+                <span className={cl.activIcon}/>
               </button>
-              <button className={cl.btn}>
+              <button className={`${cl.btn} ${active=='train' && cl.active}`} value='train'
+                      onClick={(e)=>selectPaymant(e)}>
                 <span className={cl.imgWr}><img src={train} alt='Ж/Д' /></span>
                 <span>Ж/Д</span>
+                <span className={cl.activIcon}/>
               </button>
-              <button className={cl.btn}>
+              <button className={`${cl.btn} ${active=='vehicle' && cl.active}`} value='vehicle'
+                      onClick={(e)=>selectPaymant(e)}>
                 <span className={cl.imgWr}><img src={vehicle} alt='Авто' /></span>
                 <span>Авто</span>
+                <span className={cl.activIcon}/>
               </button>
-              <button className={cl.btn}>
+              <button className={`${cl.btn} ${cl.aviaBtn}  ${active=='avia' && cl.active}`} value='avia'
+                      onClick={(e)=>selectPaymant(e)}>
                 <span className={cl.imgWr}><img src={avia} alt='Авиаэкспресс' /></span>
                 <span>Авиаэкспресс</span>
+                <span className={cl.activIcon}/>
               </button>
             </div>
             <button className={cl.btnOrangeSetFilter}>применить фильтр</button>
@@ -360,18 +363,18 @@ const ThirdStep = () => {
       <div className={cl.result}>
         <div className={cl.container}>
           <p className={cl.resultTitle}>Результаты поиска</p>
-
-          <TableContainer component={Paper}>
+        </div>
+          <TableContainer component={Paper} className={cl.resultTable}>
             <Table aria-label='collapsible table'>
-              <TableHead>
+              <TableHead  className={cl.resultTableHead}>
                 <TableRow>
-
-                  <TableCell>Название компании</TableCell>
+                {/*<TableRow style={{    overflowX: 'auto'}}>*/}
+                  <TableCell className={cl.CompName}>Название компании</TableCell>
                   <TableCell align='right'>Выполненных заказов</TableCell>
                   <TableCell align='right'>Время доставки, дни</TableCell>
                   <TableCell align='right'>Цена за 1 кг</TableCell>
                   <TableCell align='right'>Цена за вашу посылку</TableCell>
-                  <TableCell />
+                  <TableCell className={cl.cellArrow}/>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -381,7 +384,7 @@ const ThirdStep = () => {
               </TableBody>
             </Table>
           </TableContainer>
-        </div>
+
       </div>
 
       <BlockTotal prise={'23 000 $'} delivery={'230 $'} orderPrise={'23 000 $'}/>

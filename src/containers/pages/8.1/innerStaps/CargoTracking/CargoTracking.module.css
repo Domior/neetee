@@ -1,0 +1,32 @@
+.bg{
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 25px 30px;
+}
+.bg>*{
+    font-family: Roboto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.imgWr {
+    width: 43px;
+    margin-right: 5px;
+}
+.deliveryType{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 218px;
+    height: 82px;
+    background: #F5F5F5;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000;
+    border: 2px solid #F5F5F5;
+    margin-top: 15px;
+}

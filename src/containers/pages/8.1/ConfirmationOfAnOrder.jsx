@@ -9,6 +9,7 @@ import ThirdStep from './innerStaps/thirdStep/ThirdStep';
 import SecondStep from './innerStaps/secondStep/SecondStep';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
+import FourStep from './innerStaps/fourStep/FourStep';
 
 
 const steps = ['Данные получателя', 'Оплата товара', 'Выбор доставки','Отслеживание заказа'];
@@ -16,7 +17,7 @@ const innerSteps = [
   <FirstStep/>,
   <SecondStep/>,
   <ThirdStep/>,
-  'finish'
+  <FourStep/>
 ]
 const ConfirmationOfAnOrder = () => {
   const [activeStep, setActiveStep] = useState(0);
