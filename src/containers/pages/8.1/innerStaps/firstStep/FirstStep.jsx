@@ -247,7 +247,7 @@ export const AdresBloc = ({ adres,bgColor='#fff' }) => {
             <p className={cl.formTitle}>E-mail</p>
             <p>{currentAdres.email}</p>
           </div>
-          <div>
+          <div style={{maxWidth:250}}>
             <p className={cl.formTitle}>
               Индекс <span> Страна, город</span>
             </p>

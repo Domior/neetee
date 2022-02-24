@@ -9,7 +9,7 @@ import {
   Tab,
   Tabs,
   SelectChangeEvent,
-  FormControl, Checkbox, FormControlLabel,
+  FormControl, Checkbox, FormControlLabel, Popover,
 } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { InputValidate } from '../../../../../components/InputValidate/Input';
@@ -119,6 +119,11 @@ export const FormUserData = ({ userType, ...props }: propsFormUserData) => {
   const [town, setTown] = useState('');
   const [adres, setAdres] = useState('');
   const [other, setOther] = useState('');
+  const [popoverRecipient, setPopoverRecipient] = useState<HTMLButtonElement | null>(null);
+  const handlePopoverRecipient = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setPopoverRecipient(event.currentTarget);
+  };
+  const idR = !!popoverRecipient ? 'simple-popover' : undefined;
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('lg'));
   const setNewInputsValue = (inputValue: string, name: string) => {
@@ -261,11 +266,16 @@ export const FormUserData = ({ userType, ...props }: propsFormUserData) => {
       <div className={cl.row}>
         <AccountCircleOutlinedIcon style={{ color: '#C4C4C4', fontSize: '75px' }} />
         <div className={cl.userChange}>
-          <div style={{ display: 'flex' }}>
+          <div style={{ display: 'flex' ,alignItems: 'center'}}>
             <p>Укажите получателя</p>
-            <span>
-              <InfoOutlinedIcon style={{ marginLeft: '10px', color: '#FF9900' }} />
+            <span  aria-describedby={idR} onClick={handlePopoverRecipient}>
+              <InfoOutlinedIcon style={{ marginLeft: '10px', color: '#FF9900' }}/>
             </span>
+            <Popover id={idR} open={!!popoverRecipient} anchorEl={popoverRecipient}
+              onClose={()=>setPopoverRecipient(null)}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'left', }}>
+              <p>some text for ...</p>
+            </Popover>
           </div>
           <input type='text' placeholder='Никнейм' />
         </div>

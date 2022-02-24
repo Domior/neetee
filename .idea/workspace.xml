@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="add 8.2...">
-      <change afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/CargoTracking/CargoTracking.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/fourStep/FourStep.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/fourStep/FourStep.tsx" afterDir="false" />
+    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="add CargoTracking">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/CargoTracking/CargoTracking.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/CargoTracking/CargoTracking.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/fourStep/FourStep.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/fourStep/FourStep.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/fourStep/FourStep.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/fourStep/FourStep.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +114,8 @@
       <workItem from="1644781518300" duration="16051000" />
       <workItem from="1644845839726" duration="13506000" />
       <workItem from="1645030462937" duration="23989000" />
-      <workItem from="1645171061347" duration="61267000" />
+      <workItem from="1645171061347" duration="72963000" />
+      <workItem from="1645483664113" duration="31111000" />
     </task>
     <task id="LOCAL-00001" summary="add 8.1">
       <created>1644398846734</created>
@@ -187,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645234944095</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add CargoTracking">
+      <created>1645404501033</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1645404501033</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +217,8 @@
     <MESSAGE value="add 8.1..." />
     <MESSAGE value="fix style" />
     <MESSAGE value="add 8.2..." />
-    <option name="LAST_COMMIT_MESSAGE" value="add 8.2..." />
+    <MESSAGE value="add CargoTracking" />
+    <option name="LAST_COMMIT_MESSAGE" value="add CargoTracking" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -271,11 +279,6 @@
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx</url>
-          <line>144</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
           <line>65</line>
           <option name="timeStamp" value="38" />
@@ -288,31 +291,49 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.jsx</url>
           <line>100</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.jsx</url>
           <line>35</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx</url>
           <line>325</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx</url>
           <line>105</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/fourStep/FourStep.tsx</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/CargoTracking/CargoTracking.tsx</url>
+          <line>86</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx</url>
+          <line>271</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx</url>
+          <line>121</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx</url>
+          <line>273</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

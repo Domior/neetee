@@ -1,0 +1,175 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2022-01-13T06:15:58.715Z",
+  "__export_source": "insomnia.desktop.app:v2020.4.2",
+  "resources": [
+    {
+      "_id": "req_e2dbb3e61ec54b74a1b878c896867527",
+      "parentId": "fld_9939d731ff4d4e30a01c919791f52a54",
+      "modified": 1642015882996,
+      "created": 1641972898141,
+      "url": "https://xenera.aestar.com.ua/api/avatar/get",
+      "name": "avatar/get",
+      "description": "",
+      "method": "POST",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTEiLCJleHAiOjE2NDE5NzQ1MTd9.0IwdEF7MZvqteoPbQgZ0wa6W18sHRgQp2xD4COo9-RY"
+      },
+      "metaSortKey": -1638956133513,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_9939d731ff4d4e30a01c919791f52a54",
+      "parentId": "fld_b178d476b3cc42489e20a9c3816babe9",
+      "modified": 1641969207519,
+      "created": 1641969195925,
+      "name": "AVATAR",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1638956133563,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_b178d476b3cc42489e20a9c3816babe9",
+      "parentId": "wrk_42f8be1dc1ed4b7798067e47c454ca83",
+      "modified": 1638943578232,
+      "created": 1638943578232,
+      "name": "FRONTEND",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1638943578232,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_42f8be1dc1ed4b7798067e47c454ca83",
+      "parentId": null,
+      "modified": 1638913794317,
+      "created": 1638913794317,
+      "name": "XENERA",
+      "description": "",
+      "scope": "design",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_900d27b0b2a8413e8b1ce463ec16112b",
+      "parentId": "fld_9939d731ff4d4e30a01c919791f52a54",
+      "modified": 1642048407108,
+      "created": 1642019498937,
+      "url": "https://xenera.aestar.com.ua/api/avatar/update",
+      "name": "avatar/add",
+      "description": "",
+      "method": "POST",
+      "body": {},
+      "parameters": [
+        {
+          "name": "settings",
+          "value": "{\n    \"items\": {\n        \"heat\": {\n            \"model\": null,\n            \"color\": \"default\"\n        },\n        \"beard\": {\n            \"model\": null,\n            \"color\": \"default\"\n        },\n        \"accessories\": {\n            \"model\": \"101404\",\n            \"color\": \"default\"\n        },\n        \"top\": {\n            \"model\": null,\n            \"color\": \"default\"\n        },\n        \"bottom\": {\n            \"model\": null,\n            \"color\": \"default\"\n        },\n        \"costume\": {\n            \"model\": \"101109\",\n            \"color\": \"default\"\n        },\n        \"eyes\": {\n            \"model\": \"100209\",\n            \"color\": \"default\"\n        },\n        \"hairstyle\": {\n            \"model\": \"100121\",\n            \"color\": \"default\"\n        },\n        \"hand\": {\n            \"model\": \"100607\",\n            \"color\": \"default\"\n        },\n        \"foot\": {\n            \"model\": \"100709\",\n            \"color\": \"default\"\n        },\n        \"mouth\": {\n            \"model\": \"100305\",\n            \"color\": \"default\"\n        },\n        \"glasses\": {\n            \"model\": \"100910\",\n            \"color\": \"default\"\n        },\n        \"emotions\": {\n            \"model\": \"100404\",\n            \"color\": \"default\"\n        },\n        \"mask\": {\n            \"model\": null,\n            \"color\": \"default\"\n        },\n        \"pet\": {\n            \"model\": \"20010701\",\n            \"color\": \"default\"\n        }\n    },\n    \"animation\": \"idle\",\n    \"coins\": 0\n}",
+          "description": "",
+          "id": "pair_4befc1fa6e2e44e38ca805980d14dd96",
+          "type": "text",
+          "multiline": true
+        }
+      ],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTEiLCJleHAiOjE2NDE5NzQ1MTd9.0IwdEF7MZvqteoPbQgZ0wa6W18sHRgQp2xD4COo9-RY"
+      },
+      "metaSortKey": -1638949998489,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e4bc52be9e8042e78c62a0ddbf6585ab",
+      "parentId": "fld_9939d731ff4d4e30a01c919791f52a54",
+      "modified": 1642048443507,
+      "created": 1642048432462,
+      "url": "https://xenera.aestar.com.ua/api/avatar/remove",
+      "name": "avatar/remove",
+      "description": "",
+      "method": "POST",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTEiLCJleHAiOjE2NDE5NzQ1MTd9.0IwdEF7MZvqteoPbQgZ0wa6W18sHRgQp2xD4COo9-RY"
+      },
+      "metaSortKey": -1638946930977,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_bb6c558869da81a877cac10113b28e2c3d021877",
+      "parentId": "wrk_42f8be1dc1ed4b7798067e47c454ca83",
+      "modified": 1638913794410,
+      "created": 1638913794410,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1638913794410,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_bb6c558869da81a877cac10113b28e2c3d021877",
+      "parentId": "wrk_42f8be1dc1ed4b7798067e47c454ca83",
+      "modified": 1641973613186,
+      "created": 1638913794414,
+      "name": "Default Jar",
+      "cookies": [
+        {
+          "key": "refresh_token",
+          "value": "eyJ1c2VyX2lkIjoiMTEiLCJleHAiOjE2NDIwNjAwMTcsImZpbmdlcnByaW50IjoiaW5zb21uaWFcLzIwMjAuNC4yLTUuNTMuMTEzLjc5In0.k4hfsv04SJlE1LQmJkAJuBwoX5RG3zzDKHPFqMR1k-E",
+          "expires": "2022-01-13T07:46:57.000Z",
+          "maxAge": 86400,
+          "domain": "xenera.aestar.com.ua",
+          "path": "/api/user/refreshToken",
+          "httpOnly": true,
+          "hostOnly": false,
+          "creation": "2021-12-08T11:47:45.807Z",
+          "lastAccessed": "2022-01-12T07:46:53.177Z",
+          "id": "3983669028391843"
+        }
+      ],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_3d1f31725120428c9ee3b1e4846a3bc8",
+      "parentId": "wrk_42f8be1dc1ed4b7798067e47c454ca83",
+      "modified": 1638913794323,
+      "created": 1638913794323,
+      "fileName": "XENERA",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    }
+  ]
+}

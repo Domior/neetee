@@ -1,32 +1,143 @@
-.bg{
+.bg {
     background: #FFFFFF;
     border-radius: 5px;
     padding: 25px 30px;
+    margin-bottom: 20px;
 }
-.bg>*{
+
+.bg > * {
     font-family: Roboto;
 }
-.row{
+
+.row {
     display: flex;
     flex-wrap: wrap;
 }
+
 .imgWr {
-    width: 43px;
-    margin-right: 5px;
+    width: 37px;
+    margin-right: 10px;
 }
-.deliveryType{
+
+.imgWr img {
+    width: 100%;
+}
+
+.deliveryType {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 218px;
-    height: 82px;
+    width: 164px;
+    height: 50px;
     background: #F5F5F5;
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.12);
     border-radius: 5px;
     font-weight: bold;
     font-size: 16px;
     color: #000000;
     border: 2px solid #F5F5F5;
-    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.trackText, .adresText {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #666666;
+}
+
+.adresProps, .phoneProps {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.trackProps {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    margin-top: 10px;
+}
+
+.writeBtn, .writeBtn.active {
+    width: 150px;
+    height: 30px;
+    background: #79B256;
+    box-shadow: 0px 10px 20px rgba(121, 178, 86, 0.12);
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 1px solid #79B256;
+}
+
+.writeBtn svg {
+    font-size: 15px;
+    margin-right: 7px;
+}
+
+.writeBtn:hover {
+    color: #79B256;
+}
+
+.columnLeft {
+    width: 30%;
+}
+
+.stepInfo {
+    font-size: 14px;
+    line-height: 16px;
+    color: #666666;
+}
+
+.stepInfoTime {
+    margin: 0 28px;
+}
+
+.orangeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    width: 170px;
+    height: 53px;
+    background: #FF9900;
+    box-shadow: 0px 10px 20px rgba(255, 153, 0, 0.12);
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #FFFFFF;
+    border: 1px solid #FF9900;
+}
+
+.orangeBtn svg {
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+.deliveredT {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+.someInfoT{
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #666666;
+    margin-left: 25px;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 1100px) {
+    .columnLeft, .columnRight {
+        width: 100%;
+        margin: 10px 0;
+    }
 }
