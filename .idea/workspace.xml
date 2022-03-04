@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="fix style">
+    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="deleted commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +110,7 @@
       <workItem from="1645030462937" duration="23989000" />
       <workItem from="1645171061347" duration="72963000" />
       <workItem from="1645483664113" duration="32452000" />
-      <workItem from="1646083238978" duration="1761000" />
+      <workItem from="1646083238978" duration="3366000" />
     </task>
     <task id="LOCAL-00001" summary="add 8.1">
       <created>1644398846734</created>
@@ -196,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645743989150</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="deleted commits">
+      <created>1646103371041</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1646103371041</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +227,8 @@
     <MESSAGE value="add 8.2..." />
     <MESSAGE value="add CargoTracking" />
     <MESSAGE value="fix style" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix style" />
+    <MESSAGE value="deleted commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted commits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
