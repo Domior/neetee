@@ -144,9 +144,13 @@ const initialState = {
 export const orderReducer = (state: any = initialState, action: actionType) => {
   switch (action.type) {
     case 'ORDER/SET-CURRENT-ADRES': {
+      console.log('currentAdres', state.currentAdres );
+      console.log('currentAdres', state.listUserAdres[0] );
+      console.log('currentAdres', action.payload );
       return { ...state, currentAdres: action.payload };
     }
     case 'ORDER/SET-NEW-ADRES':
+      console.log(action.payload);
       return { ...state, listUserAdres: [action.payload,...state.listUserAdres] };
     case 'ORDER/CHANGE-ADRES': {
       return { ...state, listUserAdres:[state.listUserAdres.map((itemAdr:itemUserAdresType)=>{

@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="deleted commits">
+    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="add 8.2...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bll/orderReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/orderReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bll/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserCard/UserCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserCard/UserCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupChangeUserData/PopupChangeUserData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupChangeUserData/PopupChangeUserData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,19 +32,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/bll/store.ts" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupChangeUserData/PopupChangeUserData.tsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/bll/orderReducer.ts" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/secondStep/SecondStep.tsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.module.css" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/InputValidate/Input.tsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.module.css" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/InputValidate/input.module.css" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="24kqeVt4yqqAS8RNRAlcmVP2p6M" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -106,11 +100,7 @@
       <workItem from="1644589713461" duration="31966000" />
       <workItem from="1644656849989" duration="19077000" />
       <workItem from="1644781518300" duration="16051000" />
-      <workItem from="1644845839726" duration="13506000" />
-      <workItem from="1645030462937" duration="23989000" />
-      <workItem from="1645171061347" duration="72963000" />
-      <workItem from="1645483664113" duration="32452000" />
-      <workItem from="1646083238978" duration="3366000" />
+      <workItem from="1644845839726" duration="12877000" />
     </task>
     <task id="LOCAL-00001" summary="add 8.1">
       <created>1644398846734</created>
@@ -168,42 +158,7 @@
       <option name="project" value="LOCAL" />
       <updated>1644823079133</updated>
     </task>
-    <task id="LOCAL-00009" summary="add 8.2...">
-      <created>1644917499949</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1644917499949</updated>
-    </task>
-    <task id="LOCAL-00010" summary="add 8.2...">
-      <created>1645234944095</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1645234944095</updated>
-    </task>
-    <task id="LOCAL-00011" summary="add CargoTracking">
-      <created>1645404501033</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1645404501033</updated>
-    </task>
-    <task id="LOCAL-00012" summary="fix style">
-      <created>1645743989150</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1645743989150</updated>
-    </task>
-    <task id="LOCAL-00013" summary="deleted commits">
-      <created>1646103371041</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1646103371041</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,32 +180,39 @@
     <MESSAGE value="add 8.1" />
     <MESSAGE value="add 8.1..." />
     <MESSAGE value="add 8.2..." />
-    <MESSAGE value="add CargoTracking" />
-    <MESSAGE value="fix style" />
-    <MESSAGE value="deleted commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="add 8.2..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.jsx</url>
+          <line>70</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx</url>
-          <line>140</line>
+          <line>208</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx</url>
+          <line>141</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx</url>
-          <line>126</line>
+          <line>127</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx</url>
-          <line>122</line>
+          <line>123</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx</url>
-          <line>130</line>
+          <line>131</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -275,72 +237,32 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
-          <line>226</line>
+          <line>241</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
           <line>111</line>
+          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
           <line>57</line>
+          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx</url>
+          <line>145</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
           <line>65</line>
+          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
-          <line>199</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.jsx</url>
-          <line>100</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/ConfirmationOfAnOrder.jsx</url>
-          <line>35</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx</url>
-          <line>325</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/thirdStep/ThirdStep.tsx</url>
-          <line>105</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/fourStep/FourStep.tsx</url>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/CargoTracking/CargoTracking.tsx</url>
-          <line>86</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx</url>
-          <line>271</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx</url>
-          <line>121</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx</url>
-          <line>273</line>
-          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
