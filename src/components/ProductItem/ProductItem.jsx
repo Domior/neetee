@@ -20,6 +20,7 @@ const ProductItem = (props) => {
   const { name, title, description, itemPrice } = props.data;
   const classes = useStyles();
 
+
   return (
     <div className={styles.cardContainer}>
       <div className={styles.cardHeader}>
