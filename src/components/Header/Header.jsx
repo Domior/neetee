@@ -8,6 +8,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 
 import HeaderMenu from '@components/HeaderMenu';
+import HeaderSubmenu from '@components/HeaderSubmenu';
 import Logo from '@components/Logo';
 import { ReactComponent as HomeIcon } from '@icons/home.svg';
 import { ReactComponent as CatalogIcon } from '@icons/catalog.svg';
@@ -162,7 +163,9 @@ export default function ButtonAppBar() {
             </Box>
           </Box>
 
-          <Box className={classes.headerDown}></Box>
+          <Box className={classes.headerDown}>
+            <HeaderSubmenu />
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>

@@ -16,14 +16,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ProductItem = () => {
+const ProductItem = (props) => {
+  const { name, title, description, itemPrice } = props.data;
   const classes = useStyles();
 
   return (
     <div className={styles.cardContainer}>
       <div className={styles.cardHeader}>
         <img className={styles.cardHeaderLogo} src={Logo} alt="logo" />
-        <span className={styles.cardHeaderTitle}>揭阳市生生模具器有限公司</span>
+        <span className={styles.cardHeaderTitle}>{name}</span>
         <button className={styles.btnClose}>
           <img className={styles.btnCloseIcon} src={Close} alt="close" />
         </button>
@@ -31,19 +32,14 @@ const ProductItem = () => {
       <div className={styles.cardBody}>
         <img className={styles.cardItemImg} src={ItemImg} alt="item" />
         <div className={styles.cardItemInfo}>
-          <p className={styles.cardItemTitle}>
-            2021 новый предмет baotou тапочки женские летние за тапочки
-            женские...
-          </p>
-          <p className={styles.cardItemDescription}>
-            2021 новый предмет baotou тапочки женские летние за тапочки
-            женские...
-          </p>
+          <p className={styles.cardItemTitle}>{title}</p>
+          <p className={styles.cardItemDescription}>{description}</p>
         </div>
         <div className={styles.cardBodyFooter}>
           <p className={styles.cardItemPrice}>
             <span>Цена</span>
-            <span>Итоговая цена</span>60000 $
+            <span>Итоговая цена</span>
+            {itemPrice}
           </p>
           <Button className={classes.btn} variant="contained" color="warning">
             Посмотреть
