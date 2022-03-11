@@ -1,16 +1,17 @@
 // import styles from './HomePage.module.css';
 // import Logo from '@components/Logo';
-import { Outlet } from 'react-router';
-import Hero from '@components/Home/Hero';
-import Tabs from '@components/Home/TabContainer';
+// import { Outlet } from 'react-router';
+// import Hero from '@components/Home/Hero';
+// import Tabs from '@components/Home/TabContainer';
+import Banner from '@components/Banner/Banner';
 
 const HomePage = () => {
   return (
     <>
-      <h1>HomePage</h1>
-      <Hero />
+      <Banner link1="/" link2="/" />
+      {/* <Hero />
       <Tabs />
-      <Outlet />
+      <Outlet /> */}
     </>
   );
 };

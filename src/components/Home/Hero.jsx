@@ -1,4 +1,4 @@
-import hero from '@static/hero.jpg';
+import hero from '@static/banner-img.jpg';
 import styled from '@emotion/styled';
 
 const Container = styled.div`
