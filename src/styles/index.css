@@ -92,3 +92,139 @@ body {
   transform: translateX(110%);
   transition: all .5s ease;
 }
+
+
+
+
+
+
+
+.navbar {
+  position: relative;
+  width: 100%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 115px 0 110px;
+  background-color: inherit;
+}
+
+
+.navMenu {
+  display: flex;
+  height: inherit;
+  padding: 8px 0;
+  list-style: none;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.navLinks {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  text-decoration: none;
+  padding: 7px 40px;
+}
+
+.navLinks:hover {
+  background-color: #F5F5F5;
+  transition: all 0.2s ease-out;
+}
+
+.menuIcon {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar {
+    padding: 0 20px;
+    justify-content: space-between;
+  }
+  .NavbarItems {
+    position: relative;
+  }
+
+  .navMenu {
+    display: none;
+  }
+
+  .navMenu.active {
+    display: block;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: 1;
+    padding: 0 0 20px;
+    background-color: #C4C4C4;
+    transition: all 0.5s ease;
+  }
+
+  .navLinks {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navLinks:hover {
+    background-color: #F5F5F5;
+  }
+  .menuIcon {
+    display: block;
+  }
+  .menuIcon.active{
+    transform: rotate(180deg)
+  }
+  .menuIcon path{
+    fill: #666666
+  }
+}
+
+
+.dropdownMenu {
+  display: block;
+  width: 320px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  text-align: center;
+  list-style: none;
+  background-color: #C4C4C4;
+  padding: 10px 2px;
+  border-radius: 5px;
+}
+
+.dropdownMenu li {
+  background-color: #C4C4C4;
+  cursor: pointer;
+}
+
+.dropdownMenu li:hover {
+  background-color: #F5F5F5;
+}
+
+.dropdownMenu.clicked {
+  display: none;
+}
+
+.dropdownLink {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  padding: 7px 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+}

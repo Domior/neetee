@@ -1,7 +1,8 @@
 import * as React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import { makeStyles } from '@mui/styles';
+import { makeStyles, useTheme } from '@mui/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import { CSSTransition } from 'react-transition-group';
 
@@ -9,6 +10,29 @@ import { ReactComponent as MenuButtonIcon } from '@icons/menu.svg';
 import { ReactComponent as ArrowIcon } from '@icons/arrow.svg';
 
 import './HeaderSubmenu.module.css';
+
+export const MenuItems = [
+  {
+    title: 'Marketing',
+    path: '/',
+    cName: 'dropdownLink',
+  },
+  {
+    title: 'Consulting',
+    path: '/',
+    cName: 'dropdownLink',
+  },
+  {
+    title: 'Design',
+    path: '/',
+    cName: 'dropdownLink',
+  },
+  {
+    title: 'Development',
+    path: '/',
+    cName: 'dropdownLink',
+  },
+];
 
 const useStyles = makeStyles((theme) => ({
   navbar: {
@@ -84,10 +108,90 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function HeaderSubmenu() {
+  const theme = useTheme();
+  const isMobileScreen = useMediaQuery(theme.breakpoints.down('md'));
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
 
-  return (
+  const [click, setClick] = React.useState(false);
+  const [dropdown, setDropdown] = React.useState(false);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
+  const onMouseEnter = (e) => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = (e) => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+
+  return !isMobileScreen ? (
+    <>
+      <nav className="navbar">
+        <div
+          className={click ? 'menuIcon active' : 'menuIcon'}
+          onClick={handleClick}
+        >
+          <MenuButtonIcon />
+        </div>
+        <ul className={click ? 'navMenu active' : 'navMenu'}>
+          <li className="navItem">
+            <Link to="/" className="navLinks" onClick={closeMobileMenu}>
+              Помощь
+            </Link>
+          </li>
+          <li className="navItem" onMouseEnter={onMouseEnter}>
+            <Link to="/" className="navLinks" onClick={closeMobileMenu}>
+              Партнерство
+            </Link>
+            {dropdown && (
+              <>
+                <ul
+                  onMouseLeave={onMouseLeave}
+                  onClick={handleClick}
+                  className={click ? 'dropdownMenu clicked' : 'dropdownMenu'}
+                >
+                  {MenuItems.map((item, index) => {
+                    return (
+                      <li key={index}>
+                        <Link
+                          className={item.cName}
+                          to={item.path}
+                          onClick={() => setClick(false)}
+                        >
+                          {item.title}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </>
+            )}
+          </li>
+          <li className="navItem">
+            <Link to="/" className="navLinks" onClick={closeMobileMenu}>
+              Статьи и новости
+            </Link>
+          </li>
+          <li className="navItem">
+            <Link to="/" className="navLinks" onClick={closeMobileMenu}>
+              Контакты
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </>
+  ) : (
     <nav className={classes.navbar}>
       <ul className={classes.navbarNav}>
         <li className={classes.navItem}>

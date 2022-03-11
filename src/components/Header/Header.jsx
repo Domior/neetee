@@ -111,9 +111,12 @@ const useStyles = makeStyles((theme) => ({
   headerDown: {
     width: '100%',
     height: headerDownHeight,
+    // paddingLeft: '110px',
+    // paddingRight: '115px',
     backgroundColor: theme.palette.primary.secondary,
     [theme.breakpoints.down('md')]: {
       height: '30px',
+      // padding: `0 20px`,
     },
   },
 }));
