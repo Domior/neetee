@@ -41,6 +41,11 @@
   background-color: #FFFFFF;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.12);
   border-radius: 5px;
+  transition: all .4s ease-in-out;
+}
+
+.slick-slide-link:hover {
+  color: #4270AD;
 }
 
 .slick-slide-link-outlined {
@@ -52,6 +57,12 @@
   border: 3px solid #FFFFFF;
   filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.12));
   border-radius: 5px;
+  transition: all .4s ease-in-out;
+}
+
+.slick-slide-link-outlined:hover {
+  color: #4270AD;
+  border-color: #4270AD;
 }
 
 .slick-slide-image {
