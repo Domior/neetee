@@ -66,7 +66,11 @@ const listSelectedProductDefault = [
     itemPrise:'350 $',
     count:'100',
     deliveryPr:'5 $',
-    totalPr:'35 000 $'
+    totalPr:'35 000 $',
+    sales:'20',
+    reviews:'7',
+    imgUserUrl:'./../../../../../assets/avatar.png',
+    productName:'productName'
   },
   {
     id:'io2',
@@ -77,7 +81,11 @@ const listSelectedProductDefault = [
     itemPrise:'350 $',
     count:'100',
     deliveryPr:'5 $',
-    totalPr:'35 000 $'
+    totalPr:'35 000 $',
+    sales:'20',
+    reviews:'88',
+    imgUserUrl:'./../../../../../assets/avatar.png',
+    productName:'productName'
   },
   {
     id:'io3',
@@ -88,7 +96,11 @@ const listSelectedProductDefault = [
     itemPrise:'350 $',
     count:'100',
     deliveryPr:'5 $',
-    totalPr:'35 000 $'
+    totalPr:'35 000 $',
+    sales:'12',
+    reviews:'88',
+    imgUserUrl:'./../../../../../assets/avatar.png',
+    productName:'productName'
   },
   {
     id:'io4',
@@ -99,7 +111,11 @@ const listSelectedProductDefault = [
     itemPrise:'350 $',
     count:'100',
     deliveryPr:'5 $',
-    totalPr:'35 000 $'
+    totalPr:'35 000 $',
+    sales:'12',
+    reviews:'22',
+    imgUserUrl:'./../../../../../assets/avatar.png',
+    productName:'productName'
   },
   {
     id:'io5',
@@ -110,7 +126,11 @@ const listSelectedProductDefault = [
     itemPrise:'350 $',
     count:'100',
     deliveryPr:'5 $',
-    totalPr:'35 000 $'
+    totalPr:'35 000 $',
+    sales:'12',
+    reviews:'22',
+    imgUserUrl:'./../../../../../assets/avatar.png',
+    productName:'productName'
   },
   {
     id:'io6',
@@ -121,7 +141,11 @@ const listSelectedProductDefault = [
     itemPrise:'350 $',
     count:'100',
     deliveryPr:'5 $',
-    totalPr:'35 000 $'
+    totalPr:'35 000 $',
+    sales:'90',
+    reviews:'13',
+    imgUserUrl:'./../../../../../assets/avatar.png',
+    productName:'productName'
   },
   {
     id:'io7',
@@ -132,7 +156,11 @@ const listSelectedProductDefault = [
     itemPrise:'350 $',
     count:'100',
     deliveryPr:'5 $',
-    totalPr:'35 000 $'
+    totalPr:'35 000 $',
+    sales:'90',
+    reviews:'13',
+    imgUserUrl:'./../../../../../assets/avatar.png',
+    productName:'productName'
   }
 ]
 const initialState = {
