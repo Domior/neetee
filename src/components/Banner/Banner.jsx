@@ -60,7 +60,7 @@ function Banner(props) {
         {bannerData.map((slide) => (
           <div className="slick-slide" key={slide.id}>
             <div className="slick-slide-info-section">
-              <h2 className="slick-slide-title">{slide.title}</h2>
+              <p className="slick-slide-title">{slide.title}</p>
               {isLink && (
                 <div className="slick-slide-links-container">
                   {link1 && (
