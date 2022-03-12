@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="add 8.2...">
-      <change afterPath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.tsx" afterDir="false" />
+    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="cartProduct">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +98,7 @@
       <workItem from="1644845839726" duration="12877000" />
       <workItem from="1647069258769" duration="3559000" />
       <workItem from="1647075244514" duration="139000" />
+      <workItem from="1647075437812" duration="4464000" />
     </task>
     <task id="LOCAL-00001" summary="add 8.1">
       <created>1644398846734</created>
@@ -155,7 +156,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644823079133</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="cartProduct">
+      <created>1647075723242</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1647075723242</updated>
+    </task>
+    <task id="LOCAL-00010" summary="cartProduct">
+      <created>1647075736858</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1647075736858</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,7 +192,8 @@
     <MESSAGE value="add 8.1" />
     <MESSAGE value="add 8.1..." />
     <MESSAGE value="add 8.2..." />
-    <option name="LAST_COMMIT_MESSAGE" value="add 8.2..." />
+    <MESSAGE value="cartProduct" />
+    <option name="LAST_COMMIT_MESSAGE" value="cartProduct" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
