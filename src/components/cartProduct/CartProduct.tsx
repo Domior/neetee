@@ -42,7 +42,8 @@ const CartProduct = (props: CartProductType) => {
 
 
   return (
-    <div className={cl.cartProductWrap} style={{flexDirection: props.gridView? 'column': 'row'}}>
+    <div className={`${cl.cartProductWrap} ${props.gridView? cl.cartPCol : cl.cartPRow}`}
+         style={{flexDirection: props.gridView? 'column': 'row'}}>
       <div className={cl.imgWrap}>
         <img src={props.imgUrl} alt='productName' />
       </div>

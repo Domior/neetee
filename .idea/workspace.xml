@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/components/filteredProductsList/style.css" afterDir="false" />
+    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="CartProduct">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bll/orderReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/orderReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bll/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/filteredProductsList/filteredProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filteredProductsList/filteredProductsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/HomePage/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/HomePage/HomePage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647084418001</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="CartProduct">
+      <created>1647125493998</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1647125493998</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +223,8 @@
     <MESSAGE value="add 8.2..." />
     <MESSAGE value="cartProduct" />
     <MESSAGE value="FilteredProductsList" />
-    <option name="LAST_COMMIT_MESSAGE" value="FilteredProductsList" />
+    <MESSAGE value="CartProduct" />
+    <option name="LAST_COMMIT_MESSAGE" value="CartProduct" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

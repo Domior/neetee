@@ -6,6 +6,12 @@
     border-radius: 5px;
     padding: 5px;
 }
+.cartPCol{
+    width: 270px;
+}
+.cartPRow{
+    width: 100%;
+}
 .imgWrap{
     width: 256px;
 }
