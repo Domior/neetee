@@ -3,14 +3,16 @@
 import { Outlet } from 'react-router';
 import Hero from '@components/Home/Hero';
 import Tabs from '@components/Home/TabContainer';
+import FilteredProductsList from '../../../components/filteredProductsList/filteredProductsList';
 
 const HomePage = () => {
   return (
     <>
-      <h1>HomePage</h1>
+      {/*<h1>HomePage</h1>*/}
       <Hero />
       <Tabs />
-      <Outlet />
+      {/*<Outlet />*/}
+      <FilteredProductsList/>
     </>
   );
 };
