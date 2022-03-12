@@ -13,7 +13,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <div className={styles.wrapper}>
-          <Header />
+          {/*<Header />*/}
           <Routes>
             {routesConfig.map((route, index) => (
               <Route key={index} path={route.path} element={route.element} />

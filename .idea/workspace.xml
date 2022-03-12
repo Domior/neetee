@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="cartProduct">
-      <change afterPath="$PROJECT_DIR$/src/components/filteredProductsList/filteredProductsList.tsx" afterDir="false" />
+    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="FilteredProductsList">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/HomePage/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/HomePage/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/App/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/routesConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routesConfig.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +45,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\lisa1\Desktop\helps\neetee\node_modules\prettier" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="D:\react\komelin\neetee\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -98,7 +99,7 @@
       <workItem from="1644845839726" duration="12877000" />
       <workItem from="1647069258769" duration="3559000" />
       <workItem from="1647075244514" duration="139000" />
-      <workItem from="1647075437812" duration="7834000" />
+      <workItem from="1647075437812" duration="9164000" />
     </task>
     <task id="LOCAL-00001" summary="add 8.1">
       <created>1644398846734</created>
@@ -177,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647080527187</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="FilteredProductsList">
+      <created>1647084418001</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1647084418001</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +208,8 @@
     <MESSAGE value="add 8.1..." />
     <MESSAGE value="add 8.2..." />
     <MESSAGE value="cartProduct" />
-    <option name="LAST_COMMIT_MESSAGE" value="cartProduct" />
+    <MESSAGE value="FilteredProductsList" />
+    <option name="LAST_COMMIT_MESSAGE" value="FilteredProductsList" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
