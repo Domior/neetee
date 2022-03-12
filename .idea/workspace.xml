@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="add 8.2...">
+    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="cartProduct">
+      <change afterPath="$PROJECT_DIR$/src/components/filteredProductsList/filteredProductsList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bll/orderReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/orderReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bll/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UserCard/UserCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserCard/UserCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupChangeUserData/PopupChangeUserData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupChangeUserData/PopupChangeUserData.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/HomePage/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/HomePage/HomePage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,15 +15,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lisa" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,7 +44,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\lisa1\Desktop\helps\neetee\node_modules\prettier" />
-    <property name="ts.external.directory.path" value="C:\Users\lisa1\Desktop\helps\neetee\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -101,6 +96,9 @@
       <workItem from="1644656849989" duration="19077000" />
       <workItem from="1644781518300" duration="16051000" />
       <workItem from="1644845839726" duration="12877000" />
+      <workItem from="1647069258769" duration="3559000" />
+      <workItem from="1647075244514" duration="139000" />
+      <workItem from="1647075437812" duration="7834000" />
     </task>
     <task id="LOCAL-00001" summary="add 8.1">
       <created>1644398846734</created>
@@ -158,7 +156,28 @@
       <option name="project" value="LOCAL" />
       <updated>1644823079133</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="cartProduct">
+      <created>1647075723242</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1647075723242</updated>
+    </task>
+    <task id="LOCAL-00010" summary="cartProduct">
+      <created>1647075736858</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1647075736858</updated>
+    </task>
+    <task id="LOCAL-00011" summary="cartProduct">
+      <created>1647080527187</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1647080527187</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +199,8 @@
     <MESSAGE value="add 8.1" />
     <MESSAGE value="add 8.1..." />
     <MESSAGE value="add 8.2..." />
-    <option name="LAST_COMMIT_MESSAGE" value="add 8.2..." />
+    <MESSAGE value="cartProduct" />
+    <option name="LAST_COMMIT_MESSAGE" value="cartProduct" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -243,25 +263,21 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
           <line>111</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
           <line>57</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/PopupNewAdress/PopupNewAdress.tsx</url>
           <line>145</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
           <line>65</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
