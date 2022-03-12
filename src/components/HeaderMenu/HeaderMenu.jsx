@@ -7,7 +7,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Badge from '@mui/material/Badge';
 
-import MenuButtonIcon from '@components/Icons/MenuButtonIcon';
+import { ReactComponent as MenuButtonIcon } from '@icons/menu2.svg';
 
 const useStyles = makeStyles((theme) => ({
   menuButton: {
@@ -16,6 +16,31 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '20px',
     [theme.breakpoints.down('md')]: {
       marginRight: '10px',
+    },
+  },
+  icon: {
+    width: '25px',
+    height: '25px',
+    fill: 'none',
+    '& rect': {
+      stroke: theme.colors.gray,
+      transition: `stroke .4s ease-in-out`,
+    },
+    '& path': {
+      fill: theme.colors.gray,
+      transition: `fill .4s ease-in-out`,
+    },
+    '&:hover rect': {
+      stroke: theme.colors.blue,
+      transition: `stroke .4s ease-in-out`,
+    },
+    '&:hover path': {
+      fill: theme.colors.blue,
+      transition: `fill .4s ease-in-out`,
+    },
+    [theme.breakpoints.down('md')]: {
+      width: '20px',
+      height: '20px',
     },
   },
   menu: {
@@ -86,7 +111,7 @@ export default function HeaderMenu() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        <MenuButtonIcon />
+        <MenuButtonIcon className={classes.icon} />
       </Button>
       <Menu
         className={classes.menu}

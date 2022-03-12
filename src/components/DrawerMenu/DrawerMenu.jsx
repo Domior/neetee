@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     width: 'fit-content',
+    backgroundColor: theme.colors.black,
     [theme.breakpoints.down('md')]: {
       marginTop: drawerHeight,
     },

@@ -22,9 +22,6 @@ const ProductNavList = styled.ul`
 `;
 const ProdoctItem = styled.li`
   flex-basis: calc((100% - 3 * 30px) / 3);
-  &:nth-child(n + 3) {
-      m
-  }
 `;
 const Link = styled(NavLink)`
   color: var(--color-black);

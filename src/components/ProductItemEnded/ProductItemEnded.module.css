@@ -5,20 +5,23 @@
     flex-direction: column;
     border-radius: 5px;
     border: 1px solid #C4C4C4;
-    margin-bottom: 20px;
 }
-.cardContainer:last-of-type {
-    margin-bottom: 0;
-}
+
 .cardHeader {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     height: 60px;
-    padding-left: 26px;
+    padding: 0 60px 0 26px;
     background-color: #F5F5F5;
     border-radius: 5px 5px 0 0;
+}
+
+.cardHeaderTitleContainer {
+    display: flex;
+    align-items: center;
 }
 
 .cardHeaderLogo {
@@ -41,7 +44,7 @@
     background-color: transparent;
     border: none;
     outline: none;
-    cursor: pointer 
+    cursor: pointer
 }
 
 .btnCloseIcon {
@@ -56,17 +59,27 @@
     border-radius: 0 0 5px 5px;
 }
 
-.cardItemImg{
+.cardItemImg {
     width: 215px;
     height: 157px;
     align-self: stretch;
     margin-right: 30px;
     border-radius: 5px;
 }
+
 .cardItemInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    align-self: flex-start;
-    
+}
+
+.cardItemTitleContainerLg {
+    display: block;
+}
+
+.cardItemTitleContainerSm {
+    display: none;
 }
 
 .cardItemTitle {
@@ -82,32 +95,45 @@
     line-height: 21px;
     color: #000000;
 }
-.cardBodyFooter{
+
+.cardBodyFooter {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-self: flex-end;
     flex-direction: column;
 }
+
 .cardItemPrice {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
     font-weight: 500;
     font-size: 20px;
-    line-height: 23px;
-    color: #000000;
+    line-height: 24px;
+    color: #666666;
     margin-bottom: 20px;
-    text-align: right;
 }
+
+.cardItemPrice:last-of-type {
+    color: #000000;
+}
+
 .cardItemPrice span {
-    font-weight: 500;
     font-size: 12px;
     line-height: 14px;
+    font-weight: 500;
     color: #666666;
     margin-right: 10px;
 }
-.cardItemPrice span:nth-child(1) {
-    display: inline;
+
+.btnsContainer {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
 }
-.cardItemPrice span:nth-child(2) {
-    display: none;
+
+.test {
+    display: flex;
 }
 
 
@@ -115,52 +141,81 @@
     .cardContainer {
         width: 100%;
     }
+
     .cardHeader {
-        height: 50px;
-        padding-left: 9px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: unset;
+        height: auto;
+        padding: 15px 30px 10px 9px;
     }
+
+    .cardHeaderTitleContainer {
+        order: 1
+    }
+
     .btnClose {
         top: 9px;
         right: 9px;
     }
+
     .cardBody {
-        flex-wrap: wrap;
+        flex-direction: column;
         padding: 15px 10px 20px;
     }
-    .cardItemImg{
+
+    .cardItemImg {
         width: 102px;
         height: 74px;
         margin-right: 10px;
     }
+
     .cardItemInfo {
-        width: 30%;
-        flex: auto;
-        margin-bottom: 10px;
+        margin-top: 10px;
     }
+
+    .cardItemTitleContainerLg {
+        display: none;
+    }
+
+    .cardItemTitleContainerSm {
+        display: block;
+    }
+
     .cardItemTitle {
         font-size: 12px;
         line-height: 14px;
         margin-bottom: 5px;
+
     }
+
     .cardItemDescription {
         font-size: 12px;
         line-height: 14px;
+
     }
+
     .cardBodyFooter {
-        width: 100%;
+        flex-wrap: wrap;
+        align-items: center;
     }
+
     .cardItemPrice {
-        text-align: left;
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 15px;
+    }
+
+    .cardItemPrice span {
+        margin-bottom: 1px;
+    }
+
+    .btnsContainer {
+        flex-direction: column;
+    }
+
+    .btnsContainer button:first-of-type {
         margin-bottom: 10px;
     }
-    .cardItemPrice span {
-        display: block;
-        margin-bottom: 5px;
-    }
-    .cardItemPrice span:nth-child(1) {
-        display: none;
-    }
-    .cardItemPrice span:nth-child(2) {
-        display: block;
-    }
+
 }

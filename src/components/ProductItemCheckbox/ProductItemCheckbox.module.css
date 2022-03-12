@@ -5,18 +5,15 @@
     flex-direction: column;
     border-radius: 5px;
     border: 1px solid #C4C4C4;
-    margin-bottom: 20px;
 }
-.cardContainer:last-of-type {
-    margin-bottom: 0;
-}
+
 .cardHeader {
     position: relative;
     display: flex;
     align-items: center;
     width: 100%;
     height: 60px;
-    padding-left: 26px;
+    padding: 0 45px 0 26px;
     background-color: #F5F5F5;
     border-radius: 5px 5px 0 0;
 }
@@ -41,7 +38,7 @@
     background-color: transparent;
     border: none;
     outline: none;
-    cursor: pointer 
+    cursor: pointer
 }
 
 .btnCloseIcon {
@@ -52,21 +49,31 @@
 .cardBody {
     display: flex;
     background-color: #fff;
-    padding: 30px 20px 30px 30px;
+    padding: 30px 20px 30px 60px;
     border-radius: 0 0 5px 5px;
 }
 
-.cardItemImg{
+.cardItemImg {
     width: 215px;
     height: 157px;
     align-self: stretch;
     margin-right: 30px;
     border-radius: 5px;
 }
+
 .cardItemInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    align-self: flex-start;
-    
+}
+
+.cardItemTitleContainerLg {
+    display: block;
+}
+
+.cardItemTitleContainerSm {
+    display: none;
 }
 
 .cardItemTitle {
@@ -82,32 +89,41 @@
     line-height: 21px;
     color: #000000;
 }
-.cardBodyFooter{
+
+.cardBodyFooter {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-self: flex-end;
-    flex-direction: column;
+    justify-content: space-between;
 }
+
+.counterContainer {
+    display: flex;
+}
+
 .cardItemPrice {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     font-weight: 500;
     font-size: 20px;
-    line-height: 23px;
-    color: #000000;
-    margin-bottom: 20px;
-    text-align: right;
+    line-height: 24px;
+    color: #666666;
 }
+
+.cardItemPrice:last-of-type {
+    color: #000000;
+}
+
 .cardItemPrice span {
-    font-weight: 500;
     font-size: 12px;
     line-height: 14px;
+    font-weight: 500;
     color: #666666;
-    margin-right: 10px;
+    margin-bottom: 13px;
 }
-.cardItemPrice span:nth-child(1) {
-    display: inline;
-}
-.cardItemPrice span:nth-child(2) {
-    display: none;
+
+.test {
+    display: flex;
 }
 
 
@@ -115,52 +131,99 @@
     .cardContainer {
         width: 100%;
     }
+
     .cardHeader {
         height: 50px;
-        padding-left: 9px;
+        padding: 0 30px 0 9px;
     }
+
     .btnClose {
         top: 9px;
         right: 9px;
     }
+
     .cardBody {
-        flex-wrap: wrap;
-        padding: 15px 10px 20px;
+        flex-direction: column;
+        padding: 15px 10px 20px 35px;
     }
-    .cardItemImg{
+
+    .cardItemImg {
         width: 102px;
         height: 74px;
         margin-right: 10px;
     }
+
     .cardItemInfo {
-        width: 30%;
-        flex: auto;
-        margin-bottom: 10px;
+        margin-top: 10px;
     }
+
+    .cardItemTitleContainerLg {
+        display: none;
+    }
+
+    .cardItemTitleContainerSm {
+        display: block;
+    }
+
     .cardItemTitle {
         font-size: 12px;
         line-height: 14px;
         margin-bottom: 5px;
+
     }
+
     .cardItemDescription {
         font-size: 12px;
         line-height: 14px;
+
     }
+
     .cardBodyFooter {
-        width: 100%;
+        flex-wrap: wrap;
+        align-items: center;
     }
-    .cardItemPrice {
-        text-align: left;
+
+    .cardBodyFooter>* {
         margin-bottom: 10px;
     }
+
+    .counterContainer {
+        justify-content: flex-end;
+        width: 50%;
+        order: 2;
+        margin-bottom: 0;
+    }
+
+    .cardItemPrice {
+        justify-content: flex-end;
+        width: 50%;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .cardItemPrice:last-of-type {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .cardItemPrice:nth-child(2) {
+        order: 0;
+    }
+
+    .cardItemPrice:nth-child(3) {
+        order: 1;
+    }
+
+    .cardItemPrice:nth-child(4) {
+        order: 3;
+        margin-bottom: 0;
+    }
+
     .cardItemPrice span {
-        display: block;
+        margin-bottom: 1px;
+    }
+
+    .cardItemPrice:last-of-type span {
         margin-bottom: 5px;
-    }
-    .cardItemPrice span:nth-child(1) {
-        display: none;
-    }
-    .cardItemPrice span:nth-child(2) {
-        display: block;
     }
 }

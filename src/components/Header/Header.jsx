@@ -8,10 +8,11 @@ import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 
 import HeaderMenu from '@components/HeaderMenu';
+import HeaderSubmenu from '@components/HeaderSubmenu';
 import Logo from '@components/Logo';
-import HomeIcon from '@components/Icons/HomeIcon';
-import CatalogIcon from '@components/Icons/CatalogIcon';
-import AvatarIcon from '@components/Icons/AvatarIcon';
+import { ReactComponent as HomeIcon } from '@icons/home.svg';
+import { ReactComponent as CatalogIcon } from '@icons/catalog.svg';
+import { ReactComponent as AvatarIcon } from '@icons/avatar.svg';
 
 // const headerHeight = 150;
 const headerUpHeight = 110;
@@ -80,11 +81,43 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
-
+  icon: {
+    width: '24px',
+    height: '24px',
+    fill: theme.colors.gray,
+    '&:hover *': {
+      fill: theme.colors.blue,
+      transition: `fill .4s ease-in-out`,
+    },
+    [theme.breakpoints.down('md')]: {
+      width: '20px',
+      height: '20px',
+    },
+  },
+  iconAvatar: {
+    width: '55px',
+    height: '55px',
+    stroke: theme.colors.gray,
+    fill: 'none',
+    '&:hover *': {
+      stroke: theme.colors.blue,
+      transition: `stroke .4s ease-in-out`,
+    },
+    [theme.breakpoints.down('md')]: {
+      width: '32px',
+      height: '32px',
+    },
+  },
   headerDown: {
     width: '100%',
     height: headerDownHeight,
+    // paddingLeft: '110px',
+    // paddingRight: '115px',
     backgroundColor: theme.palette.primary.secondary,
+    [theme.breakpoints.down('md')]: {
+      height: '30px',
+      // padding: `0 20px`,
+    },
   },
 }));
 
@@ -105,14 +138,14 @@ export default function ButtonAppBar() {
               {logined ? (
                 <Box className={classes.headerIcons}>
                   <Link to="/">
-                    <HomeIcon />
+                    <HomeIcon className={classes.icon} />
                   </Link>
                   <Link to="/">
-                    <CatalogIcon />
+                    <CatalogIcon className={classes.icon} />
                   </Link>
                   <HeaderMenu />
                   <Link to="/">
-                    <AvatarIcon />
+                    <AvatarIcon className={classes.iconAvatar} />
                   </Link>
                 </Box>
               ) : (
@@ -136,7 +169,9 @@ export default function ButtonAppBar() {
             </Box>
           </Box>
 
-          <Box className={classes.headerDown}></Box>
+          <Box className={classes.headerDown}>
+            <HeaderSubmenu />
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>

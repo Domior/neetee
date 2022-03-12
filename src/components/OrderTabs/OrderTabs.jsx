@@ -6,11 +6,16 @@ import Tab from '@mui/material/Tab';
 import Badge from '@mui/material/Badge';
 import Box from '@mui/material/Box';
 
-import ProductItem from '@components/ProductItem';
+import ProductList from '@components/ProductList';
+import ProductListBasket from '@components/ProductListBasket';
+import ProductItemMain from '@components/ProductItemMain';
+import ProductItemWithTracker from '@components/ProductItemWithTracker';
+import ProductItemEnded from '@components/ProductItemEnded';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
+    overflow: 'hidden',
     padding: `40px 115px 60px 65px`,
     [theme.breakpoints.down('md')]: {
       padding: `10px 20px 60px`,
@@ -18,6 +23,8 @@ const useStyles = makeStyles((theme) => ({
   },
   tabs: {
     minHeight: 'unset',
+    margin: `0 -15px`,
+    overflowX: 'auto',
     '& .MuiTabs-indicator': {
       display: 'none',
     },
@@ -25,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
       textShadow: `0px 0px 1px rgba(0,0,0,0.5)`,
       color: theme.colors.black,
       borderBottom: `2px solid ${theme.palette.info.main}`,
+    },
+    '& .MuiTabScrollButton-root': {
+      width: 'fit-content',
     },
   },
   tab: {
@@ -63,6 +73,11 @@ const useStyles = makeStyles((theme) => ({
       color: theme.colors.white,
       top: '-5px',
       right: '-9px',
+    },
+  },
+  tabPanel: {
+    '& > div': {
+      padding: `20px 0 0`,
     },
   },
 }));
@@ -107,98 +122,96 @@ export default function OrderTabs() {
 
   return (
     <Box className={classes.root}>
-      <Box>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          variant="scrollable"
-          scrollButtons="auto"
-          allowScrollButtonsMobile={true}
-          className={classes.tabs}
-          indicator="false"
-        >
-          <Tab
-            className={classes.tab}
-            label={<span className={classes.tabSpan}>Просмотренные</span>}
-            {...a11yProps(0)}
-          />
-          <Tab
-            className={classes.tab}
-            label={<span className={classes.tabSpan}>Избранное</span>}
-            {...a11yProps(1)}
-          />
-          <Tab
-            className={classes.tab}
-            label={<span className={classes.tabSpan}>Корзина</span>}
-            {...a11yProps(2)}
-          ></Tab>
-          <Tab
-            className={classes.tab}
-            label={
-              <Badge className={classes.badge} badgeContent={3} color="success">
-                <span className={classes.tabSpan}>Ждут оплаты</span>
-              </Badge>
-            }
-            {...a11yProps(3)}
-          />
-          <Tab
-            className={classes.tab}
-            label={
-              <Badge className={classes.badge} badgeContent={3} color="success">
-                <span className={classes.tabSpan}>Оплаченные</span>
-              </Badge>
-            }
-            {...a11yProps(4)}
-          />
-          <Tab
-            className={classes.tab}
-            label={
-              <Badge className={classes.badge} badgeContent={3} color="success">
-                <span className={classes.tabSpan}>Ждут получения</span>
-              </Badge>
-            }
-            {...a11yProps(5)}
-          />
-          <Tab
-            className={classes.tab}
-            label={
-              <Badge className={classes.badge} badgeContent={3} color="success">
-                <span className={classes.tabSpan}>Завершенные</span>
-              </Badge>
-            }
-            {...a11yProps(6)}
-          />
-          <Tab
-            className={classes.tab}
-            label={
-              <Badge className={classes.badge} badgeContent={5} color="error">
-                <span className={classes.tabSpan}>Заказы/работа</span>
-              </Badge>
-            }
-            {...a11yProps(7)}
-          />
-        </Tabs>
-      </Box>
-      <TabPanel value={value} index={0}>
-        <ProductItem />
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        variant="scrollable"
+        scrollButtons="auto"
+        allowScrollButtonsMobile={true}
+        className={classes.tabs}
+        indicator="false"
+      >
+        <Tab
+          className={classes.tab}
+          label={<span className={classes.tabSpan}>Просмотренные</span>}
+          {...a11yProps(0)}
+        />
+        <Tab
+          className={classes.tab}
+          label={<span className={classes.tabSpan}>Избранное</span>}
+          {...a11yProps(1)}
+        />
+        <Tab
+          className={classes.tab}
+          label={<span className={classes.tabSpan}>Корзина</span>}
+          {...a11yProps(2)}
+        ></Tab>
+        <Tab
+          className={classes.tab}
+          label={
+            <Badge className={classes.badge} badgeContent={3} color="success">
+              <span className={classes.tabSpan}>Ждут оплаты</span>
+            </Badge>
+          }
+          {...a11yProps(3)}
+        />
+        <Tab
+          className={classes.tab}
+          label={
+            <Badge className={classes.badge} badgeContent={3} color="success">
+              <span className={classes.tabSpan}>Оплаченные</span>
+            </Badge>
+          }
+          {...a11yProps(4)}
+        />
+        <Tab
+          className={classes.tab}
+          label={
+            <Badge className={classes.badge} badgeContent={3} color="success">
+              <span className={classes.tabSpan}>Ждут получения</span>
+            </Badge>
+          }
+          {...a11yProps(5)}
+        />
+        <Tab
+          className={classes.tab}
+          label={
+            <Badge className={classes.badge} badgeContent={3} color="success">
+              <span className={classes.tabSpan}>Завершенные</span>
+            </Badge>
+          }
+          {...a11yProps(6)}
+        />
+        <Tab
+          className={classes.tab}
+          label={
+            <Badge className={classes.badge} badgeContent={5} color="error">
+              <span className={classes.tabSpan}>Заказы/работа</span>
+            </Badge>
+          }
+          {...a11yProps(7)}
+        />
+      </Tabs>
+      <TabPanel value={value} index={0} className={classes.tabPanel}>
+        <ProductList />
       </TabPanel>
-      <TabPanel value={value} index={1}>
-        Избранное
+      <TabPanel value={value} index={1} className={classes.tabPanel}>
+        <ProductList />
       </TabPanel>
-      <TabPanel value={value} index={2}>
-        Корзина
+      <TabPanel value={value} index={2} className={classes.tabPanel}>
+        <ProductListBasket />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Ждут оплаты
+        <ProductItemMain />
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Оплаченные
+        <ProductItemWithTracker />
       </TabPanel>
       <TabPanel value={value} index={5}>
-        Ждут получения
+        <ProductList />
       </TabPanel>
       <TabPanel value={value} index={6}>
-        Завершенные
+        <ProductItemEnded />
       </TabPanel>
       <TabPanel value={value} index={7}>
         Заказы/работа

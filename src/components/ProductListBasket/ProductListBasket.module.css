@@ -1,0 +1,13 @@
+.container {
+    max-height: 850px;
+    overflow-y: auto;
+    padding-right: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        max-height: unset;
+        overflow-y: unset;
+        padding-right: 0;
+    }
+}
