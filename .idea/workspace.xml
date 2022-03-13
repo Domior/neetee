@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="cartProduct">
-      <change afterPath="$PROJECT_DIR$/src/components/filteredProductsList/filteredProductsList.tsx" afterDir="false" />
+    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="CartProduct">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/HomePage/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/HomePage/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="lisa" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,13 +37,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/containers/pages/8.1/innerStaps" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\lisa1\Desktop\helps\neetee\node_modules\prettier" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="D:\react\komelin\neetee\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -99,6 +98,10 @@
       <workItem from="1647069258769" duration="3559000" />
       <workItem from="1647075244514" duration="139000" />
       <workItem from="1647075437812" duration="7834000" />
+      <workItem from="1647170960269" duration="1378000" />
+      <workItem from="1647172384624" duration="350000" />
+      <workItem from="1647172783389" duration="633000" />
+      <workItem from="1647177694318" duration="1784000" />
     </task>
     <task id="LOCAL-00001" summary="add 8.1">
       <created>1644398846734</created>
@@ -193,7 +196,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add 8.1" />
