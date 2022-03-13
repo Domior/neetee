@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import Banner from '@components/Banner/Banner';
+import Breadcrumbs from '@components/Breadcrumbs/Breadcrumbs';
 
 import { ReactComponent as AllItemsIcon } from '@icons/allItems.svg';
 import { ReactComponent as TrendingItemsIcon } from '@icons/trendingItems.svg';
@@ -24,6 +25,13 @@ const subFilterButtons = [
   { title: 'Детская одежда и обувь', link: '#/', value: '4' },
   { title: 'Товары для детей и игрушки', link: '#/', value: '5' },
   { title: 'Часы и украшения', link: '#/', value: '6' },
+];
+
+const breadcrumbs = [
+  { title: 'Главная', link: '#/' },
+  { title: 'Категории', link: '#/' },
+  { title: 'Товар', link: '#/' },
+  { title: 'Красота и здоровье', link: '#/' },
 ];
 
 const HomePage = () => {
@@ -61,6 +69,7 @@ const HomePage = () => {
             ))}
           </ul>
         </div>
+        <Breadcrumbs data={breadcrumbs} />
       </div>
     </>
   );
