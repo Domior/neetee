@@ -1,6 +1,7 @@
 .container{
     width: 95%;
     margin: 0 auto;
+    /*background: red;*/
 }
 .titleFilters{
     font-size: 20px;
@@ -18,6 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 37px;
 }
 .priceFilter{
     display: flex;
@@ -41,10 +43,12 @@
     height: 32px;
     border-radius: 30px;
     border: 1px solid #C4C4C4;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: space-between;*/
+    padding: 8px;
 }
+
 .priceFilter input{
     border:none;
     background: transparent;
@@ -58,4 +62,42 @@
 }
 .checkboxWrap,.viewWrap{
     display: flex;
+    align-items: center;
+}
+.viewWrap p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #666666;
+}
+.viewWrap svg{
+    color:#C4C4C4;
+    margin-left: 15px;
+}
+.viewWrap svg.activeView{
+    color: #4270AD;
+}
+@media screen and (max-width: 992px) {
+    .rowFilters{
+        flex-wrap: wrap;
+    }
+    .priceFilter{
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .rowFilters{
+        flex-direction: column;
+        align-items: baseline;
+    }
+    .checkboxWrap{
+        margin-bottom: 20px;
+    }
+    .priceFilter label{
+        width: 132px;
+        padding: 0 9px;
+    }
+    .checkboxWrap{
+
+    }
 }

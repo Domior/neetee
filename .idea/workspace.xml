@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="CartProduct">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/filteredProductsList/FilteredProductsList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filteredProductsList/FilteredProductsList.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/filteredProductsList/filteredProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filteredProductsList/filteredProductsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/filteredProductsList/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filteredProductsList/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/App/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/routesConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routesConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/pages/HomePage/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/HomePage/HomePage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +40,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="24kqeVt4yqqAS8RNRAlcmVP2p6M" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -108,6 +116,7 @@
       <workItem from="1647075244514" duration="139000" />
       <workItem from="1647075437812" duration="9164000" />
       <workItem from="1647162547424" duration="447000" />
+      <workItem from="1647184691873" duration="21013000" />
     </task>
     <task id="LOCAL-00001" summary="add 8.1">
       <created>1644398846734</created>
@@ -223,7 +232,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add 8.1" />
@@ -311,6 +319,12 @@
           <url>file://$PROJECT_DIR$/src/containers/pages/8.1/innerStaps/firstStep/FirstStep.jsx</url>
           <line>65</line>
           <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/filteredProductsList/filteredProductsList.tsx</url>
+          <line>93</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

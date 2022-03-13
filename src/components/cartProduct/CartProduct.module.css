@@ -1,4 +1,4 @@
-.cartProductWrap{
+.cartProductWrap {
     display: flex;
     background: #FFFFFF;
     border: 1px solid #C4C4C4;
@@ -6,46 +6,139 @@
     border-radius: 5px;
     padding: 5px;
 }
-.cartPCol{
-    width: 270px;
+
+.cartPCol {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto 30px;
 }
-.cartPRow{
+
+.cartPRow {
+    width: 100%;
+    margin: 0 0 30px;
+}
+
+.imgWrap {
+    max-width: 266px;
+    width: 99%;
+}
+.cartPCol .imgWrap {
+    margin: 0 auto;
+}
+.imgWrap img {
     width: 100%;
 }
-.imgWrap{
-    width: 256px;
+.cartPCol .infoExpansiveWrap{
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
 }
-.imgWrap image{
-    width: 100%;
+.cartPRow .infoExpansiveWrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .infoWrap{
-
+    position: relative;
 }
-.infoWrap h4{
-    font-weight: 700;
-    color: #000000;
+.starInfo,.cartInfo{
+    position: absolute;
+    background: #ffffff;
+    top: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
-.infoWrap p{
+.cartProductWrap.cartPRow .infoWrap{
+    margin: 0 20px;
+}
+.cartProductWrap.cartPRow .infoPriceWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.cartPRow .infoName{
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
     color: #666666;
 }
-.bagInfo{
-
+.cartPRow .infoData{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
 }
-.iconBtn{
-    color: #C4C4C4;
+.infoPriceWrap p{
+    width: 190px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
 }
-.bagBtn{
-    color: #8C4C14;
+.productPriceText{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #666666;
 }
-.starBtn{
-    color: #F9CB38;
-}
-.userBtn{
+.productPrice{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: right;
     color: #4270AD;
 }
-.cartBtn{
+.infoWrap h4 {
+    font-weight: 700;
+    color: #000000;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.infoWrap p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+.bagInfo p>span{
+    font-size: 12px;
+    color: #000;
+    margin-left: 12px;
+}
+
+.iconBtn {
+    color: #C4C4C4;
+}
+
+.bagBtn {
+    color: #8C4C14;
+}
+
+.starBtn {
+    color: #F9CB38;
+}
+
+.userBtn {
+    color: #4270AD;
+}
+
+.cartBtn {
     color: #79B256;
+}
+
+@media screen and (max-width: 1132px) {
+    .cartPCol .imgWrap {
+        width: 200px;
+        width: 99%;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 500px) {
+    .cartPCol .infoExpansiveWrap{
+        flex-wrap: wrap;
+    }
 }

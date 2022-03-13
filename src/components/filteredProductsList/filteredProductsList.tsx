@@ -1,8 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputAdornment from '@mui/material/InputAdornment';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootStateType } from '../../bll/store';
 import { setMaxTypeAC, setMinTypeAC } from '../../bll/productReduser';
@@ -29,19 +25,37 @@ const FilteredProductsList = () => {
     if (!isFinite(value)) return;
     dispatch(setMaxTypeAC(value));
   };
-  const [gridView,setGridView]=useState(true)
-  const [rowView,setRowView]=useState(false)
+  const [gridView, setGridView] = useState(true);
+  const [rowView, setRowView] = useState(false);
+  const [countColumn, setCountColumn] = useState('repeat(4, 1fr)');
   const gridViewHandler = () => {
-    setGridView(true)
-    setRowView(false)
-  }
+    setGridView(true);
+    setRowView(false);
+  };
   const rowViewHandler = () => {
-    setGridView(false)
-    setRowView(true)
+    setGridView(false);
+    setRowView(true);
+  };
+  let ollProducts = productsList;
+
+  const windowWidth = window.innerWidth;
+  useEffect(() => {
+    if (windowWidth <= 992) setCountColumn('repeat(3, 1fr)');
+    if (windowWidth <= 665) setCountColumn('repeat(2, 1fr)');
+  }, [windowWidth]);
+  const viewsStyle = {
+    display: gridView ? 'grid' : 'block',
+    gridTemplateColumns: countColumn,
+    gridGap: '5px',
+  };
+  if(min){
+    ollProducts = ollProducts.filter(p=> Number(p.itemPrise) >= Number(min))
   }
-
+  if(max){
+    ollProducts = ollProducts.filter(p=> Number(p.itemPrise) >= Number(max))
+  }
   console.log('productsList', productsList);
-
+  console.log('ollProducts', ollProducts);
   return (
     <div className={cl.container}>
       <h3 className={cl.titleFilters}>Результаты поиска</h3>
@@ -77,16 +91,19 @@ const FilteredProductsList = () => {
         </div>
         <div className={cl.viewWrap}>
           <p>Показать в виде</p>
-          <GridViewOutlinedIcon onClick={gridViewHandler}/>
-          <DensitySmallOutlinedIcon onClick={rowViewHandler}/>
+          <GridViewOutlinedIcon onClick={gridViewHandler} className={`${gridView ? cl.activeView : ''}`} />
+          <DensitySmallOutlinedIcon onClick={rowViewHandler} className={`${rowView ? cl.activeView : ''}`} />
         </div>
       </div>
-      <div className={cl.productList}>
-        {productsList?.map(p => <CartProduct key={p.id} imgUrl={p.imgUrl} productName={p.productName}
-                                            productDeck={p.desc} productPrice={p.itemPrise} sales={p.sales}
-                                            ads={'12'} affiliate={'someText'} reviews={p.reviews}
-                                            imgUserUrl={p.imgUserUrl} userName={'userName'} userMail={'@someMail'}
-                                            createdAk={'08.03.2020'} gridView={gridView}/>)
+      <div className={cl.productList} style={viewsStyle}>
+        {
+          // ollProducts?.map(p => <CartProduct
+          productsList?.map(p => <CartProduct
+            key={p.id} imgUrl={p.imgUrl} productName={p.productName}
+                                             productDeck={p.desc} productPrice={p.itemPrise} sales={p.sales}
+                                             ads={'12'} affiliate={'someText'} reviews={p.reviews}
+                                             imgUserUrl={p.imgUserUrl} userName={'userName'} userMail={'@someMail'}
+                                             createdAk={'08.03.2020'} gridView={gridView} />)
         }
       </div>
     </div>
