@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/neetee/static/css/main.7a7aeef8.css",
-    "main.js": "/neetee/static/js/main.77d299d8.js",
+    "main.css": "/neetee/static/css/main.1248d1a7.css",
+    "main.js": "/neetee/static/js/main.91149abe.js",
     "static/media/shopItemsIcon.svg": "/neetee/static/media/shopItemsIcon.6245c7cc828ab3a99bc178e61adb7da1.svg",
     "static/media/taobao.svg": "/neetee/static/media/taobao.92d02043bb02c64c3fa837288d26b118.svg",
     "static/media/banner-img.jpg": "/neetee/static/media/banner-img.1c35d5acb691e65029ca.jpg",
@@ -30,11 +30,11 @@
     "static/media/menu2.svg": "/neetee/static/media/menu2.c68515b1525d74fab80ed58ecd5d12fd.svg",
     "static/media/close.svg": "/neetee/static/media/close.343931f4559cb58fa4b5703b86154ee1.svg",
     "static/media/arrow.svg": "/neetee/static/media/arrow.e4916964c5e003ed99b71706577b80db.svg",
-    "main.7a7aeef8.css.map": "/neetee/static/css/main.7a7aeef8.css.map",
-    "main.77d299d8.js.map": "/neetee/static/js/main.77d299d8.js.map"
+    "main.1248d1a7.css.map": "/neetee/static/css/main.1248d1a7.css.map",
+    "main.91149abe.js.map": "/neetee/static/js/main.91149abe.js.map"
   },
   "entrypoints": [
-    "static/css/main.7a7aeef8.css",
-    "static/js/main.77d299d8.js"
+    "static/css/main.1248d1a7.css",
+    "static/js/main.91149abe.js"
   ]
 }
