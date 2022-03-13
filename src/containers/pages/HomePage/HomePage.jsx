@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import Banner from '@components/Banner/Banner';
+import Breadcrumbs from '@components/Breadcrumbs/Breadcrumbs';
 
 import { ReactComponent as AllItemsIcon } from '@icons/allItems.svg';
 import { ReactComponent as TrendingItemsIcon } from '@icons/trendingItems.svg';
@@ -10,21 +11,28 @@ import { ReactComponent as WholesaleItemsIcon } from '@icons/shopItemsIcon.svg';
 
 import styles from './HomePage.module.css';
 
-const tabsItems = [
+const mainFilterButtons = [
   { title: 'Все товары', value: 'all', img: <AllItemsIcon /> },
   { title: 'Трендовые товары', value: 'trending', img: <TrendingItemsIcon /> },
   { title: 'Товары 1688.com', value: '1688', img: <ShopItemsIcon /> },
   { title: 'Оптовые товары', value: 'wholesale', img: <WholesaleItemsIcon /> },
 ];
 
-// const list = [
-//   'Одежда, обувь, аксессуары',
-//   'Товары для детей и игрушки',
-//   'Одежда, обувь, аксессуары1',
-//   'Детская одежда и обувь',
-//   'Часы и украшения',
-//   'Детская одежда и обувь1',
-// ];
+const subFilterButtons = [
+  { title: 'Одежда, обувь, аксессуары', link: '#/', value: '1' },
+  { title: 'Часы и украшения', link: '#/', value: '2' },
+  { title: 'Товары для детей и игрушки', link: '#/', value: '3' },
+  { title: 'Детская одежда и обувь', link: '#/', value: '4' },
+  { title: 'Товары для детей и игрушки', link: '#/', value: '5' },
+  { title: 'Часы и украшения', link: '#/', value: '6' },
+];
+
+const breadcrumbs = [
+  { title: 'Главная', link: '#/' },
+  { title: 'Категории', link: '#/' },
+  { title: 'Товар', link: '#/' },
+  { title: 'Красота и здоровье', link: '#/' },
+];
 
 const HomePage = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
@@ -38,7 +46,7 @@ const HomePage = () => {
       <Banner link1="/" link2="/" />
       <div className={styles.container}>
         <div className={styles.mainFilterButtonsContainer}>
-          {tabsItems.map((item, index) => (
+          {mainFilterButtons.map((item, index) => (
             <button
               className={`${styles.mainFilterButton} ${
                 activeIndex === index ? styles.mainFilterButtonActive : ''
@@ -52,6 +60,16 @@ const HomePage = () => {
             </button>
           ))}
         </div>
+        <div className={styles.subFilterButtonsContainer}>
+          <ul className={styles.subFilterButtonsList}>
+            {subFilterButtons.map((item) => (
+              <li key={item.value}>
+                <a href={item.link}>{item.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <Breadcrumbs data={breadcrumbs} />
       </div>
     </>
   );
