@@ -1,0 +1,51 @@
+.cartProductWrap{
+    display: flex;
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    padding: 5px;
+}
+.cartPCol{
+    width: 270px;
+}
+.cartPRow{
+    width: 100%;
+}
+.imgWrap{
+    width: 256px;
+}
+.imgWrap image{
+    width: 100%;
+}
+.infoWrap{
+
+}
+.infoWrap h4{
+    font-weight: 700;
+    color: #000000;
+}
+.infoWrap p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #666666;
+}
+.bagInfo{
+
+}
+.iconBtn{
+    color: #C4C4C4;
+}
+.bagBtn{
+    color: #8C4C14;
+}
+.starBtn{
+    color: #F9CB38;
+}
+.userBtn{
+    color: #4270AD;
+}
+.cartBtn{
+    color: #79B256;
+}

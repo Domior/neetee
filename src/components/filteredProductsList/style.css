@@ -1,0 +1,44 @@
+.clear {clear: both;}
+label {float: left;}
+
+.labeltext {
+    display: inline-block;
+    float: left;
+    padding-top: 6px;
+    padding-left: 10px;
+}
+
+.custom-big-checkbox input[type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.custom-big-checkbox {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.custom-big-checkbox__checkbox {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid silver;
+    transition: border 0.3s ease;
+}
+
+.custom-big-checkbox input[type="checkbox"]:checked + .custom-big-checkbox__checkbox {
+    background: url('./../../assets/active.png') center center no-repeat;
+    border-color: #C4C4C4;
+    width: 20px;
+}
+
+.custom-big-checkbox:hover .custom-big-checkbox__checkbox {
+    border-color: #C4C4C4;
+}
+.labelValue{
+    font-size: 14px;
+    color: #000000;
+    margin-left: 9px;
+    margin-right: 29px;
+}
