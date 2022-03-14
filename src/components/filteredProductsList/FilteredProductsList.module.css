@@ -52,8 +52,27 @@
 .priceFilter input{
     border:none;
     background: transparent;
-    padding: 10px 0;
+    padding: 0 10px ;
     width: 60px;
+}
+.applyFilterPrice{
+    width: 139px;
+    height: 49px;
+    background: #4270AD;
+    box-shadow: 0 10px 15px rgba(66, 112, 173, 0.12);
+    border-radius: 5px;
+    border: 2px solid #4270AD;
+    color: #fff;
+    font-size: 14px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.applyFilterPrice:hover{
+    background: transparent;
+    color: #4270AD;
+}
+.applyFilterPrice.disabled{
+
 }
 .arrows{
     width: 20px;

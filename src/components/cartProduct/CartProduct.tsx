@@ -104,7 +104,7 @@ const CartProduct = (props: CartProductType) => {
         <StarBorderOutlinedIcon className={`${cl.iconBtn} ${starInfo && cl.starBtn}`} onClick={starInfoHandler} />
         <AccountCircleOutlinedIcon className={`${cl.iconBtn} ${userInfo && cl.userBtn}`} onClick={userInfoHandler} />
         <ShoppingCartOutlinedIcon className={`${cl.iconBtn} ${cartInfo && cl.cartBtn}`} onClick={cartInfoHandler} />
-        {props.gridView && <span className={`${cl.productPrice}`}>{props.productPrice}</span>}
+        {props.gridView && <span className={`${cl.productPrice}`}>{props.productPrice}$</span>}
       </div>
       {!props.gridView && <div className={cl.infoPriceWrap}>
         <p>
@@ -121,7 +121,7 @@ const CartProduct = (props: CartProductType) => {
         </p>
         <p>
           <span className={`${cl.productPriceText}`}>Цена:</span>
-          <span className={`${cl.productPrice}`}>{props.productPrice}</span>
+          <span className={`${cl.productPrice}`}>{props.productPrice}$</span>
         </p>
       </div>
       }

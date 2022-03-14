@@ -12,6 +12,21 @@ export type itemUserAdresType={
   companyName?:string
   inn?:string
 }
+export type selectedProductDefaultType={
+  id:string
+  imgUrl:string
+  desc:string
+  color:string
+  storeName:string
+  itemPrise:string
+  count:string
+  deliveryPr:string
+  totalPr:string
+  sales:string
+  reviews:string
+  imgUserUrl:string
+  productName:string
+}
 const userAdres = [
   {
     id: '1',
@@ -63,7 +78,7 @@ const listSelectedProductDefault = [
     desc:'2021 новый предмет baotou тапочки женские летние за  тапочки...',
     color:'Голубое озеро 60 мм',
     storeName:'揭阳市生生模具器有限公司',
-    itemPrise:'350 $',
+    itemPrise:'350 ',
     count:'100',
     deliveryPr:'5 $',
     totalPr:'35 000 $',
@@ -78,7 +93,7 @@ const listSelectedProductDefault = [
     desc:'2021 новый предмет baotou тапочки женские летние за  тапочки...',
     color:'Голубое озеро 60 мм',
     storeName:'揭阳市生生模具器有限公司',
-    itemPrise:'350 $',
+    itemPrise:'50 ',
     count:'100',
     deliveryPr:'5 $',
     totalPr:'35 000 $',
@@ -93,7 +108,7 @@ const listSelectedProductDefault = [
     desc:'2021 новый предмет baotou тапочки женские летние за  тапочки...',
     color:'Голубое озеро 60 мм',
     storeName:'揭阳市生生模具器有限公司',
-    itemPrise:'350 $',
+    itemPrise:'35 ',
     count:'100',
     deliveryPr:'5 $',
     totalPr:'35 000 $',
@@ -108,7 +123,7 @@ const listSelectedProductDefault = [
     desc:'2021 новый предмет baotou тапочки женские летние за  тапочки...',
     color:'Голубое озеро 60 мм',
     storeName:'揭阳市生生模具器有限公司',
-    itemPrise:'350 $',
+    itemPrise:'355',
     count:'100',
     deliveryPr:'5 $',
     totalPr:'35 000 $',
@@ -123,7 +138,7 @@ const listSelectedProductDefault = [
     desc:'2021 новый предмет baotou тапочки женские летние за  тапочки...',
     color:'Голубое озеро 60 мм',
     storeName:'揭阳市生生模具器有限公司',
-    itemPrise:'350 $',
+    itemPrise:'355',
     count:'100',
     deliveryPr:'5 $',
     totalPr:'35 000 $',
@@ -138,7 +153,7 @@ const listSelectedProductDefault = [
     desc:'2021 новый предмет baotou тапочки женские летние за  тапочки...',
     color:'Голубое озеро 60 мм',
     storeName:'揭阳市生生模具器有限公司',
-    itemPrise:'350 $',
+    itemPrise:'3508',
     count:'100',
     deliveryPr:'5 $',
     totalPr:'35 000 $',
@@ -153,7 +168,7 @@ const listSelectedProductDefault = [
     desc:'2021 новый предмет baotou тапочки женские летние за  тапочки...',
     color:'Голубое озеро 60 мм',
     storeName:'揭阳市生生模具器有限公司',
-    itemPrise:'350 $',
+    itemPrise:'3508',
     count:'100',
     deliveryPr:'5 $',
     totalPr:'35 000 $',
