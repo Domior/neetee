@@ -26,7 +26,7 @@ const FilteredProductsList = () => {
   const [rowView, setRowView] = useState(false);
   const [ollProducts, setOllProducts] = useState<Array<selectedProductDefaultType>>(productsList);
   // const [ollProducts, setOllProducts] = useState<Array<selectedProductDefaultType>>([]);
-  const [countColumn, setCountColumn] = useState('repeat(4, 1fr)');
+  const [countColumn, setCountColumn] = useState('repeat(auto-fill, minmax(270px, 1fr))');
   const windowWidth = window.innerWidth;
 
 
@@ -94,7 +94,7 @@ const FilteredProductsList = () => {
             <input type={'number'} value={min}  placeholder={'0'} onChange={onChangeMin} />
             <span>₽</span>
           </label>
-          <img src={arrows} alt='arrows' className={cl.arrows} />
+          <img src={arrows} alt="arrows" className={cl.arrows} />
           <label className={cl.priceMax}> до
             <input type={'number'} value={max} placeholder={'0'} onChange={onChangeMax} />
             {/*<input type={'number'} value={max} min={min} onChange={onChangeMax} />*/}
@@ -103,20 +103,20 @@ const FilteredProductsList = () => {
           <button className={cl.applyFilterPrice} onClick={applyFilterPrice} disabled={false}>Применить</button>
         </div>
         <div className={cl.checkboxWrap}>
-          <label className='custom-big-checkbox'>
-            <input type='checkbox' name='otk' className='align-self-center' />
-            <span className='custom-big-checkbox__checkbox'></span>
-            <span className='labelValue'>По рейтингу</span>
+          <label className="custom-big-checkbox">
+            <input type="checkbox" name="otk" className="align-self-center" />
+            <span className="custom-big-checkbox__checkbox"></span>
+            <span className="labelValue">По рейтингу</span>
           </label>
-          <label className='custom-big-checkbox'>
-            <input type='checkbox' name='otk' className='align-self-center' />
-            <span className='custom-big-checkbox__checkbox'></span>
-            <span className='labelValue'>По отзывам</span>
+          <label className="custom-big-checkbox">
+            <input type="checkbox" name="otk" className="align-self-center" />
+            <span className="custom-big-checkbox__checkbox"></span>
+            <span className="labelValue">По отзывам</span>
           </label>
-          <label className='custom-big-checkbox'>
-            <input type='checkbox' name='otk' className='align-self-center' />
-            <span className='custom-big-checkbox__checkbox'></span>
-            <span className='labelValue'>По покупке</span>
+          <label className="custom-big-checkbox">
+            <input type="checkbox" name="otk" className="align-self-center" />
+            <span className="custom-big-checkbox__checkbox"></span>
+            <span className="labelValue">По покупке</span>
           </label>
         </div>
         <div className={cl.viewWrap}>

@@ -72,7 +72,7 @@ const CartProduct = (props: CartProductType) => {
     <div className={`${cl.cartProductWrap} ${props.gridView ? cl.cartPCol : cl.cartPRow}`}
          style={{ flexDirection: props.gridView ? 'column' : 'row' }}>
       <div className={cl.imgWrap}>
-        <img src={img} alt='productName' />
+        <img src={img} alt="productName" />
         {/*<img src={props.imgUrl} alt='productName' />*/}
       </div>
       <div className={cl.infoWrap}>
@@ -86,7 +86,7 @@ const CartProduct = (props: CartProductType) => {
         </div>}
         {userInfo && <div className={cl.userInfo}>
           <div className={cl.imgUserWrap}>
-            <img src={props.imgUserUrl} alt='productName' />
+            <img src={props.imgUserUrl} alt="productName" />
           </div>
           <p>{props.userName}</p>
           <p>{props.userMail}</p>
@@ -100,10 +100,12 @@ const CartProduct = (props: CartProductType) => {
         </div>
       </div>
       <div className={cl.infoExpansiveWrap}>
-        <BusinessCenterOutlinedIcon className={`${cl.iconBtn} ${bagInfo && cl.bagBtn}`} onClick={bagInfoHandler} />
-        <StarBorderOutlinedIcon className={`${cl.iconBtn} ${starInfo && cl.starBtn}`} onClick={starInfoHandler} />
-        <AccountCircleOutlinedIcon className={`${cl.iconBtn} ${userInfo && cl.userBtn}`} onClick={userInfoHandler} />
-        <ShoppingCartOutlinedIcon className={`${cl.iconBtn} ${cartInfo && cl.cartBtn}`} onClick={cartInfoHandler} />
+        <div className={cl.infoExpansiveIcons}>
+          <BusinessCenterOutlinedIcon className={`${cl.iconBtn} ${bagInfo && cl.bagBtn}`} onClick={bagInfoHandler} />
+          <StarBorderOutlinedIcon className={`${cl.iconBtn} ${starInfo && cl.starBtn}`} onClick={starInfoHandler} />
+          <AccountCircleOutlinedIcon className={`${cl.iconBtn} ${userInfo && cl.userBtn}`} onClick={userInfoHandler} />
+          <ShoppingCartOutlinedIcon className={`${cl.iconBtn} ${cartInfo && cl.cartBtn}`} onClick={cartInfoHandler} />
+        </div>
         {props.gridView && <span className={`${cl.productPrice}`}>{props.productPrice}$</span>}
       </div>
       {!props.gridView && <div className={cl.infoPriceWrap}>

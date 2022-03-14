@@ -5,7 +5,7 @@ import MainFilterButtons from '@components/MainFilterButtons/MainFilterButtons';
 import SubFilterButtons from '@components/SubFilterButtons/SubFilterButtons';
 import Breadcrumbs from '@components/Breadcrumbs/Breadcrumbs';
 
-import FilteredProductsList from '../../../components/filteredProductsList/filteredProductsList';
+import FilteredProductsList from '../../../components/FilteredProductsList/filteredProductsList';
 
 import styles from './HomePage.module.css';
 

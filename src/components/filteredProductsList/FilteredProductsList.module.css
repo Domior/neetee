@@ -1,32 +1,34 @@
-.container{
-    width: 95%;
-    margin: 0 auto;
-    /*background: red;*/
+.container {
+    margin-top: 40px;
 }
-.titleFilters{
+
+.titleFilters {
     font-size: 20px;
     font-weight: 700;
-    margin-top: 40px;
     margin-bottom: 20px;
 }
-.titlePrice{
+
+.titlePrice {
     color: #666666;
     font-weight: 400;
     font-size: 14px;
     margin-bottom: 17px;
 }
-.rowFilters{
+
+.rowFilters {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 37px;
 }
-.priceFilter{
+
+.priceFilter {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.priceFilter label{
+
+.priceFilter label {
     width: 140px;
     height: 50px;
     background: #FFFFFF;
@@ -38,24 +40,30 @@
     /*justify-content: space-between;*/
     padding: 0 9px 0 20px;
 }
-.priceFilter span{
+
+.priceFilter span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 32px;
+    min-width: 32px;
     height: 32px;
     border-radius: 30px;
     border: 1px solid #C4C4C4;
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: space-between;*/
-    padding: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    /* padding: 8px; */
 }
 
-.priceFilter input{
-    border:none;
+.priceFilter input {
+    border: none;
     background: transparent;
-    padding: 0 10px ;
+    padding: 0 0 0 5px;
     width: 60px;
 }
-.applyFilterPrice{
+
+.applyFilterPrice {
     width: 139px;
     height: 49px;
     background: #4270AD;
@@ -66,57 +74,69 @@
     font-size: 14px;
     margin-left: 20px;
     margin-right: 20px;
+    cursor: pointer;
 }
-.applyFilterPrice:hover{
+
+.applyFilterPrice:hover {
     background: transparent;
     color: #4270AD;
 }
-.applyFilterPrice.disabled{
 
-}
-.arrows{
+.applyFilterPrice.disabled {}
+
+.arrows {
     width: 20px;
     height: 10px;
     margin: 0 10px;
 }
-.checkboxWrap,.viewWrap{
+
+.checkboxWrap,
+.viewWrap {
     display: flex;
     align-items: center;
 }
-.viewWrap p{
+
+.viewWrap p {
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
     color: #666666;
 }
-.viewWrap svg{
-    color:#C4C4C4;
+
+.viewWrap svg {
+    color: #C4C4C4;
     margin-left: 15px;
+    cursor: pointer;
 }
-.viewWrap svg.activeView{
+
+.viewWrap svg.activeView {
     color: #4270AD;
 }
-@media screen and (max-width: 992px) {
-    .rowFilters{
+
+
+@media screen and (max-width: 900px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .rowFilters {
         flex-wrap: wrap;
-    }
-    .priceFilter{
-        margin-bottom: 20px;
-    }
-}
-@media screen and (max-width: 650px) {
-    .rowFilters{
         flex-direction: column;
         align-items: baseline;
     }
-    .checkboxWrap{
+
+    .checkboxWrap {
         margin-bottom: 20px;
     }
-    .priceFilter label{
+
+    .priceFilter {
+        margin-bottom: 20px;
+    }
+
+    .priceFilter label {
         width: 132px;
         padding: 0 9px;
     }
-    .checkboxWrap{
 
-    }
+    .checkboxWrap {}
 }

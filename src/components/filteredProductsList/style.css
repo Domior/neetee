@@ -1,4 +1,3 @@
-
 .labeltext {
     display: inline-block;
     float: left;
@@ -25,7 +24,7 @@
     transition: border 0.3s ease;
 }
 
-.custom-big-checkbox input[type="checkbox"]:checked + .custom-big-checkbox__checkbox {
+.custom-big-checkbox input[type="checkbox"]:checked+.custom-big-checkbox__checkbox {
     background: url('./../../assets/active.png') center center no-repeat;
     border-color: #C4C4C4;
     width: 20px;
@@ -34,7 +33,8 @@
 .custom-big-checkbox:hover .custom-big-checkbox__checkbox {
     border-color: #C4C4C4;
 }
-.labelValue{
+
+.labelValue {
     font-size: 14px;
     color: #000000;
     margin-left: 9px;
