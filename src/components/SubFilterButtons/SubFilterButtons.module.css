@@ -1,0 +1,65 @@
+.subFilterButtonsContainer {
+  margin-top: 20px;
+}
+
+.subFilterButtonsList {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 45px 15px 25px 30px;
+  max-height: 148px;
+  overflow-y: auto;
+  background-color: #F5F5F5;
+  border-radius: 5px;
+  list-style-type: disclosure-closed;
+}
+
+.subFilterButtonsList::-webkit-scrollbar {
+  width: 5px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+}
+
+.subFilterButtonsList::-webkit-scrollbar-thumb {
+  background-color: #C4C4C4;
+  border-radius: 5px;
+}
+
+.subFilterButtonsList li {
+  width: calc(100% / 3);
+  margin-bottom: 20px;
+}
+
+.subFilterButtonsList li::marker {
+  font-size: 12px;
+  list-style: 8px;
+  color: #C4C4C4;
+}
+
+.subFilterButtonsList li a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 900px) {
+  .subFilterButtonsContainer {
+    margin-top: 30px;
+    padding: 0 20px;
+  }
+
+  .subFilterButtonsList {
+    padding: 30px 20px 20px 30px;
+    max-height: 256px;
+  }
+
+  .subFilterButtonsList li {
+    width: 100%;
+    margin-bottom: 18px;
+  }
+
+  .subFilterButtonsList li:last-of-type {
+    margin-bottom: 0;
+  }
+}
