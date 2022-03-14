@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="CartProduct">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cartProduct/CartProduct.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/filteredProductsList/FilteredProductsList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filteredProductsList/FilteredProductsList.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/filteredProductsList/filteredProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filteredProductsList/filteredProductsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/filteredProductsList/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filteredProductsList/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/App/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/pages/HomePage/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/pages/HomePage/HomePage.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="41a11069-4201-4d4f-a294-9239a4089a50" name="Changes" comment="CartProduct" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,7 +107,7 @@
       <workItem from="1647075244514" duration="139000" />
       <workItem from="1647075437812" duration="9164000" />
       <workItem from="1647162547424" duration="447000" />
-      <workItem from="1647184691873" duration="21013000" />
+      <workItem from="1647184691873" duration="22322000" />
     </task>
     <task id="LOCAL-00001" summary="add 8.1">
       <created>1644398846734</created>
@@ -216,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647129159273</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="CartProduct">
+      <created>1647215591432</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1647215591432</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
