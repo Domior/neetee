@@ -1,3 +1,12 @@
+.cardContainerBlock {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.cardContainerBlock:last-of-type {
+    margin-bottom: 0;
+}
+
 .cardContainer {
     width: 100%;
     height: fit-content;
@@ -55,7 +64,7 @@
 .cardBody {
     display: flex;
     background-color: #fff;
-    padding: 30px 20px 30px 60px;
+    padding: 30px 20px 30px 30px;
     border-radius: 0 0 5px 5px;
 }
 
@@ -99,17 +108,20 @@
 .cardBodyFooter {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
-.counterContainer {
-    display: flex;
+.cardBodyFooterWaitingPayment {
+    flex-direction: row;
 }
 
 .cardItemPrice {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
@@ -125,7 +137,60 @@
     line-height: 14px;
     font-weight: 500;
     color: #666666;
+    margin-right: 10px;
+}
+
+.cardBodyFooterWaitingPayment .cardItemPrice {
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 0;
+}
+
+.cardBodyFooterWaitingPayment .cardItemPrice span {
+    margin-right: 0;
     margin-bottom: 13px;
+}
+
+.cardItemDeliveryContainer {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.cardItemDeliveryInfo {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+
+.cardItemDeliveryInfo:last-of-type {
+    margin-right: 0;
+}
+
+.cardItemDeliveryInfo p {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #696969;
+    margin-bottom: 8px;
+}
+
+.cardItemDeliveryInfo span {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.btnsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.btnsContainer button:last-of-type {
+    margin-left: 10px;
 }
 
 .test {
@@ -134,6 +199,10 @@
 
 
 @media screen and (max-width: 900px) {
+    .cardContainerBlock {
+        margin-bottom: 20px;
+    }
+
     .cardContainer {
         width: 100%;
     }
@@ -146,8 +215,8 @@
         padding: 15px 30px 10px 9px;
     }
 
-    .cardHeaderTitleContainer{
-       order: 1
+    .cardHeaderTitleContainer {
+        order: 1
     }
 
     .btnClose {
@@ -167,7 +236,7 @@
     }
 
     .cardItemInfo {
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     .cardItemTitleContainerLg {
@@ -182,13 +251,31 @@
         font-size: 12px;
         line-height: 14px;
         margin-bottom: 5px;
-
     }
 
     .cardItemDescription {
         font-size: 12px;
         line-height: 14px;
+    }
 
+    .cardItemDeliveryContainer {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .cardItemDeliveryInfo {
+        width: 50%;
+        margin-right: 0;
+    }
+
+    .cardItemDeliveryInfo p {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .cardItemDeliveryInfo span {
+        font-size: 14px;
+        line-height: 16px;
     }
 
     .cardBodyFooter {
@@ -196,20 +283,36 @@
         align-items: center;
     }
 
-    .cardBodyFooter>* {
+    .cardBodyFooterWaitingPayment>* {
         margin-bottom: 10px;
     }
 
-    .counterContainer {
+    .cardBodyFooterWaitingPayment .cardItemPrice {
         justify-content: flex-end;
         width: 50%;
-        order: 2;
+        margin-bottom: 12px;
+    }
+
+    .btnsContainer {
+        flex-direction: column;
+    }
+
+    .btnsContainer button:last-of-type {
+        margin-left: 0;
+    }
+
+    .cardBodyFooterFinished .cardItemPrice:last-of-type span{
         margin-bottom: 0;
     }
 
+    .cardBodyFooterWithTracker .btnsContainer button:first-of-type {
+        display: none;
+    }
+
     .cardItemPrice {
-        justify-content: flex-end;
-        width: 50%;
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 15px;
         font-size: 16px;
         line-height: 19px;
     }
@@ -219,24 +322,24 @@
         line-height: 24px;
     }
 
-    .cardItemPrice:nth-child(2) {
+    .cardBodyFooterWithTracker  .cardItemPrice:nth-child(2) {
         order: 0;
     }
 
-    .cardItemPrice:nth-child(3) {
+    .cardBodyFooterWithTracker  .cardItemPrice:nth-child(3) {
         order: 1;
     }
 
-    .cardItemPrice:nth-child(4) {
+    .cardBodyFooterWithTracker  .cardItemPrice:nth-child(4) {
         order: 3;
         /* margin-bottom: 0; */
     }
 
-    .cardItemPrice span {
+    .cardBodyFooterWithTracker  .cardItemPrice span {
         margin-bottom: 1px;
     }
 
-    .cardItemPrice:last-of-type span {
+    .cardBodyFooterWithTracker  .cardItemPrice:last-of-type span {
         margin-bottom: 5px;
     }
 }

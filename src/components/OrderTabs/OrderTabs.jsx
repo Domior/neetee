@@ -8,9 +8,6 @@ import Box from '@mui/material/Box';
 
 import ProductList from '@components/ProductList';
 import ProductListBasket from '@components/ProductListBasket';
-import ProductItemMain from '@components/ProductItemMain';
-import ProductItemWithTracker from '@components/ProductItemWithTracker';
-import ProductItemEnded from '@components/ProductItemEnded';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -193,25 +190,25 @@ export default function OrderTabs() {
         />
       </Tabs>
       <TabPanel value={value} index={0} className={classes.tabPanel}>
-        <ProductList />
+        <ProductList type="viewed" />
       </TabPanel>
       <TabPanel value={value} index={1} className={classes.tabPanel}>
-        <ProductList />
+        <ProductList type="favourites" />
       </TabPanel>
       <TabPanel value={value} index={2} className={classes.tabPanel}>
         <ProductListBasket />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <ProductItemMain />
+        <ProductList type="waitingPayment" />
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <ProductItemWithTracker />
+        <ProductList type="withTracker" />
       </TabPanel>
       <TabPanel value={value} index={5}>
-        <ProductList />
+        <ProductList type="waitingRecieve" />
       </TabPanel>
       <TabPanel value={value} index={6}>
-        <ProductItemEnded />
+        <ProductList type="finished" />
       </TabPanel>
       <TabPanel value={value} index={7}>
         Заказы/работа

@@ -3,24 +3,17 @@ import * as React from 'react';
 import Chip from '@mui/material/Chip';
 import Button from '@mui/material/Button';
 
+import ToMessageButton from '@components/Buttons/ToMessageButton';
+
 import Logo from '../../static/taobao.svg';
 import ItemImg from '../../static/item.jpg';
 import Close from '../../static/icons/close.svg';
 
 import { makeStyles, useTheme } from '@mui/styles';
+
 import styles from './ProductItemMain.module.css';
 
 const useStyles = makeStyles((theme) => ({
-  cardContainerBlock: {
-    position: 'relative',
-    marginBottom: '30px',
-    '&:last-of-type': {
-      marginBottom: '0',
-    },
-    [theme.breakpoints.down('md')]: {
-      marginBottom: '20px',
-    },
-  },
   statusContainer: {
     display: 'flex',
     alignItems: 'center',
@@ -59,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btn: {
-    padding: `18px 40px`,
+    padding: `16px 40px`,
     order: 4,
     [theme.breakpoints.down('md')]: {
       width: '100%',
@@ -69,8 +62,20 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ProductItemMain = (props) => {
-  // const { name, title, description, itemPrice, deliveryPrice, totalPrice } =
-  //   props.data;
+  const { type } = props;
+
+  const {
+    name,
+    title,
+    description,
+    trackNumber,
+    deliveryCompany,
+    itemPrice,
+    quantity,
+    deliveryThroughChina,
+    totalPrice,
+  } = props.data;
+
   const theme = useTheme();
   const classes = useStyles();
 
@@ -119,21 +124,24 @@ const ProductItemMain = (props) => {
   }
 
   return (
-    <div className={classes.cardContainerBlock}>
+    <div className={styles.cardContainerBlock}>
       <div className={styles.cardContainer}>
         <div className={styles.cardHeader}>
           <div className={styles.cardHeaderTitleContainer}>
             <img className={styles.cardHeaderLogo} src={Logo} alt="logo" />
-            <span className={styles.cardHeaderTitle}>RT3234234234234</span>
+            <span className={styles.cardHeaderTitle}>{name}</span>
           </div>
-          <div className={classes.statusContainer}>
-            <p>Статус:</p>
-            <Chip
-              className={classes.statusBadge}
-              label={statusLabel}
-              style={{ backgroundColor: `${statusColor}` }}
-            />
-          </div>
+          {!(type === 'viewed' || type === 'favourites') && (
+            <div className={classes.statusContainer}>
+              <p>Статус:</p>
+              <Chip
+                className={classes.statusBadge}
+                label={statusLabel}
+                style={{ backgroundColor: `${statusColor}` }}
+              />
+            </div>
+          )}
+
           <button className={styles.btnClose}>
             <img className={styles.btnCloseIcon} src={Close} alt="close" />
           </button>
@@ -142,49 +150,112 @@ const ProductItemMain = (props) => {
           <div className={styles.test}>
             <img className={styles.cardItemImg} src={ItemImg} alt="item" />
             <div className={styles.cardItemTitleContainerSm}>
-              <p className={styles.cardItemTitle}>
-                2021 новый предмет baotou тапочки женские летние за тапочки
-                женские...
-              </p>
-              <p className={styles.cardItemDescription}>
-                Россия, Москва, Проспект мира, 125, кв 426, 223344
-              </p>
+              <p className={styles.cardItemTitle}>{title}</p>
+              <p className={styles.cardItemDescription}>{description}</p>
             </div>
           </div>
           <div className={styles.cardItemInfo}>
             <div className={styles.cardItemTitleContainerLg}>
-              <p className={styles.cardItemTitle}>
-                2021 новый предмет baotou тапочки женские летние за тапочки
-                женские...
-              </p>
-              <p className={styles.cardItemDescription}>
-                Россия, Москва, Проспект мира, 125, кв 426, 223344
-              </p>
+              <p className={styles.cardItemTitle}>{title}</p>
+              <p className={styles.cardItemDescription}>{description}</p>
             </div>
-            <div className={styles.cardBodyFooter}>
-              <p className={styles.cardItemPrice}>
-                <span>Количество</span>
-                123
-              </p>
-              <p className={styles.cardItemPrice}>
-                <span>Цена за единицу</span>
-                123
-              </p>
-              <p className={styles.cardItemPrice}>
-                <span>Доставка по Китаю</span>
-                123
-              </p>
-              <p className={styles.cardItemPrice}>
-                <span>Итоговая цена</span>
-                123
-              </p>
-              <Button
-                className={classes.btn}
-                variant="contained"
-                color="warning"
-              >
-                Оплатить заказ
-              </Button>
+            {type === 'withTracker' && (
+              <div className={styles.cardItemDeliveryContainer}>
+                <div className={styles.cardItemDeliveryInfo}>
+                  <p>Трек-номер:</p>
+                  <span>{trackNumber}</span>
+                </div>
+                <div className={styles.cardItemDeliveryInfo}>
+                  <p>Компания доставки:</p>
+                  <span>{deliveryCompany}</span>
+                </div>
+              </div>
+            )}
+
+            <div
+              className={`
+                ${styles.cardBodyFooter}
+                ${
+                  type === 'waitingPayment'
+                    ? styles.cardBodyFooterWaitingPayment
+                    : ''
+                }
+                ${
+                  type === 'withTracker' ? styles.cardBodyFooterWithTracker : ''
+                }
+                ${type === 'finished' ? styles.cardBodyFooterFinished : ''}
+              `}
+            >
+              {type === 'waitingPayment' && (
+                <>
+                  <p className={styles.cardItemPrice}>
+                    <span>Количество</span>
+                    {quantity}
+                  </p>
+                  <p className={styles.cardItemPrice}>
+                    <span>Цена за единицу</span>
+                    {itemPrice}
+                  </p>
+                  <p className={styles.cardItemPrice}>
+                    <span>Доставка по Китаю</span>
+                    {deliveryThroughChina}
+                  </p>
+                  <p className={styles.cardItemPrice}>
+                    <span>Итоговая цена</span>
+                    {totalPrice}
+                  </p>
+                  <Button
+                    className={classes.btn}
+                    variant="contained"
+                    color="warning"
+                  >
+                    Оплатить заказ
+                  </Button>
+                </>
+              )}
+
+              {type === 'withTracker' && (
+                <div className={styles.btnsContainer}>
+                  <ToMessageButton />
+                  <Button
+                    className={classes.btn}
+                    variant="contained"
+                    color="warning"
+                  >
+                    Перейти к заказу
+                  </Button>
+                </div>
+              )}
+
+              {(type === 'viewed' ||
+                type === 'favourites' ||
+                type === 'waitingRecieve' ||
+                type === 'finished') && (
+                <>
+                  <p className={styles.cardItemPrice}>
+                    <span>Цена за единицу</span>
+                    {itemPrice}
+                  </p>
+                  <div className={styles.btnsContainer}>
+                    {type === 'finished' && (
+                      <Button
+                        className={classes.btn}
+                        variant="contained"
+                        color="success"
+                      >
+                        Оставить отзыв
+                      </Button>
+                    )}
+                    <Button
+                      className={classes.btn}
+                      variant="contained"
+                      color="warning"
+                    >
+                      Перейти к заказу
+                    </Button>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
